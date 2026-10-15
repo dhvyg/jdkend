@@ -5,9 +5,16 @@
         "source": "github",
         "repo": "DietrichGebert/ponytail"
       }
+    },
+    "prompts.chat": {
+      "source": {
+        "source": "github",
+        "repo": "f/prompts.chat"
+      }
     }
   },
   "enabledPlugins": {
-    "ponytail@ponytail": true
+    "ponytail@ponytail": true,
+    "prompts.chat@prompts.chat": true
   }
 }
