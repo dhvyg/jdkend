@@ -12,6 +12,12 @@
         "repo": "eugeniughelbur/obsidian-second-brain"
       }
     },
+    "claude-video": {
+      "source": {
+        "source": "github",
+        "repo": "bradautomates/claude-video"
+      }
+    },
     "ponytail": {
       "source": {
         "source": "github",
@@ -87,6 +93,7 @@
   },
   "enabledPlugins": {
     "ponytail@ponytail": true,
+    "watch@claude-video": true,
     "obsidian-second-brain@obsidian-second-brain": true,
     "task-observer@one-skill-to-rule-them-all": true,
     "prompts.chat@prompts.chat": true,
