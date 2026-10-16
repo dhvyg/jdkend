@@ -35,6 +35,12 @@
         "source": "github",
         "repo": "headroomlabs-ai/headroom"
       }
+    },
+    "anthropic-agent-skills": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/skills"
+      }
     }
   },
   "enabledPlugins": {
@@ -43,6 +49,11 @@
     "ecc@ecc": true,
     "superpowers@superpowers-marketplace": true,
     "claude-mem@thedotmack": true,
-    "headroom@headroom-marketplace": true
+    "headroom@headroom-marketplace": true,
+    "document-skills@anthropic-agent-skills": true,
+    "example-skills@anthropic-agent-skills": true,
+    "claude-api@anthropic-agent-skills": true,
+    "academy-guide@anthropic-agent-skills": true,
+    "discernment-nudge@anthropic-agent-skills": true
   }
 }
