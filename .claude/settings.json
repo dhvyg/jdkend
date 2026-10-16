@@ -11,10 +11,17 @@
         "source": "github",
         "repo": "f/prompts.chat"
       }
+    },
+    "ecc": {
+      "source": {
+        "source": "github",
+        "repo": "affaan-m/ECC"
+      }
     }
   },
   "enabledPlugins": {
     "ponytail@ponytail": true,
-    "prompts.chat@prompts.chat": true
+    "prompts.chat@prompts.chat": true,
+    "ecc@ecc": true
   }
 }
