@@ -17,11 +17,32 @@
         "source": "github",
         "repo": "affaan-m/ECC"
       }
+    },
+    "superpowers-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "obra/superpowers-marketplace"
+      }
+    },
+    "thedotmack": {
+      "source": {
+        "source": "github",
+        "repo": "thedotmack/claude-mem"
+      }
+    },
+    "headroom-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "headroomlabs-ai/headroom"
+      }
     }
   },
   "enabledPlugins": {
     "ponytail@ponytail": true,
     "prompts.chat@prompts.chat": true,
-    "ecc@ecc": true
+    "ecc@ecc": true,
+    "superpowers@superpowers-marketplace": true,
+    "claude-mem@thedotmack": true,
+    "headroom@headroom-marketplace": true
   }
 }
