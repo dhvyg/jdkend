@@ -17,11 +17,18 @@
         "source": "github",
         "repo": "affaan-m/ECC"
       }
+    },
+    "superpowers-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "obra/superpowers-marketplace"
+      }
     }
   },
   "enabledPlugins": {
     "ponytail@ponytail": true,
     "prompts.chat@prompts.chat": true,
-    "ecc@ecc": true
+    "ecc@ecc": true,
+    "superpowers@superpowers-marketplace": true
   }
 }
