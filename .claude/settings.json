@@ -87,7 +87,7 @@
     "discernment-nudge@anthropic-agent-skills": false,
     "i-have-adhd@i-have-adhd": true,
     "ui-ux-pro-max@ui-ux-pro-max-skill": true,
-    "andrej-karpathy-skills@karpathy-skills": false,
+    "andrej-karpathy-skills@karpathy-skills": true,
     "bmad-method@bmad": false,
     "bmad-toolbox@bmad": false,
     "agent-skills@addy-agent-skills": false
