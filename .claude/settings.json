@@ -59,6 +59,12 @@
         "source": "github",
         "repo": "multica-ai/andrej-karpathy-skills"
       }
+    },
+    "bmad": {
+      "source": {
+        "source": "github",
+        "repo": "bmad-code-org/bmad-plugins"
+      }
     }
   },
   "enabledPlugins": {
@@ -75,6 +81,8 @@
     "discernment-nudge@anthropic-agent-skills": true,
     "i-have-adhd@i-have-adhd": true,
     "ui-ux-pro-max@ui-ux-pro-max-skill": true,
-    "andrej-karpathy-skills@karpathy-skills": true
+    "andrej-karpathy-skills@karpathy-skills": true,
+    "bmad-method@bmad": true,
+    "bmad-toolbox@bmad": true
   }
 }
