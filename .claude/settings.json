@@ -1,0 +1,27 @@
+{
+  "extraKnownMarketplaces": {
+    "ponytail": {
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail"
+      }
+    },
+    "prompts.chat": {
+      "source": {
+        "source": "github",
+        "repo": "f/prompts.chat"
+      }
+    },
+    "ecc": {
+      "source": {
+        "source": "github",
+        "repo": "affaan-m/ECC"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "ponytail@ponytail": true,
+    "prompts.chat@prompts.chat": true,
+    "ecc@ecc": true
+  }
+}
