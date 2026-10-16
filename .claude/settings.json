@@ -6,6 +6,12 @@
         "repo": "rebelytics/one-skill-to-rule-them-all"
       }
     },
+    "obsidian-second-brain": {
+      "source": {
+        "source": "github",
+        "repo": "eugeniughelbur/obsidian-second-brain"
+      }
+    },
     "ponytail": {
       "source": {
         "source": "github",
@@ -81,6 +87,7 @@
   },
   "enabledPlugins": {
     "ponytail@ponytail": true,
+    "obsidian-second-brain@obsidian-second-brain": true,
     "task-observer@one-skill-to-rule-them-all": true,
     "prompts.chat@prompts.chat": true,
     "ecc@ecc": false,
