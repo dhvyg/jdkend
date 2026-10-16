@@ -65,6 +65,12 @@
         "source": "github",
         "repo": "bmad-code-org/bmad-plugins"
       }
+    },
+    "addy-agent-skills": {
+      "source": {
+        "source": "github",
+        "repo": "addyosmani/agent-skills"
+      }
     }
   },
   "enabledPlugins": {
@@ -83,6 +89,7 @@
     "ui-ux-pro-max@ui-ux-pro-max-skill": true,
     "andrej-karpathy-skills@karpathy-skills": true,
     "bmad-method@bmad": true,
-    "bmad-toolbox@bmad": true
+    "bmad-toolbox@bmad": true,
+    "agent-skills@addy-agent-skills": true
   }
 }
