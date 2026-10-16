@@ -41,6 +41,12 @@
         "source": "github",
         "repo": "anthropics/skills"
       }
+    },
+    "i-have-adhd": {
+      "source": {
+        "source": "github",
+        "repo": "ayghri/i-have-adhd"
+      }
     }
   },
   "enabledPlugins": {
@@ -54,6 +60,7 @@
     "example-skills@anthropic-agent-skills": true,
     "claude-api@anthropic-agent-skills": true,
     "academy-guide@anthropic-agent-skills": true,
-    "discernment-nudge@anthropic-agent-skills": true
+    "discernment-nudge@anthropic-agent-skills": true,
+    "i-have-adhd@i-have-adhd": true
   }
 }
