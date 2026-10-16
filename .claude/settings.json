@@ -1,5 +1,11 @@
 {
   "extraKnownMarketplaces": {
+    "one-skill-to-rule-them-all": {
+      "source": {
+        "source": "github",
+        "repo": "rebelytics/one-skill-to-rule-them-all"
+      }
+    },
     "ponytail": {
       "source": {
         "source": "github",
@@ -75,6 +81,7 @@
   },
   "enabledPlugins": {
     "ponytail@ponytail": true,
+    "task-observer@one-skill-to-rule-them-all": true,
     "prompts.chat@prompts.chat": true,
     "ecc@ecc": false,
     "superpowers@superpowers-marketplace": true,
