@@ -76,20 +76,20 @@
   "enabledPlugins": {
     "ponytail@ponytail": true,
     "prompts.chat@prompts.chat": true,
-    "ecc@ecc": true,
+    "ecc@ecc": false,
     "superpowers@superpowers-marketplace": true,
-    "claude-mem@thedotmack": true,
-    "headroom@headroom-marketplace": true,
+    "claude-mem@thedotmack": false,
+    "headroom@headroom-marketplace": false,
     "document-skills@anthropic-agent-skills": true,
     "example-skills@anthropic-agent-skills": true,
     "claude-api@anthropic-agent-skills": true,
-    "academy-guide@anthropic-agent-skills": true,
-    "discernment-nudge@anthropic-agent-skills": true,
+    "academy-guide@anthropic-agent-skills": false,
+    "discernment-nudge@anthropic-agent-skills": false,
     "i-have-adhd@i-have-adhd": true,
     "ui-ux-pro-max@ui-ux-pro-max-skill": true,
-    "andrej-karpathy-skills@karpathy-skills": true,
-    "bmad-method@bmad": true,
-    "bmad-toolbox@bmad": true,
-    "agent-skills@addy-agent-skills": true
+    "andrej-karpathy-skills@karpathy-skills": false,
+    "bmad-method@bmad": false,
+    "bmad-toolbox@bmad": false,
+    "agent-skills@addy-agent-skills": false
   }
 }
