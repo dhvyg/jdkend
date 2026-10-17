@@ -12,6 +12,12 @@
         "repo": "eugeniughelbur/obsidian-second-brain"
       }
     },
+    "founder-skill": {
+      "source": {
+        "source": "github",
+        "repo": "Jakeschincariol/founder-skill"
+      }
+    },
     "last30days-skill": {
       "source": {
         "source": "github",
@@ -108,6 +114,7 @@
     "watch@claude-video": true,
     "caveman@caveman": true,
     "last30days@last30days-skill": true,
+    "founder-skill@founder-skill": true,
     "obsidian-second-brain@obsidian-second-brain": true,
     "task-observer@one-skill-to-rule-them-all": true,
     "prompts.chat@prompts.chat": true,
