@@ -12,6 +12,12 @@
         "repo": "eugeniughelbur/obsidian-second-brain"
       }
     },
+    "last30days-skill": {
+      "source": {
+        "source": "github",
+        "repo": "mvanhorn/last30days-skill"
+      }
+    },
     "caveman": {
       "source": {
         "source": "github",
@@ -101,6 +107,7 @@
     "ponytail@ponytail": true,
     "watch@claude-video": true,
     "caveman@caveman": true,
+    "last30days@last30days-skill": true,
     "obsidian-second-brain@obsidian-second-brain": true,
     "task-observer@one-skill-to-rule-them-all": true,
     "prompts.chat@prompts.chat": true,
