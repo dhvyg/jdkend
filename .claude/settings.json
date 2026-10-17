@@ -12,6 +12,18 @@
         "repo": "eugeniughelbur/obsidian-second-brain"
       }
     },
+    "nowork-studio": {
+      "source": {
+        "source": "github",
+        "repo": "nowork-studio/notfair-plugin"
+      }
+    },
+    "hormozi-skills": {
+      "source": {
+        "source": "github",
+        "repo": "alexsmedile/hormozi-skills"
+      }
+    },
     "founder-skill": {
       "source": {
         "source": "github",
@@ -115,6 +127,8 @@
     "caveman@caveman": true,
     "last30days@last30days-skill": true,
     "founder-skill@founder-skill": true,
+    "notfair@nowork-studio": true,
+    "hormozi-skills@hormozi-skills": true,
     "obsidian-second-brain@obsidian-second-brain": true,
     "task-observer@one-skill-to-rule-them-all": true,
     "prompts.chat@prompts.chat": true,
