@@ -12,6 +12,12 @@
         "repo": "eugeniughelbur/obsidian-second-brain"
       }
     },
+    "humanizer": {
+      "source": {
+        "source": "github",
+        "repo": "blader/humanizer"
+      }
+    },
     "nowork-studio": {
       "source": {
         "source": "github",
@@ -129,6 +135,7 @@
     "founder-skill@founder-skill": true,
     "notfair@nowork-studio": true,
     "hormozi-skills@hormozi-skills": true,
+    "humanizer@humanizer": true,
     "obsidian-second-brain@obsidian-second-brain": true,
     "task-observer@one-skill-to-rule-them-all": true,
     "prompts.chat@prompts.chat": true,
