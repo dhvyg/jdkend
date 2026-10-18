@@ -12,6 +12,12 @@
         "repo": "eugeniughelbur/obsidian-second-brain"
       }
     },
+    "context-mode": {
+      "source": {
+        "source": "github",
+        "repo": "mksglu/context-mode"
+      }
+    },
     "humanizer": {
       "source": {
         "source": "github",
@@ -136,6 +142,7 @@
     "notfair@nowork-studio": true,
     "hormozi-skills@hormozi-skills": true,
     "humanizer@humanizer": true,
+    "context-mode@context-mode": true,
     "obsidian-second-brain@obsidian-second-brain": true,
     "task-observer@one-skill-to-rule-them-all": true,
     "prompts.chat@prompts.chat": true,
