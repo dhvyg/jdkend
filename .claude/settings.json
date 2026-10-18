@@ -191,6 +191,7 @@
     "brand-voice@knowledge-work-plugins": true,
     "diagram-design@diagram-design": true,
     "text-to-cad@earthtojake": true,
-    "hyperframes@hyperframes": true
+    "hyperframes@hyperframes": true,
+    "postiz@knowledge-work-plugins": true
   }
 }
