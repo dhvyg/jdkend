@@ -1,5 +1,11 @@
 {
   "extraKnownMarketplaces": {
+    "knowledge-work-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/knowledge-work-plugins"
+      }
+    },
     "one-skill-to-rule-them-all": {
       "source": {
         "source": "github",
@@ -160,6 +166,10 @@
     "andrej-karpathy-skills@karpathy-skills": true,
     "bmad-method@bmad": false,
     "bmad-toolbox@bmad": false,
-    "agent-skills@addy-agent-skills": false
+    "agent-skills@addy-agent-skills": false,
+    "customer-support@knowledge-work-plugins": true,
+    "human-resources@knowledge-work-plugins": true,
+    "enterprise-search@knowledge-work-plugins": true,
+    "brand-voice@knowledge-work-plugins": true
   }
 }
