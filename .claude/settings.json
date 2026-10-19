@@ -1,5 +1,11 @@
 {
   "extraKnownMarketplaces": {
+    "perplexity-mcp-server": {
+      "source": {
+        "source": "github",
+        "repo": "ppl-ai/modelcontextprotocol"
+      }
+    },
     "taste-skill": {
       "source": {
         "source": "github",
@@ -258,6 +264,7 @@
     "repomix-explorer@repomix": true,
     "planning-with-files@planning-with-files": false,
     "codex@openai-codex": false,
-    "agentmemory@agentmemory": false
+    "agentmemory@agentmemory": false,
+    "perplexity@perplexity-mcp-server": true
   }
 }
