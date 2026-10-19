@@ -1,5 +1,41 @@
 {
   "extraKnownMarketplaces": {
+    "taste-skill": {
+      "source": {
+        "source": "github",
+        "repo": "Leonxlnx/taste-skill"
+      }
+    },
+    "claude-hud": {
+      "source": {
+        "source": "github",
+        "repo": "jarrodwatts/claude-hud"
+      }
+    },
+    "repomix": {
+      "source": {
+        "source": "github",
+        "repo": "yamadashy/repomix"
+      }
+    },
+    "planning-with-files": {
+      "source": {
+        "source": "github",
+        "repo": "OthmanAdi/planning-with-files"
+      }
+    },
+    "openai-codex": {
+      "source": {
+        "source": "github",
+        "repo": "openai/codex-plugin-cc"
+      }
+    },
+    "agentmemory": {
+      "source": {
+        "source": "github",
+        "repo": "rohitg00/agentmemory"
+      }
+    },
     "claude-code-workflows": {
       "source": {
         "source": "github",
@@ -215,6 +251,13 @@
     "javascript-typescript@claude-code-workflows": true,
     "full-stack-orchestration@claude-code-workflows": true,
     "database-design@claude-code-workflows": true,
-    "startup-business-analyst@claude-code-workflows": true
+    "startup-business-analyst@claude-code-workflows": true,
+    "taste-skill@taste-skill": true,
+    "claude-hud@claude-hud": true,
+    "repomix-commands@repomix": true,
+    "repomix-explorer@repomix": true,
+    "planning-with-files@planning-with-files": false,
+    "codex@openai-codex": false,
+    "agentmemory@agentmemory": false
   }
 }
