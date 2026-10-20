@@ -1,5 +1,11 @@
 {
   "extraKnownMarketplaces": {
+    "impeccable": {
+      "source": {
+        "source": "github",
+        "repo": "pbakaus/impeccable"
+      }
+    },
     "perplexity-mcp-server": {
       "source": {
         "source": "github",
@@ -265,6 +271,7 @@
     "planning-with-files@planning-with-files": false,
     "codex@openai-codex": false,
     "agentmemory@agentmemory": false,
-    "perplexity@perplexity-mcp-server": true
+    "perplexity@perplexity-mcp-server": true,
+    "impeccable@impeccable": true
   }
 }
