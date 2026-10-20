@@ -1,5 +1,23 @@
 {
   "extraKnownMarketplaces": {
+    "mattpocock": {
+      "source": {
+        "source": "github",
+        "repo": "mattpocock/skills"
+      }
+    },
+    "beads-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "steveyegge/beads"
+      }
+    },
+    "omc": {
+      "source": {
+        "source": "github",
+        "repo": "Yeachan-Heo/oh-my-claudecode"
+      }
+    },
     "agent-browser": {
       "source": {
         "source": "github",
@@ -286,6 +304,9 @@
     "perplexity@perplexity-mcp-server": true,
     "impeccable@impeccable": true,
     "youtube-agent@youtube-agent-skill": true,
-    "agent-browser@agent-browser": true
+    "agent-browser@agent-browser": true,
+    "mattpocock-skills@mattpocock": true,
+    "beads@beads-marketplace": true,
+    "oh-my-claudecode@omc": false
   }
 }
