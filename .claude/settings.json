@@ -1,5 +1,11 @@
 {
   "extraKnownMarketplaces": {
+    "youtube-agent-skill": {
+      "source": {
+        "source": "github",
+        "repo": "Jakeschincariol/youtube-agent-skill"
+      }
+    },
     "impeccable": {
       "source": {
         "source": "github",
@@ -272,6 +278,7 @@
     "codex@openai-codex": false,
     "agentmemory@agentmemory": false,
     "perplexity@perplexity-mcp-server": true,
-    "impeccable@impeccable": true
+    "impeccable@impeccable": true,
+    "youtube-agent@youtube-agent-skill": true
   }
 }
