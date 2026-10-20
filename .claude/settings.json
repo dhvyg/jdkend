@@ -1,5 +1,11 @@
 {
   "extraKnownMarketplaces": {
+    "agent-browser": {
+      "source": {
+        "source": "github",
+        "repo": "vercel-labs/agent-browser"
+      }
+    },
     "youtube-agent-skill": {
       "source": {
         "source": "github",
@@ -279,6 +285,7 @@
     "agentmemory@agentmemory": false,
     "perplexity@perplexity-mcp-server": true,
     "impeccable@impeccable": true,
-    "youtube-agent@youtube-agent-skill": true
+    "youtube-agent@youtube-agent-skill": true,
+    "agent-browser@agent-browser": true
   }
 }
