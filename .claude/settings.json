@@ -1,5 +1,11 @@
 {
   "extraKnownMarketplaces": {
+    "arena-skill": {
+      "source": {
+        "source": "github",
+        "repo": "Jakeschincariol/arena-skill"
+      }
+    },
     "mattpocock": {
       "source": {
         "source": "github",
@@ -307,6 +313,7 @@
     "agent-browser@agent-browser": true,
     "mattpocock-skills@mattpocock": true,
     "beads@beads-marketplace": true,
-    "oh-my-claudecode@omc": false
+    "oh-my-claudecode@omc": false,
+    "arena-skill@arena-skill": true
   }
 }
