@@ -1,5 +1,11 @@
 {
   "extraKnownMarketplaces": {
+    "gsap-skills": {
+      "source": {
+        "source": "github",
+        "repo": "greensock/gsap-skills"
+      }
+    },
     "arena-skill": {
       "source": {
         "source": "github",
@@ -314,6 +320,7 @@
     "mattpocock-skills@mattpocock": true,
     "beads@beads-marketplace": true,
     "oh-my-claudecode@omc": false,
-    "arena-skill@arena-skill": true
+    "arena-skill@arena-skill": true,
+    "gsap-skills@gsap-skills": true
   }
 }
