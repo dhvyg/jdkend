@@ -1,5 +1,17 @@
 {
   "extraKnownMarketplaces": {
+    "claude-design-skillstack": {
+      "source": {
+        "source": "github",
+        "repo": "freshtechbro/claudedesignskills"
+      }
+    },
+    "scroll-world": {
+      "source": {
+        "source": "github",
+        "repo": "oso95/scroll-world"
+      }
+    },
     "gsap-skills": {
       "source": {
         "source": "github",
@@ -321,6 +333,10 @@
     "beads@beads-marketplace": true,
     "oh-my-claudecode@omc": false,
     "arena-skill@arena-skill": true,
-    "gsap-skills@gsap-skills": true
+    "gsap-skills@gsap-skills": true,
+    "scroll-world@scroll-world": true,
+    "animated-component-libraries@claude-design-skillstack": true,
+    "react-spring-physics@claude-design-skillstack": true,
+    "scroll-reveal-libraries@claude-design-skillstack": true
   }
 }
