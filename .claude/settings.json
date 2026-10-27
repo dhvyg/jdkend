@@ -1,5 +1,17 @@
 {
   "extraKnownMarketplaces": {
+    "ai-memory": {
+      "source": {
+        "source": "github",
+        "repo": "akitaonrails/ai-memory"
+      }
+    },
+    "ruflo": {
+      "source": {
+        "source": "github",
+        "repo": "ruvnet/ruflo"
+      }
+    },
     "claude-design-skillstack": {
       "source": {
         "source": "github",
@@ -337,6 +349,8 @@
     "scroll-world@scroll-world": true,
     "animated-component-libraries@claude-design-skillstack": true,
     "react-spring-physics@claude-design-skillstack": true,
-    "scroll-reveal-libraries@claude-design-skillstack": true
+    "scroll-reveal-libraries@claude-design-skillstack": true,
+    "ai-memory@ai-memory": false,
+    "ruflo-core@ruflo": false
   }
 }
