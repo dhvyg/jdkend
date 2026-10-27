@@ -1,5 +1,11 @@
 {
   "extraKnownMarketplaces": {
+    "claude-for-financial-services": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/financial-services"
+      }
+    },
     "ai-memory": {
       "source": {
         "source": "github",
@@ -351,6 +357,9 @@
     "react-spring-physics@claude-design-skillstack": true,
     "scroll-reveal-libraries@claude-design-skillstack": true,
     "ai-memory@ai-memory": false,
-    "ruflo-core@ruflo": false
+    "ruflo-core@ruflo": false,
+    "financial-analysis@claude-for-financial-services": true,
+    "market-researcher@claude-for-financial-services": true,
+    "model-builder@claude-for-financial-services": true
   }
 }
