@@ -1,5 +1,17 @@
 {
   "extraKnownMarketplaces": {
+    "apify-agent-skills": {
+      "source": {
+        "source": "github",
+        "repo": "apify/agent-skills"
+      }
+    },
+    "ffmpeg-skill": {
+      "source": {
+        "source": "github",
+        "repo": "kajisho5/ffmpeg-skill"
+      }
+    },
     "claude-for-financial-services": {
       "source": {
         "source": "github",
@@ -360,6 +372,12 @@
     "ruflo-core@ruflo": false,
     "financial-analysis@claude-for-financial-services": true,
     "market-researcher@claude-for-financial-services": true,
-    "model-builder@claude-for-financial-services": true
+    "model-builder@claude-for-financial-services": true,
+    "apify-ultimate-scraper@apify-agent-skills": true,
+    "ffmpeg-skill@ffmpeg-skill": true,
+    "playwright@claude-plugins-official": true,
+    "figma@claude-plugins-official": true,
+    "zapier@claude-plugins-official": true,
+    "chrome-devtools-mcp@claude-plugins-official": true
   }
 }
