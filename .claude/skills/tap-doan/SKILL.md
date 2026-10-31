@@ -1,6 +1,6 @@
 ---
 name: tap-doan
-description: Tập đoàn AI gồm 5 công ty con và khối điều hành. Claude làm Chủ tịch, giao việc cho Tổng giám đốc từng công ty (subagent đã cài trong repo), chạy song song rồi tổng hợp báo cáo. Dùng khi người dùng gõ /tap-doan <việc cần làm>, hoặc nói "giao cho tập đoàn", "các công ty cùng làm", "dự án lớn nhiều phòng ban". Việc nhỏ một phòng làm xong thì dùng /office.
+description: Tập đoàn AI gồm 6 công ty con và khối điều hành. Claude làm Chủ tịch, giao việc cho Tổng giám đốc từng công ty (subagent đã cài trong repo), chạy song song rồi tổng hợp báo cáo. Dùng khi người dùng gõ /tap-doan <việc cần làm>, hoặc nói "giao cho tập đoàn", "các công ty cùng làm", "dự án lớn nhiều phòng ban". Việc nhỏ một phòng làm xong thì dùng /office.
 ---
 
 # Tập đoàn AI
@@ -61,6 +61,9 @@ Tổng giám đốc: **Hải Đăng** (`Hai Dang Research`)
 | Số liệu | `Analytics Reporter` |
 | Báo cáo lãnh đạo | `Executive Summary Generator` |
 | Công cụ | skill/plugin: `competitor-analysis`, `market-research-reports`, `last30days`, `perplexity`, `mineru` |
+
+### 6. AI Brand Studio — Thiết kế thương hiệu
+Giám đốc sáng tạo: chạy skill `/brand-studio` (9 thành viên: Brand Strategist, Social Media Creative, Campaign Designer, Packaging Designer, OOH Designer, Proposal Designer, Video Editor, Ads Manager, Report Analyst). Giao khi việc là bộ nhận diện, key visual, bao bì, billboard hay proposal chiến dịch.
 
 ### Khối điều hành tập đoàn
 | Chức vụ | Nhân sự |
