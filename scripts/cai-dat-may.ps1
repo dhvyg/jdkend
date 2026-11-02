@@ -42,6 +42,21 @@ if (Hoi "Cài 4 skill làm video (dashi-animationstyle, huashu-art-motion, video
   foreach ($r in "chuspeeism/dashi-animationstyle","alchaincyf/huashu-art-motion","Vincentwei1021/video-shotcraft","solplum/anything2video") { npx -y skills add $r -g }
 }
 
+# Công ty AI chạy riêng (framework/app), không phải plugin Claude Code
+if ((Co python) -and (Hoi "Cài MetaGPT (công ty phần mềm AI: CEO, PM, kiến trúc sư, lập trình viên; cần Python 3.9–3.11)?")) {
+  python -m pip install -U metagpt; metagpt --init-config
+  Write-Host "Điền API key vào $HOME\.metagpt\config2.yaml rồi chạy: metagpt `"ý tưởng`""
+}
+
+if (Hoi "Tải ChatDev (công ty phần mềm ảo, cần uv + Node.js)?") {
+  if (-not (Test-Path "$HOME\ChatDev")) { git clone --depth 1 https://github.com/OpenBMB/ChatDev.git "$HOME\ChatDev" }
+  Write-Host "Xem $HOME\ChatDev\README.md: chạy 'uv sync', 'cd frontend; npm install', rồi 'make dev'."
+}
+
+if (Hoi "Tải Agent Teams AI (app desktop: agent tự nhận việc, nhắn tin, soát bài nhau)?") {
+  Start-Process "https://github.com/777genius/agent-teams-ai/releases/latest/download/Agent.Teams.AI.Setup.exe"
+}
+
 Write-Host ""
 Write-Host "Xong. OpenRig không chạy trên Windows thường (cần WSL2)."
 Write-Host "Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
