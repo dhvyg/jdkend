@@ -1,5 +1,17 @@
 {
   "extraKnownMarketplaces": {
+    "lemolab": {
+      "source": {
+        "source": "github",
+        "repo": "lemomo-ai/lemo-opuscar"
+      }
+    },
+    "wattter-skills": {
+      "source": {
+        "source": "github",
+        "repo": "WaterDJiang/Wattter_openSkills"
+      }
+    },
     "dev-browser-marketplace": {
       "source": {
         "source": "github",
@@ -385,7 +397,7 @@
     "agent-browser@agent-browser": true,
     "mattpocock-skills@mattpocock": true,
     "beads@beads-marketplace": true,
-    "oh-my-claudecode@omc": false,
+    "oh-my-claudecode@omc": true,
     "arena-skill@arena-skill": true,
     "gsap-skills@gsap-skills": true,
     "scroll-world@scroll-world": true,
@@ -414,6 +426,8 @@
     "pm-toolkit@pm-skills": true,
     "pm-ai-shipping@pm-skills": true,
     "autoresearch@autoresearch": false,
-    "academic-research-skills@academic-research-skills": false
+    "academic-research-skills@academic-research-skills": false,
+    "lemo-opuscar@lemolab": true,
+    "wtt-code-animation-studio-skills@wattter-skills": true
   }
 }

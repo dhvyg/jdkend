@@ -52,6 +52,28 @@ fi
 
 hoi "Cài VoiceStudio (nhân bản giọng, lồng tiếng — app desktop)?" && curl -fsSL https://voicestudio.sh/install | sh
 
+# Skill làm video quá nặng để để trong repo (ảnh mẫu, dự án Remotion) — cài thẳng vào ~/.claude/skills
+if hoi "Cài 4 skill làm video (dashi-animationstyle, huashu-art-motion, video-shotcraft, anything2video)?"; then
+  for r in chuspeeism/dashi-animationstyle alchaincyf/huashu-art-motion Vincentwei1021/video-shotcraft solplum/anything2video; do
+    npx -y skills add "$r" -g
+  done
+fi
+
+# Công ty AI chạy riêng (framework/app), không phải plugin Claude Code
+if co python3 && hoi "Cài MetaGPT (công ty phần mềm AI: CEO, PM, kiến trúc sư, lập trình viên; cần Python 3.9–3.11)?"; then
+  python3 -m pip install -U metagpt && metagpt --init-config && echo "Điền API key vào ~/.metagpt/config2.yaml rồi chạy: metagpt \"ý tưởng\""
+fi
+
+if hoi "Tải ChatDev (công ty phần mềm ảo, cần uv + Node.js)?"; then
+  [ -d ~/ChatDev ] || git clone --depth 1 https://github.com/OpenBMB/ChatDev.git ~/ChatDev
+  echo "Xem ~/ChatDev/README.md: chạy 'uv sync', 'cd frontend && npm install', rồi 'make dev'."
+fi
+
+if hoi "Mở trang tải Agent Teams AI (app desktop: agent tự nhận việc, nhắn tin, soát bài nhau)?"; then
+  u=https://github.com/777genius/agent-teams-ai/releases/latest
+  if [ "$OS" = Darwin ]; then open "$u"; else xdg-open "$u" 2>/dev/null || echo "$u"; fi
+fi
+
 echo
 echo "Xong. Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
 echo "Token Apify/OpenRouter: đặt trong biến môi trường (~/.zshrc hoặc ~/.bashrc), KHÔNG ghi vào repo."
