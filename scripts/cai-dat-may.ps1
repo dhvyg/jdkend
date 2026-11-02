@@ -37,6 +37,11 @@ if (Hoi "Cài Ollama (chạy model AI miễn phí trên máy)?") { winget instal
 
 if (Hoi "Cài VoiceStudio (nhân bản giọng, lồng tiếng — app desktop)?") { irm https://voicestudio.sh/install.ps1 | iex }
 
+# Skill làm video quá nặng để để trong repo (ảnh mẫu, dự án Remotion) — cài thẳng vào ~/.claude/skills
+if (Hoi "Cài 4 skill làm video (dashi-animationstyle, huashu-art-motion, video-shotcraft, anything2video)?") {
+  foreach ($r in "chuspeeism/dashi-animationstyle","alchaincyf/huashu-art-motion","Vincentwei1021/video-shotcraft","solplum/anything2video") { npx -y skills add $r -g }
+}
+
 Write-Host ""
 Write-Host "Xong. OpenRig không chạy trên Windows thường (cần WSL2)."
 Write-Host "Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
