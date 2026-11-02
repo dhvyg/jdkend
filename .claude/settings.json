@@ -1,5 +1,29 @@
 {
   "extraKnownMarketplaces": {
+    "dev-browser-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "SawyerHood/dev-browser"
+      }
+    },
+    "pm-skills": {
+      "source": {
+        "source": "github",
+        "repo": "phuryn/pm-skills"
+      }
+    },
+    "autoresearch": {
+      "source": {
+        "source": "github",
+        "repo": "uditgoenka/autoresearch"
+      }
+    },
+    "academic-research-skills": {
+      "source": {
+        "source": "github",
+        "repo": "Imbad0202/academic-research-skills"
+      }
+    },
     "apify-agent-skills": {
       "source": {
         "source": "github",
@@ -378,6 +402,18 @@
     "playwright@claude-plugins-official": true,
     "figma@claude-plugins-official": true,
     "zapier@claude-plugins-official": true,
-    "chrome-devtools-mcp@claude-plugins-official": true
+    "chrome-devtools-mcp@claude-plugins-official": true,
+    "dev-browser@dev-browser-marketplace": true,
+    "pm-product-discovery@pm-skills": true,
+    "pm-product-strategy@pm-skills": true,
+    "pm-execution@pm-skills": true,
+    "pm-market-research@pm-skills": true,
+    "pm-data-analytics@pm-skills": true,
+    "pm-go-to-market@pm-skills": true,
+    "pm-marketing-growth@pm-skills": true,
+    "pm-toolkit@pm-skills": true,
+    "pm-ai-shipping@pm-skills": true,
+    "autoresearch@autoresearch": false,
+    "academic-research-skills@academic-research-skills": false
   }
 }
