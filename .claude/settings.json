@@ -1,5 +1,11 @@
 {
   "extraKnownMarketplaces": {
+    "ppt-master": {
+      "source": {
+        "source": "github",
+        "repo": "hugohe3/ppt-master"
+      }
+    },
     "social-media-research-skills": {
       "source": {
         "source": "github",
@@ -435,6 +441,7 @@
     "academic-research-skills@academic-research-skills": false,
     "lemo-opuscar@lemolab": true,
     "wtt-code-animation-studio-skills@wattter-skills": true,
-    "social-media-research-skills@social-media-research-skills": true
+    "social-media-research-skills@social-media-research-skills": true,
+    "ppt-master@ppt-master": true
   }
 }
