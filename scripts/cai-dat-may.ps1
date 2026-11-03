@@ -42,6 +42,17 @@ if (Hoi "Cài 4 skill làm video (dashi-animationstyle, huashu-art-motion, video
   foreach ($r in "chuspeeism/dashi-animationstyle","alchaincyf/huashu-art-motion","Vincentwei1021/video-shotcraft","solplum/anything2video") { npx -y skills add $r -g }
 }
 
+# baoyu-design: slide, canvas thiết kế, design system, dashboard mở bằng editor chạy trên máy (Node 20+)
+if (Hoi "Cài baoyu-design (slide, thiết kế, design system, dashboard từ prompt)?") {
+  npx -y skills add JimLiu/baoyu-design -g --agent claude-code --skill claude-slides --skill claude-design --skill claude-design-system --skill claude-dashboard
+}
+
+# Spec Kit (github/spec-kit): 9 lệnh /speckit.* làm phần mềm theo quy trình spec → plan → tasks → implement
+if (Hoi "Cài Spec Kit vào repo này (cần uv)?") {
+  if (-not (Co uv)) { winget install -e --id astral-sh.uv; $env:Path += ";$HOME\.local\bin" }
+  uv tool install specify-cli; specify init --here --integration claude --script ps
+}
+
 # Công ty AI chạy riêng (framework/app), không phải plugin Claude Code
 if ((Co python) -and (Hoi "Cài MetaGPT (công ty phần mềm AI: CEO, PM, kiến trúc sư, lập trình viên; cần Python 3.9–3.11)?")) {
   python -m pip install -U metagpt; metagpt --init-config
