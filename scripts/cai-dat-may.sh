@@ -59,6 +59,11 @@ if hoi "Cài 4 skill làm video (dashi-animationstyle, huashu-art-motion, video-
   done
 fi
 
+# baoyu-design: slide, canvas thiết kế, design system, dashboard mở bằng editor chạy trên máy (Node 20+)
+if hoi "Cài baoyu-design (slide, thiết kế, design system, dashboard từ prompt)?"; then
+  npx -y skills add JimLiu/baoyu-design -g --agent claude-code --skill claude-slides --skill claude-design --skill claude-design-system --skill claude-dashboard
+fi
+
 # Công ty AI chạy riêng (framework/app), không phải plugin Claude Code
 if co python3 && hoi "Cài MetaGPT (công ty phần mềm AI: CEO, PM, kiến trúc sư, lập trình viên; cần Python 3.9–3.11)?"; then
   python3 -m pip install -U metagpt && metagpt --init-config && echo "Điền API key vào ~/.metagpt/config2.yaml rồi chạy: metagpt \"ý tưởng\""
