@@ -70,6 +70,13 @@ if hoi "Cài Spec Kit vào repo này (cần uv)?"; then
   uv tool install specify-cli && specify init --here --integration claude --script sh
 fi
 
+# Nhà máy nội dung AI: công cụ Python chạy trên máy
+if co python3; then
+  hoi "Cài Kokoro (đọc văn bản thành giọng nói, chạy offline)?" && python3 -m pip install -U kokoro soundfile
+  hoi "Cài Podcastfy (biến bài viết/PDF/web thành podcast hội thoại; cần API key LLM)?" && python3 -m pip install -U podcastfy
+  hoi "Cài Local Deep Research (nghiên cứu sâu nhiều nguồn, chạy với Ollama hoặc API key)?" && python3 -m pip install -U local-deep-research && echo "Chạy: python3 -m local_deep_research.web.app rồi mở http://localhost:5000"
+fi
+
 # Công ty AI chạy riêng (framework/app), không phải plugin Claude Code
 if co python3 && hoi "Cài MetaGPT (công ty phần mềm AI: CEO, PM, kiến trúc sư, lập trình viên; cần Python 3.9–3.11)?"; then
   python3 -m pip install -U metagpt && metagpt --init-config && echo "Điền API key vào ~/.metagpt/config2.yaml rồi chạy: metagpt \"ý tưởng\""

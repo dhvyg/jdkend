@@ -1,5 +1,11 @@
 {
   "extraKnownMarketplaces": {
+    "social-media-research-skills": {
+      "source": {
+        "source": "github",
+        "repo": "ScrapeCreators/social-media-research-skills"
+      }
+    },
     "lemolab": {
       "source": {
         "source": "github",
@@ -428,6 +434,7 @@
     "autoresearch@autoresearch": false,
     "academic-research-skills@academic-research-skills": false,
     "lemo-opuscar@lemolab": true,
-    "wtt-code-animation-studio-skills@wattter-skills": true
+    "wtt-code-animation-studio-skills@wattter-skills": true,
+    "social-media-research-skills@social-media-research-skills": true
   }
 }
