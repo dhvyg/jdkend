@@ -64,6 +64,12 @@ if hoi "Cài baoyu-design (slide, thiết kế, design system, dashboard từ pr
   npx -y skills add JimLiu/baoyu-design -g --agent claude-code --skill claude-slides --skill claude-design --skill claude-design-system --skill claude-dashboard
 fi
 
+# Spec Kit (github/spec-kit): 9 lệnh /speckit.* làm phần mềm theo quy trình spec → plan → tasks → implement
+if hoi "Cài Spec Kit vào repo này (cần uv)?"; then
+  co uv || curl -LsSf https://astral.sh/uv/install.sh | sh
+  uv tool install specify-cli && specify init --here --integration claude --script sh
+fi
+
 # Công ty AI chạy riêng (framework/app), không phải plugin Claude Code
 if co python3 && hoi "Cài MetaGPT (công ty phần mềm AI: CEO, PM, kiến trúc sư, lập trình viên; cần Python 3.9–3.11)?"; then
   python3 -m pip install -U metagpt && metagpt --init-config && echo "Điền API key vào ~/.metagpt/config2.yaml rồi chạy: metagpt \"ý tưởng\""
