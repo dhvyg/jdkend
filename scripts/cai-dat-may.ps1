@@ -57,6 +57,7 @@ if (Hoi "Cài Spec Kit vào repo này (cần uv)?") {
 
 # Nhà máy nội dung AI: công cụ Python chạy trên máy
 if (Co python) {
+  if (Hoi "Cài thư viện Python cho plugin PPT Master (xuất PPTX chỉnh sửa được)?") { python -m pip install -U -r https://raw.githubusercontent.com/hugohe3/ppt-master/HEAD/requirements.txt }
   if (Hoi "Cài Kokoro (đọc văn bản thành giọng nói, chạy offline)?") { python -m pip install -U kokoro soundfile }
   if (Hoi "Cài Podcastfy (biến bài viết/PDF/web thành podcast hội thoại; cần API key LLM)?") { python -m pip install -U podcastfy }
   if (Hoi "Cài Local Deep Research (nghiên cứu sâu nhiều nguồn, chạy với Ollama hoặc API key)?") { python -m pip install -U local-deep-research; Write-Host "Chạy: python -m local_deep_research.web.app rồi mở http://localhost:5000" }
