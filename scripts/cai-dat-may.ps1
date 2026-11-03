@@ -49,6 +49,12 @@ if (Hoi "Cài baoyu-design (slide, thiết kế, design system, dashboard từ p
   npx -y skills add JimLiu/baoyu-design -g --agent claude-code --skill claude-slides --skill claude-design --skill claude-design-system --skill claude-dashboard
 }
 
+# cell_su7: biến ảnh sơ đồ PNG/JPG thành PPTX hoặc AI chỉnh sửa được (dịch vụ trả phí xiaomiao-ai.com; cần PowerPoint hoặc Illustrator)
+if ((Co python) -and (Hoi "Cài cell_su7 (ảnh sơ đồ → PowerPoint/Illustrator chỉnh sửa được, trả phí theo lượt)?")) {
+  if (-not (Test-Path "$HOME\cell_su7")) { git clone --depth 1 https://github.com/yrui-cmd/cell_su7.git "$HOME\cell_su7" }
+  python -m pip install --requirement "$HOME\cell_su7\requirements.lock"; python "$HOME\cell_su7\install.py" --destination "$HOME\.claude\skills"
+}
+
 # Spec Kit (github/spec-kit): 9 lệnh /speckit.* làm phần mềm theo quy trình spec → plan → tasks → implement
 if (Hoi "Cài Spec Kit vào repo này (cần uv)?") {
   if (-not (Co uv)) { winget install -e --id astral-sh.uv; $env:Path += ";$HOME\.local\bin" }

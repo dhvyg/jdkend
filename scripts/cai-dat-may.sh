@@ -69,6 +69,12 @@ if hoi "Cài baoyu-design (slide, thiết kế, design system, dashboard từ pr
   npx -y skills add JimLiu/baoyu-design -g --agent claude-code --skill claude-slides --skill claude-design --skill claude-design-system --skill claude-dashboard
 fi
 
+# cell_su7: biến ảnh sơ đồ PNG/JPG thành PPTX hoặc AI chỉnh sửa được (dịch vụ trả phí xiaomiao-ai.com; cần PowerPoint hoặc Illustrator)
+if co python3 && hoi "Cài cell_su7 (ảnh sơ đồ → PowerPoint/Illustrator chỉnh sửa được, trả phí theo lượt)?"; then
+  [ -d ~/cell_su7 ] || git clone --depth 1 https://github.com/yrui-cmd/cell_su7.git ~/cell_su7
+  python3 -m pip install --requirement ~/cell_su7/requirements.lock && python3 ~/cell_su7/install.py --destination ~/.claude/skills
+fi
+
 # Spec Kit (github/spec-kit): 9 lệnh /speckit.* làm phần mềm theo quy trình spec → plan → tasks → implement
 if hoi "Cài Spec Kit vào repo này (cần uv)?"; then
   co uv || curl -LsSf https://astral.sh/uv/install.sh | sh
