@@ -53,6 +53,13 @@ if (Hoi "Cài Spec Kit vào repo này (cần uv)?") {
   uv tool install specify-cli; specify init --here --integration claude --script ps
 }
 
+# Nhà máy nội dung AI: công cụ Python chạy trên máy
+if (Co python) {
+  if (Hoi "Cài Kokoro (đọc văn bản thành giọng nói, chạy offline)?") { python -m pip install -U kokoro soundfile }
+  if (Hoi "Cài Podcastfy (biến bài viết/PDF/web thành podcast hội thoại; cần API key LLM)?") { python -m pip install -U podcastfy }
+  if (Hoi "Cài Local Deep Research (nghiên cứu sâu nhiều nguồn, chạy với Ollama hoặc API key)?") { python -m pip install -U local-deep-research; Write-Host "Chạy: python -m local_deep_research.web.app rồi mở http://localhost:5000" }
+}
+
 # Công ty AI chạy riêng (framework/app), không phải plugin Claude Code
 if ((Co python) -and (Hoi "Cài MetaGPT (công ty phần mềm AI: CEO, PM, kiến trúc sư, lập trình viên; cần Python 3.9–3.11)?")) {
   python -m pip install -U metagpt; metagpt --init-config
