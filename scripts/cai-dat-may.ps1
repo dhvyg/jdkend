@@ -24,6 +24,8 @@ if (Hoi "Cài gstack (bộ 23 công cụ của Garry Tan, cần Bun)?") {
 
 if (Hoi "Cài codegraph (bản đồ code, ít token hơn)?") { npm i -g @colbymchenry/codegraph }
 
+if (Hoi "Cài agent-desktop (cho Claude điều khiển app trên máy qua accessibility)?") { npm i -g agent-desktop; agent-desktop status }
+
 if (Hoi "Cài claude-code-router (chuyển Claude Code sang model khác)?") { npm i -g @musistudio/claude-code-router }
 
 if (Co python) {

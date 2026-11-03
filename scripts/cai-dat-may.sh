@@ -31,6 +31,11 @@ fi
 
 hoi "Cài codegraph (bản đồ code, ít token hơn)?" && npm i -g @colbymchenry/codegraph
 
+if hoi "Cài agent-desktop (cho Claude điều khiển app trên máy qua accessibility)?"; then
+  npm i -g agent-desktop && agent-desktop status
+  [ "$OS" = Darwin ] && echo "Mac cần cấp quyền Accessibility: agent-desktop permissions --guide"
+fi
+
 hoi "Cài claude-code-router (chuyển Claude Code sang model khác)?" && npm i -g @musistudio/claude-code-router
 
 if hoi "Cài OpenRig (đội nhiều AI lập trình, cần tmux)?"; then
