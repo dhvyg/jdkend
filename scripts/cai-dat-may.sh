@@ -75,6 +75,14 @@ if co python3 && hoi "Cài cell_su7 (ảnh sơ đồ → PowerPoint/Illustrator 
   python3 -m pip install --requirement ~/cell_su7/requirements.lock && python3 ~/cell_su7/install.py --destination ~/.claude/skills
 fi
 
+# Earshot (Leonxlnx/earshot): cho Claude "nghe" âm thanh/video, chạy CPU, tải ~1.1 GB model lần đầu; cần ffmpeg
+if co python3 && hoi "Cài Earshot (Claude nghe và chấm âm thanh/video, MCP server; tải ~1.1 GB model)?"; then
+  [ -d ~/earshot ] || git clone --depth 1 https://github.com/Leonxlnx/earshot.git ~/earshot
+  (cd ~/earshot && python3 -m venv .venv && .venv/bin/python -m pip install torch --index-url https://download.pytorch.org/whl/cpu \
+    && .venv/bin/python -m pip install -e ".[mcp]" && .venv/bin/python -m earshot doctor --fetch) \
+    && co claude && claude mcp add earshot --scope user -e EARSHOT_THREADS=3 -- "$HOME/earshot/.venv/bin/python" -m earshot mcp
+fi
+
 # Spec Kit (github/spec-kit): 9 lệnh /speckit.* làm phần mềm theo quy trình spec → plan → tasks → implement
 if hoi "Cài Spec Kit vào repo này (cần uv)?"; then
   co uv || curl -LsSf https://astral.sh/uv/install.sh | sh

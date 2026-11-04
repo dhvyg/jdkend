@@ -55,6 +55,16 @@ if ((Co python) -and (Hoi "Cài cell_su7 (ảnh sơ đồ → PowerPoint/Illustr
   python -m pip install --requirement "$HOME\cell_su7\requirements.lock"; python "$HOME\cell_su7\install.py" --destination "$HOME\.claude\skills"
 }
 
+# Earshot (Leonxlnx/earshot): cho Claude "nghe" âm thanh/video, chạy CPU, tải ~1.1 GB model lần đầu; cần ffmpeg
+if ((Co python) -and (Hoi "Cài Earshot (Claude nghe và chấm âm thanh/video, MCP server; tải ~1.1 GB model)?")) {
+  $e = "$HOME\earshot"
+  if (-not (Test-Path $e)) { git clone --depth 1 https://github.com/Leonxlnx/earshot.git $e }
+  python -m venv "$e\.venv"; $py = "$e\.venv\Scripts\python.exe"
+  & $py -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+  & $py -m pip install -e "$e[mcp]"; & $py -m earshot doctor --fetch
+  if (Co claude) { claude mcp add earshot --scope user -e EARSHOT_THREADS=3 -- $py -m earshot mcp }
+}
+
 # Spec Kit (github/spec-kit): 9 lệnh /speckit.* làm phần mềm theo quy trình spec → plan → tasks → implement
 if (Hoi "Cài Spec Kit vào repo này (cần uv)?") {
   if (-not (Co uv)) { winget install -e --id astral-sh.uv; $env:Path += ";$HOME\.local\bin" }
