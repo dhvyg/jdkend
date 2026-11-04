@@ -1,5 +1,41 @@
 {
   "extraKnownMarketplaces": {
+    "career-ops": {
+      "source": {
+        "source": "github",
+        "repo": "career-ops-hq/career-ops"
+      }
+    },
+    "nateherk": {
+      "source": {
+        "source": "github",
+        "repo": "nateherkai/scroll-craft"
+      }
+    },
+    "understand-anything": {
+      "source": {
+        "source": "github",
+        "repo": "Egonex-AI/Understand-Anything"
+      }
+    },
+    "promptfoo": {
+      "source": {
+        "source": "github",
+        "repo": "promptfoo/promptfoo"
+      }
+    },
+    "pake": {
+      "source": {
+        "source": "github",
+        "repo": "tw93/Pake"
+      }
+    },
+    "cinetic": {
+      "source": {
+        "source": "github",
+        "repo": "Leonxlnx/cinetic"
+      }
+    },
     "ppt-master": {
       "source": {
         "source": "github",
@@ -442,6 +478,12 @@
     "lemo-opuscar@lemolab": true,
     "wtt-code-animation-studio-skills@wattter-skills": true,
     "social-media-research-skills@social-media-research-skills": true,
-    "ppt-master@ppt-master": true
+    "ppt-master@ppt-master": true,
+    "nateherk-design@nateherk": true,
+    "promptfoo@promptfoo": true,
+    "pake@pake": true,
+    "cinetic@cinetic": true,
+    "career-ops@career-ops": false,
+    "understand-anything@understand-anything": false
   }
 }
