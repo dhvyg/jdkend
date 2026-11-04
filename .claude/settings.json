@@ -1,5 +1,11 @@
 {
   "extraKnownMarketplaces": {
+    "tokeneconomizer": {
+      "source": {
+        "source": "github",
+        "repo": "microsoft/TokenEconomizer"
+      }
+    },
     "career-ops": {
       "source": {
         "source": "github",
@@ -484,6 +490,7 @@
     "pake@pake": true,
     "cinetic@cinetic": true,
     "career-ops@career-ops": false,
-    "understand-anything@understand-anything": false
+    "understand-anything@understand-anything": false,
+    "tokeneconomizer@tokeneconomizer": false
   }
 }
