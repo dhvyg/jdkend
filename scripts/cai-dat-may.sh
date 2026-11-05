@@ -141,6 +141,21 @@ if hoi "Cài SkillSpector (quét skill AI trước khi cài, cần uv + Python 3
     && echo "Quét skill trong repo: skillspector scan .claude/skills/<tên-skill>/"
 fi
 
+# Agent Reach (Panniantong, MIT): cho agent đọc/tìm Twitter, Reddit, YouTube, GitHub, LinkedIn, Xiaohongshu... một CLI, không tốn phí API
+# Lưu ý: gói "agent-reach" trên PyPI KHÔNG phải dự án này, chỉ cài từ link GitHub
+if hoi "Cài Agent Reach (agent đọc mạng xã hội, YouTube, web; cần uv)?"; then
+  co uv || curl -LsSf https://astral.sh/uv/install.sh | sh
+  uv tool install https://github.com/Panniantong/Agent-Reach/releases/latest/download/agent-reach.zip && agent-reach setup
+  echo "Thêm kênh: agent-reach add reddit | linkedin | xiaohongshu ..."
+fi
+
+# FreeLLMAPI (tashfeenahmed, MIT): gom gói miễn phí của 34 nhà cung cấp AI vào 1 endpoint, tự chuyển model khi hết lượt; chỉ dùng cá nhân
+if hoi "Cài FreeLLMAPI (router AI miễn phí, cần Docker)?"; then
+  if co docker; then curl -fsSL https://freellmapi.co/install.sh | bash
+    echo "Mở http://localhost:3001 → thêm key từng nhà cung cấp → lấy unified key. Nối Claude Code: npx freellmapi setup-claude --url http://localhost:3001 --api-key <key>"
+  else echo "Cần Docker. Bản Mac (.dmg): https://github.com/tashfeenahmed/freellmapi/releases/latest"; fi
+fi
+
 echo
 echo "Xong. Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
 echo "Token Apify/OpenRouter: đặt trong biến môi trường (~/.zshrc hoặc ~/.bashrc), KHÔNG ghi vào repo."

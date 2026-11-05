@@ -123,6 +123,19 @@ if (Hoi "Cài SkillSpector (quét skill AI trước khi cài, cần uv + Python 
   Write-Host "Quét skill trong repo: skillspector scan .claude\skills\<tên-skill>\"
 }
 
+# Agent Reach (Panniantong, MIT): agent đọc/tìm mạng xã hội, YouTube, web. Gói "agent-reach" trên PyPI KHÔNG phải dự án này
+if (Hoi "Cài Agent Reach (agent đọc mạng xã hội, YouTube, web; cần uv)?") {
+  if (-not (Co uv)) { winget install -e --id astral-sh.uv; $env:Path += ";$HOME\.local\bin" }
+  uv tool install https://github.com/Panniantong/Agent-Reach/releases/latest/download/agent-reach.zip; agent-reach setup
+  Write-Host "Thêm kênh: agent-reach add reddit | linkedin | xiaohongshu ..."
+}
+
+# FreeLLMAPI (tashfeenahmed, MIT): router gom gói miễn phí của 34 nhà cung cấp AI; chỉ dùng cá nhân
+if (Hoi "Tải FreeLLMAPI (router AI miễn phí, app desktop .exe)?") {
+  Start-Process "https://github.com/tashfeenahmed/freellmapi/releases/latest"
+  Write-Host "Cài .exe, thêm key nhà cung cấp, lấy unified key. Nối Claude Code: npx freellmapi setup-claude --url http://localhost:3001 --api-key <key>"
+}
+
 Write-Host ""
 Write-Host "Xong. OpenRig không chạy trên Windows thường (cần WSL2)."
 Write-Host "Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
