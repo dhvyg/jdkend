@@ -102,6 +102,14 @@ if (Hoi "Cài bộ dịch ngược (REA, Ghidra, x64dbg, dnSpy, ILSpy, ImHex, ra
   Write-Host "Ghidra cần JDK 21. GhidraMCP: https://github.com/LaurieWired/GhidraMCP/releases ; jadx/Apktool: https://github.com/skylot/jadx/releases"
 }
 
+# TradingAgents (TauricResearch, Apache-2.0): đội AI phân tích cổ phiếu; chỉ để nghiên cứu, không phải lời khuyên đầu tư
+if ((Co python) -and (Hoi "Cài TradingAgents (đội AI phân tích chứng khoán, cần Python 3.11+ và API key LLM)?")) {
+  $t = "$HOME\TradingAgents"
+  if (-not (Test-Path $t)) { git clone --depth 1 https://github.com/TauricResearch/TradingAgents.git $t }
+  python -m venv "$t\.venv"; & "$t\.venv\Scripts\python.exe" -m pip install $t
+  Write-Host "Chạy: $t\.venv\Scripts\tradingagents.exe (đặt ANTHROPIC_API_KEY trong biến môi trường Windows)"
+}
+
 Write-Host ""
 Write-Host "Xong. OpenRig không chạy trên Windows thường (cần WSL2)."
 Write-Host "Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."

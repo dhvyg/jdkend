@@ -121,6 +121,13 @@ if hoi "Cài bộ dịch ngược (REA, radare2, Frida, mitmproxy, angr, jadx, a
   echo "ImHex https://imhex.werwolv.net, Rizin https://rizin.re, ILSpy (avaloniaui) https://github.com/icsharpcode/AvaloniaILSpy/releases"
 fi
 
+# TradingAgents (TauricResearch, Apache-2.0): đội AI phân tích cổ phiếu (phân tích, tranh luận, quản trị rủi ro); chỉ để nghiên cứu, không phải lời khuyên đầu tư
+if co python3 && hoi "Cài TradingAgents (đội AI phân tích chứng khoán, cần Python 3.11+ và API key LLM)?"; then
+  [ -d ~/TradingAgents ] || git clone --depth 1 https://github.com/TauricResearch/TradingAgents.git ~/TradingAgents
+  (cd ~/TradingAgents && python3 -m venv .venv && .venv/bin/pip install .) \
+    && echo "Chạy: ~/TradingAgents/.venv/bin/tradingagents (đặt ANTHROPIC_API_KEY hoặc key khác trong ~/.zshrc, KHÔNG ghi vào repo)"
+fi
+
 echo
 echo "Xong. Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
 echo "Token Apify/OpenRouter: đặt trong biến môi trường (~/.zshrc hoặc ~/.bashrc), KHÔNG ghi vào repo."
