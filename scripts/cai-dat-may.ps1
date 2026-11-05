@@ -94,6 +94,14 @@ if (Hoi "Tải Agent Teams AI (app desktop: agent tự nhận việc, nhắn tin
   Start-Process "https://github.com/777genius/agent-teams-ai/releases/latest/download/Agent.Teams.AI.Setup.exe"
 }
 
+# Bộ dịch ngược (REA): chỉ dùng trên phần mềm của mình hoặc được phép phân tích
+if (Hoi "Cài bộ dịch ngược (REA, Ghidra, x64dbg, dnSpy, ILSpy, ImHex, radare2, Frida, mitmproxy)?") {
+  npx -y rea-agents setup
+  foreach ($id in "NSA.Ghidra","x64dbg.x64dbg","dnSpyEx.dnSpy","IcSharpCode.ILSpy","WerWolv.ImHex","RadareOrg.Radare2","mitmproxy.mitmproxy") { winget install -e --id $id; if ($LASTEXITCODE) { Write-Host "Không tìm thấy $id trên winget, tải ở trang dự án" } }
+  if (Co python) { python -m pip install -U frida-tools angr }
+  Write-Host "Ghidra cần JDK 21. GhidraMCP: https://github.com/LaurieWired/GhidraMCP/releases ; jadx/Apktool: https://github.com/skylot/jadx/releases"
+}
+
 Write-Host ""
 Write-Host "Xong. OpenRig không chạy trên Windows thường (cần WSL2)."
 Write-Host "Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."

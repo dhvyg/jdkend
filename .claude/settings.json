@@ -389,6 +389,12 @@
         "source": "github",
         "repo": "addyosmani/agent-skills"
       }
+    },
+    "rea": {
+      "source": {
+        "source": "github",
+        "repo": "morluto/rea"
+      }
     }
   },
   "enabledPlugins": {
@@ -491,6 +497,7 @@
     "cinetic@cinetic": true,
     "career-ops@career-ops": false,
     "understand-anything@understand-anything": false,
-    "tokeneconomizer@tokeneconomizer": false
+    "tokeneconomizer@tokeneconomizer": false,
+    "rea@rea": true
   }
 }

@@ -112,6 +112,15 @@ if hoi "Mở trang tải Agent Teams AI (app desktop: agent tự nhận việc, 
   if [ "$OS" = Darwin ]; then open "$u"; else xdg-open "$u" 2>/dev/null || echo "$u"; fi
 fi
 
+# Bộ dịch ngược (REA): chỉ dùng trên phần mềm của mình hoặc được phép phân tích
+if hoi "Cài bộ dịch ngược (REA, radare2, Frida, mitmproxy, angr, jadx, apktool)?"; then
+  npx -y rea-agents setup
+  for p in radare2 apktool jadx; do pkg "$p" || echo "Không cài được $p qua trình quản lý gói, tải ở trang dự án"; done
+  co python3 && python3 -m pip install -U frida-tools mitmproxy angr
+  echo "Tải thêm khi cần: Ghidra https://ghidra-sre.org (cần JDK 21) + GhidraMCP https://github.com/LaurieWired/GhidraMCP/releases,"
+  echo "ImHex https://imhex.werwolv.net, Rizin https://rizin.re, ILSpy (avaloniaui) https://github.com/icsharpcode/AvaloniaILSpy/releases"
+fi
+
 echo
 echo "Xong. Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
 echo "Token Apify/OpenRouter: đặt trong biến môi trường (~/.zshrc hoặc ~/.bashrc), KHÔNG ghi vào repo."
