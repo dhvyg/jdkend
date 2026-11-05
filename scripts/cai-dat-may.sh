@@ -134,6 +134,13 @@ if hoi "Tải swarm-cursors (tiện ích Chrome: đàn con trỏ dựng lại tr
   echo "Mở chrome://extensions → bật Developer mode → Load unpacked → chọn ~/swarm-cursors/swarm-rebuild. Dùng: Alt+Shift+S"
 fi
 
+# SkillSpector (NVIDIA, Apache-2.0): quét skill AI tìm prompt injection, mã độc, lén gửi dữ liệu trước khi cài
+if hoi "Cài SkillSpector (quét skill AI trước khi cài, cần uv + Python 3.12)?"; then
+  co uv || curl -LsSf https://astral.sh/uv/install.sh | sh
+  uv tool install git+https://github.com/NVIDIA/skillspector.git \
+    && echo "Quét skill trong repo: skillspector scan .claude/skills/<tên-skill>/"
+fi
+
 echo
 echo "Xong. Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
 echo "Token Apify/OpenRouter: đặt trong biến môi trường (~/.zshrc hoặc ~/.bashrc), KHÔNG ghi vào repo."

@@ -116,6 +116,13 @@ if (Hoi "Tải swarm-cursors (tiện ích Chrome: đàn con trỏ dựng lại t
   Write-Host "Mở chrome://extensions, bật Developer mode, Load unpacked, chọn $HOME\swarm-cursors\swarm-rebuild. Dùng: Alt+Shift+S"
 }
 
+# SkillSpector (NVIDIA, Apache-2.0): quét skill AI tìm prompt injection, mã độc, lén gửi dữ liệu trước khi cài
+if (Hoi "Cài SkillSpector (quét skill AI trước khi cài, cần uv + Python 3.12)?") {
+  if (-not (Co uv)) { winget install -e --id astral-sh.uv; $env:Path += ";$HOME\.local\bin" }
+  uv tool install git+https://github.com/NVIDIA/skillspector.git
+  Write-Host "Quét skill trong repo: skillspector scan .claude\skills\<tên-skill>\"
+}
+
 Write-Host ""
 Write-Host "Xong. OpenRig không chạy trên Windows thường (cần WSL2)."
 Write-Host "Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
