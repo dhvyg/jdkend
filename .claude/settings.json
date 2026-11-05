@@ -395,6 +395,12 @@
         "source": "github",
         "repo": "morluto/rea"
       }
+    },
+    "pixelfx": {
+      "source": {
+        "source": "github",
+        "repo": "patch-gg/pixelfx"
+      }
     }
   },
   "enabledPlugins": {
@@ -498,6 +504,7 @@
     "career-ops@career-ops": false,
     "understand-anything@understand-anything": false,
     "tokeneconomizer@tokeneconomizer": false,
-    "rea@rea": true
+    "rea@rea": true,
+    "pixelfx@pixelfx": true
   }
 }
