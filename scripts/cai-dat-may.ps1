@@ -4,6 +4,8 @@
 
 function Hoi($q) { (Read-Host "$q [y/N]") -match '^[Yy]$' }
 function Co($c) { [bool](Get-Command $c -ErrorAction SilentlyContinue) }
+# Lệnh do winget (uv...) và "uv tool install" cài vào hai thư mục này; thêm sẵn để dùng được ngay
+$env:Path += ";$env:LOCALAPPDATA\Microsoft\WinGet\Links;$HOME\.local\bin"
 
 Write-Host "== Kiểm tra nền tảng =="
 if (-not (Co node)) {

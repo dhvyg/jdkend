@@ -6,6 +6,8 @@ set -u
 hoi() { read -r -p "$1 [y/N] " r; [[ "$r" =~ ^[Yy]$ ]]; }
 co() { command -v "$1" >/dev/null 2>&1; }
 OS=$(uname -s)
+# uv, bun và các lệnh "uv tool install" cài vào đây; thêm sẵn để dùng được ngay trong lần chạy này
+export PATH="$HOME/.local/bin:$HOME/.bun/bin:$PATH"
 
 pkg() { # cài gói hệ thống: Homebrew trên Mac, apt trên Linux
   if [ "$OS" = Darwin ]; then
