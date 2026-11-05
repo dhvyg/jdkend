@@ -110,6 +110,12 @@ if ((Co python) -and (Hoi "Cài TradingAgents (đội AI phân tích chứng kho
   Write-Host "Chạy: $t\.venv\Scripts\tradingagents.exe (đặt ANTHROPIC_API_KEY trong biến môi trường Windows)"
 }
 
+# swarm-cursors: tiện ích Chrome, đàn con trỏ dựng lại trang web (hiệu ứng để quay video); chưa có giấy phép
+if (Hoi "Tải swarm-cursors (tiện ích Chrome: đàn con trỏ dựng lại trang web, để quay video)?") {
+  if (-not (Test-Path "$HOME\swarm-cursors")) { git clone --depth 1 https://github.com/DhvanilPatel/swarm-cursors.git "$HOME\swarm-cursors" }
+  Write-Host "Mở chrome://extensions, bật Developer mode, Load unpacked, chọn $HOME\swarm-cursors\swarm-rebuild. Dùng: Alt+Shift+S"
+}
+
 Write-Host ""
 Write-Host "Xong. OpenRig không chạy trên Windows thường (cần WSL2)."
 Write-Host "Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."

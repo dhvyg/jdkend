@@ -128,6 +128,12 @@ if co python3 && hoi "Cài TradingAgents (đội AI phân tích chứng khoán, 
     && echo "Chạy: ~/TradingAgents/.venv/bin/tradingagents (đặt ANTHROPIC_API_KEY hoặc key khác trong ~/.zshrc, KHÔNG ghi vào repo)"
 fi
 
+# swarm-cursors (DhvanilPatel): tiện ích Chrome cho đàn con trỏ "dựng lại" trang web như video timelapse; chỉ là hiệu ứng, chưa có giấy phép nên không chép vào repo
+if hoi "Tải swarm-cursors (tiện ích Chrome: đàn con trỏ dựng lại trang web, để quay video)?"; then
+  [ -d ~/swarm-cursors ] || git clone --depth 1 https://github.com/DhvanilPatel/swarm-cursors.git ~/swarm-cursors
+  echo "Mở chrome://extensions → bật Developer mode → Load unpacked → chọn ~/swarm-cursors/swarm-rebuild. Dùng: Alt+Shift+S"
+fi
+
 echo
 echo "Xong. Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
 echo "Token Apify/OpenRouter: đặt trong biến môi trường (~/.zshrc hoặc ~/.bashrc), KHÔNG ghi vào repo."
