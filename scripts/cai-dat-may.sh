@@ -128,6 +128,34 @@ if co python3 && hoi "Cài TradingAgents (đội AI phân tích chứng khoán, 
     && echo "Chạy: ~/TradingAgents/.venv/bin/tradingagents (đặt ANTHROPIC_API_KEY hoặc key khác trong ~/.zshrc, KHÔNG ghi vào repo)"
 fi
 
+# swarm-cursors (DhvanilPatel): tiện ích Chrome cho đàn con trỏ "dựng lại" trang web như video timelapse; chỉ là hiệu ứng, chưa có giấy phép nên không chép vào repo
+if hoi "Tải swarm-cursors (tiện ích Chrome: đàn con trỏ dựng lại trang web, để quay video)?"; then
+  [ -d ~/swarm-cursors ] || git clone --depth 1 https://github.com/DhvanilPatel/swarm-cursors.git ~/swarm-cursors
+  echo "Mở chrome://extensions → bật Developer mode → Load unpacked → chọn ~/swarm-cursors/swarm-rebuild. Dùng: Alt+Shift+S"
+fi
+
+# SkillSpector (NVIDIA, Apache-2.0): quét skill AI tìm prompt injection, mã độc, lén gửi dữ liệu trước khi cài
+if hoi "Cài SkillSpector (quét skill AI trước khi cài, cần uv + Python 3.12)?"; then
+  co uv || curl -LsSf https://astral.sh/uv/install.sh | sh
+  uv tool install git+https://github.com/NVIDIA/skillspector.git \
+    && echo "Quét skill trong repo: skillspector scan .claude/skills/<tên-skill>/"
+fi
+
+# Agent Reach (Panniantong, MIT): cho agent đọc/tìm Twitter, Reddit, YouTube, GitHub, LinkedIn, Xiaohongshu... một CLI, không tốn phí API
+# Lưu ý: gói "agent-reach" trên PyPI KHÔNG phải dự án này, chỉ cài từ link GitHub
+if hoi "Cài Agent Reach (agent đọc mạng xã hội, YouTube, web; cần uv)?"; then
+  co uv || curl -LsSf https://astral.sh/uv/install.sh | sh
+  uv tool install https://github.com/Panniantong/Agent-Reach/releases/latest/download/agent-reach.zip && agent-reach setup
+  echo "Thêm kênh: agent-reach add reddit | linkedin | xiaohongshu ..."
+fi
+
+# FreeLLMAPI (tashfeenahmed, MIT): gom gói miễn phí của 34 nhà cung cấp AI vào 1 endpoint, tự chuyển model khi hết lượt; chỉ dùng cá nhân
+if hoi "Cài FreeLLMAPI (router AI miễn phí, cần Docker)?"; then
+  if co docker; then curl -fsSL https://freellmapi.co/install.sh | bash
+    echo "Mở http://localhost:3001 → thêm key từng nhà cung cấp → lấy unified key. Nối Claude Code: npx freellmapi setup-claude --url http://localhost:3001 --api-key <key>"
+  else echo "Cần Docker. Bản Mac (.dmg): https://github.com/tashfeenahmed/freellmapi/releases/latest"; fi
+fi
+
 echo
 echo "Xong. Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
 echo "Token Apify/OpenRouter: đặt trong biến môi trường (~/.zshrc hoặc ~/.bashrc), KHÔNG ghi vào repo."
