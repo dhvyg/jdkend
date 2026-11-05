@@ -48,10 +48,10 @@ The wiki is a historical record. It never claims to describe how things are now,
 
 ## Procedures
 
-Some procedures you run live in other skills, installed beside this one. To run one, read its `SKILL.md` at the path below, relative to this skill's directory, and follow it.
+Some procedures you run live in other skills from the `mattpocock-skills` plugin (enabled in this repo). To run one, invoke it with the Skill tool by the name below and follow it.
 
-- **Retro** (`../retro/SKILL.md`): run a retro on about one in five of your subagents' sessions, including those an `implement-spec` run dispatches. Pick first the ones where something went wrong. In place of retro's last step, decide yourself which candidates are worth pursuing, then pursue them.
-- **Large chunks of work**: write a spec with `../to-spec/SKILL.md`, break it into tickets with `../to-tickets/SKILL.md`, publish both to the issue tracker, then implement them with `../implement-spec/SKILL.md`.
+- **Retro** (`mattpocock-skills:retro`): run a retro on about one in five of your subagents' sessions, including those an `implement-spec` run dispatches. Pick first the ones where something went wrong. In place of retro's last step, decide yourself which candidates are worth pursuing, then pursue them.
+- **Large chunks of work**: write a spec with `mattpocock-skills:to-spec`, break it into tickets with `mattpocock-skills:to-tickets`, publish both to the issue tracker, then implement them with `mattpocock-skills:implement-spec`.
 
 ## Strategic View
 
