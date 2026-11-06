@@ -172,6 +172,12 @@ if hoi "Mở trang tải OpenBot (app desktop cho đội AI, chỉ dùng phi th�
   echo "Mac: tải file .dmg. Linux: tải .AppImage, chạy chmod +x rồi mở (Ubuntu 23.10+ cần cài profile AppArmor, xem README)."
 fi
 
+# Locals (Generated-Computers, Apache-2.0): server AI chạy trên máy cho nhiều agent cùng lúc (Claude Code, OpenCode, Cline...), không gửi gì lên mây; chỉ Mac chip Apple
+if [ "$OS" = Darwin ] && [ "$(uname -m)" = arm64 ] && hoi "Cài Locals (chạy nhiều AI agent bằng model trên máy, chỉ Mac chip Apple; cần uv)?"; then
+  co uv || curl -LsSf https://astral.sh/uv/install.sh | sh
+  uv tool install --python 3.12 locals && echo "Dùng: locals code ~/thu-muc-du-an (tải model lần đầu)"
+fi
+
 echo
 echo "Xong. Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
 echo "Token Apify/OpenRouter: đặt trong biến môi trường (~/.zshrc hoặc ~/.bashrc), KHÔNG ghi vào repo."

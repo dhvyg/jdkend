@@ -152,6 +152,6 @@ if (Hoi "Mở trang tải OpenBot (app desktop cho đội AI, chỉ dùng phi th
 }
 
 Write-Host ""
-Write-Host "Xong. OpenRig không chạy trên Windows thường (cần WSL2)."
+Write-Host "Xong. OpenRig không chạy trên Windows thường (cần WSL2). Locals chỉ chạy trên Mac chip Apple."
 Write-Host "Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
 Write-Host "Token Apify/OpenRouter: đặt trong biến môi trường Windows, KHÔNG ghi vào repo."
