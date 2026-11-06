@@ -158,6 +158,12 @@ if hoi "Cài FreeLLMAPI (router AI miễn phí, cần Docker)?"; then
   else echo "Cần Docker. Bản Mac (.dmg): https://github.com/tashfeenahmed/freellmapi/releases/latest"; fi
 fi
 
+# Laya (NandhaKishorM, Apache-2.0): phân loại email/lead/ticket/bình luận chạy trên máy, 100+ ngôn ngữ; MCP server cho Claude; tải model ~0.8B lần đầu
+if hoi "Cài Laya (AI phân loại nhanh trên máy, MCP server; cần uv, tải model lần đầu)?"; then
+  co uv || curl -LsSf https://astral.sh/uv/install.sh | sh
+  uv tool install "laya[mcp]" && co claude && claude mcp add laya --scope user -e LAYA_DEVICE=cpu -- laya-mcp-server
+fi
+
 echo
 echo "Xong. Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
 echo "Token Apify/OpenRouter: đặt trong biến môi trường (~/.zshrc hoặc ~/.bashrc), KHÔNG ghi vào repo."
