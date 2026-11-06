@@ -164,6 +164,14 @@ if hoi "Cài Laya (AI phân loại nhanh trên máy, MCP server; cần uv, tải
   uv tool install "laya[mcp]" && co claude && claude mcp add laya --scope user -e LAYA_DEVICE=cpu -- laya-mcp-server
 fi
 
+# OpenBot (nightly-labs): app desktop giữ cả đội AI (Claude, Codex, Grok...) với không gian làm việc, hàng đợi việc, trình duyệt riêng
+# Giấy phép PolyForm Noncommercial: chỉ dùng phi thương mại
+if hoi "Mở trang tải OpenBot (app desktop cho đội AI, chỉ dùng phi thương mại)?"; then
+  u=https://github.com/nightly-labs/openbot/releases/latest
+  if [ "$OS" = Darwin ]; then open "$u"; else xdg-open "$u" 2>/dev/null || echo "$u"; fi
+  echo "Mac: tải file .dmg. Linux: tải .AppImage, chạy chmod +x rồi mở (Ubuntu 23.10+ cần cài profile AppArmor, xem README)."
+fi
+
 echo
 echo "Xong. Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
 echo "Token Apify/OpenRouter: đặt trong biến môi trường (~/.zshrc hoặc ~/.bashrc), KHÔNG ghi vào repo."

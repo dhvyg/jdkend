@@ -145,6 +145,12 @@ if (Hoi "Cài Laya (AI phân loại nhanh trên máy, MCP server; cần uv, tả
   if (Co claude) { claude mcp add laya --scope user -e LAYA_DEVICE=cpu -- laya-mcp-server }
 }
 
+# OpenBot (nightly-labs): app desktop cho đội AI (Claude, Codex, Grok...); giấy phép PolyForm Noncommercial, chỉ dùng phi thương mại
+if (Hoi "Mở trang tải OpenBot (app desktop cho đội AI, chỉ dùng phi thương mại)?") {
+  Start-Process "https://github.com/nightly-labs/openbot/releases/latest"
+  Write-Host "Tải file OpenBot-*-x64.exe rồi chạy."
+}
+
 Write-Host ""
 Write-Host "Xong. OpenRig không chạy trên Windows thường (cần WSL2)."
 Write-Host "Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
