@@ -4,6 +4,8 @@
 
 function Hoi($q) { (Read-Host "$q [y/N]") -match '^[Yy]$' }
 function Co($c) { [bool](Get-Command $c -ErrorAction SilentlyContinue) }
+# Lệnh do winget (uv...) và "uv tool install" cài vào hai thư mục này; thêm sẵn để dùng được ngay
+$env:Path += ";$env:LOCALAPPDATA\Microsoft\WinGet\Links;$HOME\.local\bin"
 
 Write-Host "== Kiểm tra nền tảng =="
 if (-not (Co node)) {
@@ -136,7 +138,20 @@ if (Hoi "Tải FreeLLMAPI (router AI miễn phí, app desktop .exe)?") {
   Write-Host "Cài .exe, thêm key nhà cung cấp, lấy unified key. Nối Claude Code: npx freellmapi setup-claude --url http://localhost:3001 --api-key <key>"
 }
 
+# Laya (NandhaKishorM, Apache-2.0): phân loại email/lead/ticket/bình luận chạy trên máy; MCP server cho Claude; tải model lần đầu
+if (Hoi "Cài Laya (AI phân loại nhanh trên máy, MCP server; cần uv, tải model lần đầu)?") {
+  if (-not (Co uv)) { winget install -e --id astral-sh.uv }
+  uv tool install "laya[mcp]"
+  if (Co claude) { claude mcp add laya --scope user -e LAYA_DEVICE=cpu -- laya-mcp-server }
+}
+
+# OpenBot (nightly-labs): app desktop cho đội AI (Claude, Codex, Grok...); giấy phép PolyForm Noncommercial, chỉ dùng phi thương mại
+if (Hoi "Mở trang tải OpenBot (app desktop cho đội AI, chỉ dùng phi thương mại)?") {
+  Start-Process "https://github.com/nightly-labs/openbot/releases/latest"
+  Write-Host "Tải file OpenBot-*-x64.exe rồi chạy."
+}
+
 Write-Host ""
-Write-Host "Xong. OpenRig không chạy trên Windows thường (cần WSL2)."
+Write-Host "Xong. OpenRig không chạy trên Windows thường (cần WSL2). Locals chỉ chạy trên Mac chip Apple."
 Write-Host "Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
 Write-Host "Token Apify/OpenRouter: đặt trong biến môi trường Windows, KHÔNG ghi vào repo."

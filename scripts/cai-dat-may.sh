@@ -6,6 +6,8 @@ set -u
 hoi() { read -r -p "$1 [y/N] " r; [[ "$r" =~ ^[Yy]$ ]]; }
 co() { command -v "$1" >/dev/null 2>&1; }
 OS=$(uname -s)
+# uv, bun và các lệnh "uv tool install" cài vào đây; thêm sẵn để dùng được ngay trong lần chạy này
+export PATH="$HOME/.local/bin:$HOME/.bun/bin:$PATH"
 
 pkg() { # cài gói hệ thống: Homebrew trên Mac, apt trên Linux
   if [ "$OS" = Darwin ]; then
@@ -154,6 +156,26 @@ if hoi "Cài FreeLLMAPI (router AI miễn phí, cần Docker)?"; then
   if co docker; then curl -fsSL https://freellmapi.co/install.sh | bash
     echo "Mở http://localhost:3001 → thêm key từng nhà cung cấp → lấy unified key. Nối Claude Code: npx freellmapi setup-claude --url http://localhost:3001 --api-key <key>"
   else echo "Cần Docker. Bản Mac (.dmg): https://github.com/tashfeenahmed/freellmapi/releases/latest"; fi
+fi
+
+# Laya (NandhaKishorM, Apache-2.0): phân loại email/lead/ticket/bình luận chạy trên máy, 100+ ngôn ngữ; MCP server cho Claude; tải model ~0.8B lần đầu
+if hoi "Cài Laya (AI phân loại nhanh trên máy, MCP server; cần uv, tải model lần đầu)?"; then
+  co uv || curl -LsSf https://astral.sh/uv/install.sh | sh
+  uv tool install "laya[mcp]" && co claude && claude mcp add laya --scope user -e LAYA_DEVICE=cpu -- laya-mcp-server
+fi
+
+# OpenBot (nightly-labs): app desktop giữ cả đội AI (Claude, Codex, Grok...) với không gian làm việc, hàng đợi việc, trình duyệt riêng
+# Giấy phép PolyForm Noncommercial: chỉ dùng phi thương mại
+if hoi "Mở trang tải OpenBot (app desktop cho đội AI, chỉ dùng phi thương mại)?"; then
+  u=https://github.com/nightly-labs/openbot/releases/latest
+  if [ "$OS" = Darwin ]; then open "$u"; else xdg-open "$u" 2>/dev/null || echo "$u"; fi
+  echo "Mac: tải file .dmg. Linux: tải .AppImage, chạy chmod +x rồi mở (Ubuntu 23.10+ cần cài profile AppArmor, xem README)."
+fi
+
+# Locals (Generated-Computers, Apache-2.0): server AI chạy trên máy cho nhiều agent cùng lúc (Claude Code, OpenCode, Cline...), không gửi gì lên mây; chỉ Mac chip Apple
+if [ "$OS" = Darwin ] && [ "$(uname -m)" = arm64 ] && hoi "Cài Locals (chạy nhiều AI agent bằng model trên máy, chỉ Mac chip Apple; cần uv)?"; then
+  co uv || curl -LsSf https://astral.sh/uv/install.sh | sh
+  uv tool install --python 3.12 locals && echo "Dùng: locals code ~/thu-muc-du-an (tải model lần đầu)"
 fi
 
 echo
