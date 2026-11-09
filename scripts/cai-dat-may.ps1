@@ -4,6 +4,8 @@
 
 function Hoi($q) { (Read-Host "$q [y/N]") -match '^[Yy]$' }
 function Co($c) { [bool](Get-Command $c -ErrorAction SilentlyContinue) }
+# Lệnh do winget (uv...) và "uv tool install" cài vào hai thư mục này; thêm sẵn để dùng được ngay
+$env:Path += ";$env:LOCALAPPDATA\Microsoft\WinGet\Links;$HOME\.local\bin"
 
 Write-Host "== Kiểm tra nền tảng =="
 if (-not (Co node)) {
@@ -136,7 +138,67 @@ if (Hoi "Tải FreeLLMAPI (router AI miễn phí, app desktop .exe)?") {
   Write-Host "Cài .exe, thêm key nhà cung cấp, lấy unified key. Nối Claude Code: npx freellmapi setup-claude --url http://localhost:3001 --api-key <key>"
 }
 
+# Laya (NandhaKishorM, Apache-2.0): phân loại email/lead/ticket/bình luận chạy trên máy; MCP server cho Claude; tải model lần đầu
+if (Hoi "Cài Laya (AI phân loại nhanh trên máy, MCP server; cần uv, tải model lần đầu)?") {
+  if (-not (Co uv)) { winget install -e --id astral-sh.uv }
+  uv tool install "laya[mcp]"
+  if (Co claude) { claude mcp add laya --scope user -e LAYA_DEVICE=cpu -- laya-mcp-server }
+}
+
+# OpenBot (nightly-labs): app desktop cho đội AI (Claude, Codex, Grok...); giấy phép PolyForm Noncommercial, chỉ dùng phi thương mại
+if (Hoi "Mở trang tải OpenBot (app desktop cho đội AI, chỉ dùng phi thương mại)?") {
+  Start-Process "https://github.com/nightly-labs/openbot/releases/latest"
+  Write-Host "Tải file OpenBot-*-x64.exe rồi chạy."
+}
+
+# rea-video (JuneYaooo, Apache-2.0): lệnh rea-video cho plugin rea-video (mổ xẻ video từng cảnh, cách làm lại); cần ffmpeg
+if (Hoi "Cài lệnh rea-video (mổ xẻ video, đi kèm plugin rea-video; cần uv + ffmpeg)?") {
+  if (-not (Co uv)) { winget install -e --id astral-sh.uv }
+  if (-not (Co ffmpeg)) { winget install -e --id Gyan.FFmpeg }
+  uv tool install "rea-video @ git+https://github.com/JuneYaooo/rea-video"
+}
+
+# mg-styles-15 (Vincentwei1021, MIT): 15 phong cách motion design, mỗi kiểu có prompt + mã nguồn; bỏ phim mẫu nặng
+if (Hoi "Tải mg-styles-15 (15 kiểu motion design: prompt + mã nguồn mẫu)?") {
+  $m = "$HOME\mg-styles-15"
+  if (-not (Test-Path $m)) { git clone --depth 1 --filter=blob:none --sparse https://github.com/Vincentwei1021/mg-styles-15.git $m; git -C $m sparse-checkout set prompts demos lib harness }
+  Write-Host "Dùng: nhờ Claude đọc $m\prompts\<kiểu>.md rồi làm phim theo kiểu đó. Xem mẫu: https://vincentwei1021.github.io/mg-styles-15/"
+}
+
+# OpenMontage (OpenMontageInc, AGPL-3.0): hệ thống làm phim bằng agent; cần Python 3.10+, Node 22+, ffmpeg
+if ((Co python) -and (Hoi "Cài OpenMontage (agent làm phim tài liệu/giải thích/quảng cáo; tải khá nặng)?")) {
+  if (-not (Co ffmpeg)) { winget install -e --id Gyan.FFmpeg }
+  $o = "$HOME\OpenMontage"
+  if (-not (Test-Path $o)) { git clone --depth 1 https://github.com/OpenMontageInc/OpenMontage.git $o }
+  Push-Location $o
+  py -3 -m venv .venv; .\.venv\Scripts\python.exe -m pip install "pip>=26.2.2"; .\.venv\Scripts\python.exe -m pip install -r requirements.txt
+  Push-Location remotion-composer; npm install; Pop-Location
+  .\.venv\Scripts\python.exe -m pip install piper-tts; if (-not (Test-Path .env)) { Copy-Item .env.example .env }
+  Pop-Location
+  Write-Host "Dùng: cd $o; claude, rồi nói 'Làm video 60 giây giải thích ...'. API key điền vào $o\.env"
+}
+
+# T3 Code (pingdotgg/t3code, MIT): bảng điều khiển cho nhiều coding agent, điều khiển cả từ điện thoại
+if (Hoi "Cài T3 Code (bảng điều khiển cho coding agent)?") {
+  winget install -e --id T3Tools.T3Code; if ($LASTEXITCODE) { irm https://t3.codes/install.ps1 | iex }
+  Write-Host "Chạy: t3 (mở web app trên máy)."
+}
+
+# PR-Agent (qodo-ai/pr-agent, MIT): AI review pull request, viết mô tả, gợi ý cải thiện; cần API key LLM
+if ((Co python) -and (Hoi "Cài PR-Agent (AI review pull request; cần API key LLM)?")) {
+  python -m pip install -U "pr-agent[github]"
+  Write-Host "Dùng: đặt key trong biến môi trường rồi 'pr-agent --pr_url <link PR> review'. Xem docs.pr-agent.ai"
+}
+
+# Langfuse (langfuse/langfuse): giám sát/đánh giá ứng dụng AI, chạy trên máy; cần Docker
+if (Hoi "Cài Langfuse (giám sát/đánh giá ứng dụng AI; cần Docker)?") {
+  if (Co docker) {
+    if (-not (Test-Path "$HOME\langfuse")) { git clone --depth=1 https://github.com/langfuse/langfuse.git "$HOME\langfuse" }
+    Write-Host "Chạy: cd $HOME\langfuse; docker compose up -d, rồi mở http://localhost:3000"
+  } else { Write-Host "Cần Docker: https://docs.docker.com/get-docker" }
+}
+
 Write-Host ""
-Write-Host "Xong. OpenRig không chạy trên Windows thường (cần WSL2)."
+Write-Host "Xong. OpenRig không chạy trên Windows thường (cần WSL2). Locals chỉ chạy trên Mac chip Apple."
 Write-Host "Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
 Write-Host "Token Apify/OpenRouter: đặt trong biến môi trường Windows, KHÔNG ghi vào repo."

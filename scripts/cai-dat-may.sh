@@ -6,6 +6,8 @@ set -u
 hoi() { read -r -p "$1 [y/N] " r; [[ "$r" =~ ^[Yy]$ ]]; }
 co() { command -v "$1" >/dev/null 2>&1; }
 OS=$(uname -s)
+# uv, bun và các lệnh "uv tool install" cài vào đây; thêm sẵn để dùng được ngay trong lần chạy này
+export PATH="$HOME/.local/bin:$HOME/.bun/bin:$PATH"
 
 pkg() { # cài gói hệ thống: Homebrew trên Mac, apt trên Linux
   if [ "$OS" = Darwin ]; then
@@ -154,6 +156,70 @@ if hoi "Cài FreeLLMAPI (router AI miễn phí, cần Docker)?"; then
   if co docker; then curl -fsSL https://freellmapi.co/install.sh | bash
     echo "Mở http://localhost:3001 → thêm key từng nhà cung cấp → lấy unified key. Nối Claude Code: npx freellmapi setup-claude --url http://localhost:3001 --api-key <key>"
   else echo "Cần Docker. Bản Mac (.dmg): https://github.com/tashfeenahmed/freellmapi/releases/latest"; fi
+fi
+
+# Laya (NandhaKishorM, Apache-2.0): phân loại email/lead/ticket/bình luận chạy trên máy, 100+ ngôn ngữ; MCP server cho Claude; tải model ~0.8B lần đầu
+if hoi "Cài Laya (AI phân loại nhanh trên máy, MCP server; cần uv, tải model lần đầu)?"; then
+  co uv || curl -LsSf https://astral.sh/uv/install.sh | sh
+  uv tool install "laya[mcp]" && co claude && claude mcp add laya --scope user -e LAYA_DEVICE=cpu -- laya-mcp-server
+fi
+
+# OpenBot (nightly-labs): app desktop giữ cả đội AI (Claude, Codex, Grok...) với không gian làm việc, hàng đợi việc, trình duyệt riêng
+# Giấy phép PolyForm Noncommercial: chỉ dùng phi thương mại
+if hoi "Mở trang tải OpenBot (app desktop cho đội AI, chỉ dùng phi thương mại)?"; then
+  u=https://github.com/nightly-labs/openbot/releases/latest
+  if [ "$OS" = Darwin ]; then open "$u"; else xdg-open "$u" 2>/dev/null || echo "$u"; fi
+  echo "Mac: tải file .dmg. Linux: tải .AppImage, chạy chmod +x rồi mở (Ubuntu 23.10+ cần cài profile AppArmor, xem README)."
+fi
+
+# Locals (Generated-Computers, Apache-2.0): server AI chạy trên máy cho nhiều agent cùng lúc (Claude Code, OpenCode, Cline...), không gửi gì lên mây; chỉ Mac chip Apple
+if [ "$OS" = Darwin ] && [ "$(uname -m)" = arm64 ] && hoi "Cài Locals (chạy nhiều AI agent bằng model trên máy, chỉ Mac chip Apple; cần uv)?"; then
+  co uv || curl -LsSf https://astral.sh/uv/install.sh | sh
+  uv tool install --python 3.12 locals && echo "Dùng: locals code ~/thu-muc-du-an (tải model lần đầu)"
+fi
+
+# rea-video (JuneYaooo, Apache-2.0): lệnh rea-video cho plugin rea-video (mổ xẻ video từng cảnh: quay thật/AI/3D/code, cách làm lại); cần ffmpeg
+# shortcut: bỏ extra [ocr] vì nó kéo opencv-python đè opencv-headless; cần OCR chữ trên hình thì chạy scripts/install_skill.sh của repo
+if hoi "Cài lệnh rea-video (mổ xẻ video, đi kèm plugin rea-video; cần uv + ffmpeg)?"; then
+  co uv || curl -LsSf https://astral.sh/uv/install.sh | sh
+  co ffmpeg || pkg ffmpeg
+  uv tool install "rea-video @ git+https://github.com/JuneYaooo/rea-video" && rea-video --help >/dev/null && echo "rea-video đã sẵn sàng"
+fi
+
+# mg-styles-15 (Vincentwei1021, MIT): 15 phong cách motion design, mỗi kiểu có prompt + mã nguồn để Claude làm phim bằng code
+# Bỏ thư mục videos/ và assets/ (phim mẫu nặng); xem phim mẫu tại https://vincentwei1021.github.io/mg-styles-15/
+if hoi "Tải mg-styles-15 (15 kiểu motion design: prompt + mã nguồn mẫu)?"; then
+  if [ ! -d ~/mg-styles-15 ]; then
+    git clone --depth 1 --filter=blob:none --sparse https://github.com/Vincentwei1021/mg-styles-15.git ~/mg-styles-15 \
+      && git -C ~/mg-styles-15 sparse-checkout set prompts demos lib harness
+  fi
+  echo "Dùng: nhờ Claude 'đọc ~/mg-styles-15/prompts/10-synthwave.md rồi làm phim 10 giây về <chủ đề> theo kiểu này'"
+fi
+
+# OpenMontage (OpenMontageInc, AGPL-3.0): hệ thống làm phim bằng agent (tư liệu thật, giải thích, quảng cáo); cần Python 3.10+, Node 22+, ffmpeg
+if hoi "Cài OpenMontage (agent làm phim tài liệu/giải thích/quảng cáo; tải khá nặng)?"; then
+  co ffmpeg || pkg ffmpeg
+  [ -d ~/OpenMontage ] || git clone --depth 1 https://github.com/OpenMontageInc/OpenMontage.git ~/OpenMontage
+  (cd ~/OpenMontage && make setup) && echo "Dùng: cd ~/OpenMontage && claude, rồi nói 'Làm video 60 giây giải thích ...'. Điền API key vào ~/OpenMontage/.env (KHÔNG ghi vào repo jdkend)"
+fi
+
+# T3 Code (pingdotgg/t3code, MIT): bảng điều khiển cho nhiều coding agent (Claude Code, Codex, Cursor...), điều khiển cả từ điện thoại
+if hoi "Cài T3 Code (bảng điều khiển cho coding agent)?"; then
+  curl -fsSL https://t3.codes/install.sh | sh && echo "Chạy: t3 (mở web app trên máy). t3 service install để chạy nền."
+fi
+
+# PR-Agent (qodo-ai/pr-agent, MIT): agent tự review pull request, viết mô tả, gợi ý cải thiện (/review /describe /improve); chạy CLI hoặc GitHub Action
+if co python3 && hoi "Cài PR-Agent (AI review pull request; cần API key LLM)?"; then
+  python3 -m pip install -U "pr-agent[github]" \
+    && echo "Dùng: đặt key trong biến môi trường rồi 'pr-agent --pr_url <link PR> review'. Hoặc chạy bằng GitHub Action, xem docs.pr-agent.ai"
+fi
+
+# Langfuse (langfuse/langfuse, self-host): nền tảng theo dõi và chấm điểm ứng dụng LLM/agent; cần Docker
+if hoi "Cài Langfuse (giám sát/đánh giá ứng dụng AI, chạy trên máy; cần Docker)?"; then
+  if co docker; then
+    [ -d ~/langfuse ] || git clone --depth=1 https://github.com/langfuse/langfuse.git ~/langfuse
+    echo "Chạy: cd ~/langfuse && docker compose up -d, rồi mở http://localhost:3000"
+  else echo "Cần Docker: https://docs.docker.com/get-docker"; fi
 fi
 
 echo

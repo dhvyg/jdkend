@@ -401,6 +401,24 @@
         "source": "github",
         "repo": "patch-gg/pixelfx"
       }
+    },
+    "hallmark": {
+      "source": {
+        "source": "github",
+        "repo": "nutlope/hallmark"
+      }
+    },
+    "rea-video": {
+      "source": {
+        "source": "github",
+        "repo": "JuneYaooo/rea-video"
+      }
+    },
+    "marketingskills": {
+      "source": {
+        "source": "github",
+        "repo": "coreyhaines31/marketingskills"
+      }
     }
   },
   "enabledPlugins": {
@@ -505,6 +523,9 @@
     "understand-anything@understand-anything": false,
     "tokeneconomizer@tokeneconomizer": false,
     "rea@rea": true,
-    "pixelfx@pixelfx": true
+    "pixelfx@pixelfx": true,
+    "hallmark@hallmark": true,
+    "rea-video@rea-video": true,
+    "marketing-skills@marketingskills": true
   }
 }
