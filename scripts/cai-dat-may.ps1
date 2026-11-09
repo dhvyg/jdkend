@@ -219,6 +219,21 @@ if (Hoi "Cài ACE-Step 1.5 (tạo nhạc có lời trên máy; cần uv, tải m
   Write-Host "Chạy: cd $a; uv run acestep (mở giao diện web, model tự tải lần đầu). Card AMD/Intel xem hướng dẫn trong README."
 }
 
+# === Ứng dụng mã nguồn mở TỰ HOST (thay SaaS trả phí) — cần Docker Desktop ===
+function SelfHost($name,$repo,$doc) {
+  if (-not (Test-Path "$HOME\$name")) { git clone --depth 1 "https://github.com/$repo.git" "$HOME\$name" }
+  Write-Host "Đã tải $HOME\$name. Cách chạy (Docker): $doc"
+}
+if (Hoi "Cài n8n (tự động hóa luồng việc; tự host; cần Docker)?") { SelfHost "n8n" "n8n-io/n8n" "https://docs.n8n.io/hosting/installation/docker/" }
+if (Hoi "Cài Twenty CRM (thay Salesforce; cần Docker)?") { SelfHost "twenty" "twentyhq/twenty" "https://twenty.com/developers/section/self-hosting" }
+if (Hoi "Cài Cal.com (đặt lịch thay Calendly; cần Docker)?") { SelfHost "cal.com" "calcom/cal.com" "docker compose up trong repo" }
+if (Hoi "Cài PostHog (phân tích sản phẩm; cần Docker)?") { SelfHost "posthog" "PostHog/posthog" "https://posthog.com/docs/self-host" }
+if (Hoi "Cài Documenso (ký hợp đồng thay DocuSign; cần Docker)?") { SelfHost "documenso" "documenso/documenso" "https://docs.documenso.com/developers/self-hosting" }
+if (Hoi "Cài Formbricks (khảo sát thay Typeform; cần Docker)?") { SelfHost "formbricks" "formbricks/formbricks" "https://formbricks.com/docs/self-hosting/overview" }
+if (Hoi "Cài Firecrawl (web thành Markdown, bản tự host; cần Docker)?") { SelfHost "firecrawl" "firecrawl/firecrawl" "https://docs.firecrawl.dev/contributing/self-host" }
+if (Hoi "Mở trang tải AppFlowy (ghi chú thay Notion, app desktop)?") { Start-Process "https://github.com/AppFlowy-IO/AppFlowy/releases/latest" }
+Write-Host "FastAPI là thư viện: khi code API thì 'pip install fastapi uvicorn' trong dự án, không cần cài sẵn."
+
 Write-Host ""
 Write-Host "Xong. OpenRig không chạy trên Windows thường (cần WSL2). Locals chỉ chạy trên Mac chip Apple."
 Write-Host "Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."

@@ -243,6 +243,27 @@ if hoi "Cài ACE-Step 1.5 (tạo nhạc có lời trên máy; cần uv, tải mo
   (cd ~/ACE-Step-1.5 && uv sync) && echo "Chạy: cd ~/ACE-Step-1.5 && uv run acestep (mở giao diện web, model tự tải lần đầu)"
 fi
 
+# === Ứng dụng mã nguồn mở TỰ HOST (thay SaaS trả phí) — hầu hết cần Docker, chạy trên máy/VPS; làm chủ 100% dữ liệu ===
+# Mỗi app chỉ clone repo về; cách chạy (thường là docker compose) xem trang self-host của từng dự án, vì mỗi dự án đặt file compose khác nhau.
+selfhost() { # $1=tên thư mục  $2=repo  $3=link hướng dẫn self-host
+  [ -d ~/"$1" ] || git clone --depth 1 "https://github.com/$2.git" ~/"$1"
+  echo "Đã tải ~/$1. Cách chạy (Docker): $3"
+}
+if hoi "Cài n8n (tự động hóa luồng việc qua 1500+ app; tự host miễn phí; cần Docker)?"; then selfhost n8n n8n-io/n8n "https://docs.n8n.io/hosting/installation/docker/"; fi
+if hoi "Cài Twenty CRM (quản lý khách hàng thay Salesforce; cần Docker)?"; then selfhost twenty twentyhq/twenty "https://twenty.com/developers/section/self-hosting"; fi
+if hoi "Cài Cal.com (đặt lịch hẹn thay Calendly; cần Docker)?"; then selfhost cal.com calcom/cal.com "https://github.com/calcom/cal.com (docker compose up trong repo)"; fi
+if hoi "Cài PostHog (phân tích sản phẩm, ghi hình thao tác thay Mixpanel/Amplitude; cần Docker)?"; then selfhost posthog PostHog/posthog "https://posthog.com/docs/self-host"; fi
+if hoi "Cài Documenso (ký hợp đồng điện tử thay DocuSign; cần Docker)?"; then selfhost documenso documenso/documenso "https://docs.documenso.com/developers/self-hosting"; fi
+if hoi "Cài Formbricks (khảo sát khách hàng thay Typeform; cần Docker)?"; then selfhost formbricks formbricks/formbricks "https://formbricks.com/docs/self-hosting/overview"; fi
+if hoi "Cài Firecrawl (biến web thành Markdown cho AI; đã có sẵn dạng connector, đây là bản tự host; cần Docker)?"; then selfhost firecrawl firecrawl/firecrawl "https://docs.firecrawl.dev/contributing/self-host"; fi
+# AppFlowy: ghi chú + quản lý dự án thay Notion, có app desktop sẵn
+if hoi "Mở trang tải AppFlowy (ghi chú/quản lý dự án thay Notion, app desktop)?"; then
+  u=https://github.com/AppFlowy-IO/AppFlowy/releases/latest
+  if [ "$OS" = Darwin ]; then open "$u"; else xdg-open "$u" 2>/dev/null || echo "$u"; fi
+fi
+# FastAPI là THƯ VIỆN Python, không phải app chạy riêng: cài khi lập trình API, không cần ở đây
+echo "FastAPI là thư viện: khi code API thì 'pip install fastapi uvicorn' trong dự án, không cần cài sẵn."
+
 echo
 echo "Xong. Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
 echo "Token Apify/OpenRouter: đặt trong biến môi trường (~/.zshrc hoặc ~/.bashrc), KHÔNG ghi vào repo."
