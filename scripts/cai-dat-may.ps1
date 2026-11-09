@@ -204,6 +204,12 @@ if (Hoi "Mở trang tải CADCraft (phần mềm vẽ kỹ thuật thay AutoCAD,
   Write-Host "Tải cadcraft-<ver>-windows-x64.msi rồi chạy. Đối chiếu checksum với SHA256SUMS.txt trong trang release."
 }
 
+# Mister Download Manager (anefzaoui, GPL-3.0): trình quản lý tải mã nguồn mở kiểu IDM, viết bằng Rust
+if (Hoi "Mở trang tải Mister Download Manager (quản lý tải kiểu IDM, mã nguồn mở)?") {
+  Start-Process "https://github.com/anefzaoui/misterdownloadmanager/releases/latest"
+  Write-Host "Tải bản Windows rồi chạy. Có tiện ích cho Chrome/Edge/Brave và Firefox để bắt link tải."
+}
+
 Write-Host ""
 Write-Host "Xong. OpenRig không chạy trên Windows thường (cần WSL2). Locals chỉ chạy trên Mac chip Apple."
 Write-Host "Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."

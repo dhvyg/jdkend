@@ -229,6 +229,13 @@ if hoi "Mở trang tải CADCraft (phần mềm vẽ kỹ thuật thay AutoCAD, 
   echo "Mac: tải .dmg. Linux: tải bản cho Linux. Nhớ đối chiếu checksum với SHA256SUMS.txt trong trang release."
 fi
 
+# Mister Download Manager (anefzaoui, GPL-3.0): trình quản lý tải mã nguồn mở kiểu IDM, viết bằng Rust; app desktop + tiện ích trình duyệt
+if hoi "Mở trang tải Mister Download Manager (quản lý tải kiểu IDM, mã nguồn mở)?"; then
+  u=https://github.com/anefzaoui/misterdownloadmanager/releases/latest
+  if [ "$OS" = Darwin ]; then open "$u"; else xdg-open "$u" 2>/dev/null || echo "$u"; fi
+  echo "Có tiện ích cho Firefox/Chrome để bắt link tải. Mac: tải bản macOS. Linux: tải bản Linux."
+fi
+
 echo
 echo "Xong. Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
 echo "Token Apify/OpenRouter: đặt trong biến môi trường (~/.zshrc hoặc ~/.bashrc), KHÔNG ghi vào repo."
