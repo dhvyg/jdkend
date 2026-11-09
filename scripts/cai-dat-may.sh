@@ -256,11 +256,20 @@ if hoi "Cài PostHog (phân tích sản phẩm, ghi hình thao tác thay Mixpane
 if hoi "Cài Documenso (ký hợp đồng điện tử thay DocuSign; cần Docker)?"; then selfhost documenso documenso/documenso "https://docs.documenso.com/developers/self-hosting"; fi
 if hoi "Cài Formbricks (khảo sát khách hàng thay Typeform; cần Docker)?"; then selfhost formbricks formbricks/formbricks "https://formbricks.com/docs/self-hosting/overview"; fi
 if hoi "Cài Firecrawl (biến web thành Markdown cho AI; đã có sẵn dạng connector, đây là bản tự host; cần Docker)?"; then selfhost firecrawl firecrawl/firecrawl "https://docs.firecrawl.dev/contributing/self-host"; fi
+if hoi "Cài Plane (quản lý task/sprint thay Jira, ClickUp; cần Docker)?"; then selfhost plane makeplane/plane "https://developers.plane.so/self-hosting/overview"; fi
+if hoi "Cài Chatwoot (live-chat, hỗ trợ khách thay Intercom; cần Docker)?"; then selfhost chatwoot chatwoot/chatwoot "https://www.chatwoot.com/docs/self-hosted/deployment/docker"; fi
 # AppFlowy: ghi chú + quản lý dự án thay Notion, có app desktop sẵn
 if hoi "Mở trang tải AppFlowy (ghi chú/quản lý dự án thay Notion, app desktop)?"; then
   u=https://github.com/AppFlowy-IO/AppFlowy/releases/latest
   if [ "$OS" = Darwin ]; then open "$u"; else xdg-open "$u" 2>/dev/null || echo "$u"; fi
 fi
+# App desktop tải thẳng (mở trang Releases)
+open_rel() { u="https://github.com/$1/releases/latest"; if [ "$OS" = Darwin ]; then open "$u"; else xdg-open "$u" 2>/dev/null || echo "$u"; fi; echo "Tải $2: $u"; }
+hoi "Mở trang tải OpenCut (dựng video thay CapCut; web/desktop)?" && open_rel OpenCut-app/OpenCut "OpenCut"
+hoi "Mở trang tải Cap (quay màn hình thay Loom)?" && open_rel CapSoftware/Cap "Cap"
+hoi "Mở trang tải Dyad (dựng app bằng AI trên máy, thay Lovable)?" && open_rel dyad-sh/dyad "Dyad"
+hoi "Mở trang tải OpenWhispr (đọc thành chữ thay Wispr Flow)?" && open_rel OpenWhispr/openwhispr "OpenWhispr"
+
 # FastAPI là THƯ VIỆN Python, không phải app chạy riêng: cài khi lập trình API, không cần ở đây
 echo "FastAPI là thư viện: khi code API thì 'pip install fastapi uvicorn' trong dự án, không cần cài sẵn."
 

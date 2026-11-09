@@ -231,7 +231,13 @@ if (Hoi "Cài PostHog (phân tích sản phẩm; cần Docker)?") { SelfHost "po
 if (Hoi "Cài Documenso (ký hợp đồng thay DocuSign; cần Docker)?") { SelfHost "documenso" "documenso/documenso" "https://docs.documenso.com/developers/self-hosting" }
 if (Hoi "Cài Formbricks (khảo sát thay Typeform; cần Docker)?") { SelfHost "formbricks" "formbricks/formbricks" "https://formbricks.com/docs/self-hosting/overview" }
 if (Hoi "Cài Firecrawl (web thành Markdown, bản tự host; cần Docker)?") { SelfHost "firecrawl" "firecrawl/firecrawl" "https://docs.firecrawl.dev/contributing/self-host" }
+if (Hoi "Cài Plane (quản lý task/sprint thay Jira/ClickUp; cần Docker)?") { SelfHost "plane" "makeplane/plane" "https://developers.plane.so/self-hosting/overview" }
+if (Hoi "Cài Chatwoot (live-chat thay Intercom; cần Docker)?") { SelfHost "chatwoot" "chatwoot/chatwoot" "https://www.chatwoot.com/docs/self-hosted/deployment/docker" }
 if (Hoi "Mở trang tải AppFlowy (ghi chú thay Notion, app desktop)?") { Start-Process "https://github.com/AppFlowy-IO/AppFlowy/releases/latest" }
+if (Hoi "Mở trang tải OpenCut (dựng video thay CapCut)?") { Start-Process "https://github.com/OpenCut-app/OpenCut/releases/latest" }
+if (Hoi "Mở trang tải Cap (quay màn hình thay Loom)?") { Start-Process "https://github.com/CapSoftware/Cap/releases/latest" }
+if (Hoi "Mở trang tải Dyad (dựng app bằng AI trên máy, thay Lovable)?") { Start-Process "https://github.com/dyad-sh/dyad/releases/latest" }
+if (Hoi "Mở trang tải OpenWhispr (đọc thành chữ thay Wispr Flow)?") { Start-Process "https://github.com/OpenWhispr/openwhispr/releases/latest" }
 Write-Host "FastAPI là thư viện: khi code API thì 'pip install fastapi uvicorn' trong dự án, không cần cài sẵn."
 
 Write-Host ""

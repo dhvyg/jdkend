@@ -419,6 +419,12 @@
         "source": "github",
         "repo": "coreyhaines31/marketingskills"
       }
+    },
+    "openseo": {
+      "source": {
+        "source": "github",
+        "repo": "every-app/open-seo"
+      }
     }
   },
   "enabledPlugins": {
@@ -526,6 +532,7 @@
     "pixelfx@pixelfx": true,
     "hallmark@hallmark": true,
     "rea-video@rea-video": true,
-    "marketing-skills@marketingskills": true
+    "marketing-skills@marketingskills": true,
+    "openseo@openseo": true
   }
 }
