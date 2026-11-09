@@ -233,7 +233,13 @@ if (Hoi "Cài Formbricks (khảo sát thay Typeform; cần Docker)?") { SelfHost
 if (Hoi "Cài Firecrawl (web thành Markdown, bản tự host; cần Docker)?") { SelfHost "firecrawl" "firecrawl/firecrawl" "https://docs.firecrawl.dev/contributing/self-host" }
 if (Hoi "Cài Plane (quản lý task/sprint thay Jira/ClickUp; cần Docker)?") { SelfHost "plane" "makeplane/plane" "https://developers.plane.so/self-hosting/overview" }
 if (Hoi "Cài Chatwoot (live-chat thay Intercom; cần Docker)?") { SelfHost "chatwoot" "chatwoot/chatwoot" "https://www.chatwoot.com/docs/self-hosted/deployment/docker" }
+if (Hoi "Cài OpenProject (quản lý dự án thay Asana/Jira; cần Docker)?") { SelfHost "openproject" "opf/openproject" "https://www.openproject.org/docs/installation-and-operations/installation/docker/" }
 if (Hoi "Mở trang tải AppFlowy (ghi chú thay Notion, app desktop)?") { Start-Process "https://github.com/AppFlowy-IO/AppFlowy/releases/latest" }
+if ((Co node) -and (Hoi "Cài Open Generative AI (tạo ảnh/video AI, cần MuAPI key trả theo lượt)?")) {
+  if (-not (Test-Path "$HOME\Open-Generative-AI")) { git clone --depth 1 https://github.com/Anil-matcha/Open-Generative-AI.git "$HOME\Open-Generative-AI" }
+  Push-Location "$HOME\Open-Generative-AI"; npm install; Pop-Location
+  Write-Host "Lấy API key ở muapi.ai, điền vào .env, rồi 'npm run dev'. Bạn tự chịu trách nhiệm nội dung tạo ra."
+}
 if (Hoi "Mở trang tải OpenCut (dựng video thay CapCut)?") { Start-Process "https://github.com/OpenCut-app/OpenCut/releases/latest" }
 if (Hoi "Mở trang tải Cap (quay màn hình thay Loom)?") { Start-Process "https://github.com/CapSoftware/Cap/releases/latest" }
 if (Hoi "Mở trang tải Dyad (dựng app bằng AI trên máy, thay Lovable)?") { Start-Process "https://github.com/dyad-sh/dyad/releases/latest" }

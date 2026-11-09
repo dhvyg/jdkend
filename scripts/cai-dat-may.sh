@@ -258,11 +258,18 @@ if hoi "Cài Formbricks (khảo sát khách hàng thay Typeform; cần Docker)?"
 if hoi "Cài Firecrawl (biến web thành Markdown cho AI; đã có sẵn dạng connector, đây là bản tự host; cần Docker)?"; then selfhost firecrawl firecrawl/firecrawl "https://docs.firecrawl.dev/contributing/self-host"; fi
 if hoi "Cài Plane (quản lý task/sprint thay Jira, ClickUp; cần Docker)?"; then selfhost plane makeplane/plane "https://developers.plane.so/self-hosting/overview"; fi
 if hoi "Cài Chatwoot (live-chat, hỗ trợ khách thay Intercom; cần Docker)?"; then selfhost chatwoot chatwoot/chatwoot "https://www.chatwoot.com/docs/self-hosted/deployment/docker"; fi
+if hoi "Cài OpenProject (quản lý dự án thay Asana/Jira; cần Docker)?"; then selfhost openproject opf/openproject "https://www.openproject.org/docs/installation-and-operations/installation/docker/"; fi
 # AppFlowy: ghi chú + quản lý dự án thay Notion, có app desktop sẵn
 if hoi "Mở trang tải AppFlowy (ghi chú/quản lý dự án thay Notion, app desktop)?"; then
   u=https://github.com/AppFlowy-IO/AppFlowy/releases/latest
   if [ "$OS" = Darwin ]; then open "$u"; else xdg-open "$u" 2>/dev/null || echo "$u"; fi
 fi
+# Open Generative AI (Anil-matcha, web UI tạo ảnh/video qua 600+ model; chạy qua dịch vụ MuAPI, cần API key trả theo lượt)
+if co node && hoi "Cài Open Generative AI (giao diện tạo ảnh/video AI, cần MuAPI key trả theo lượt)?"; then
+  [ -d ~/Open-Generative-AI ] || git clone --depth 1 https://github.com/Anil-matcha/Open-Generative-AI.git ~/Open-Generative-AI
+  (cd ~/Open-Generative-AI && npm install) && echo "Lấy API key ở muapi.ai, điền vào ~/Open-Generative-AI/.env, rồi 'npm run dev'. Bạn tự chịu trách nhiệm nội dung tạo ra."
+fi
+
 # App desktop tải thẳng (mở trang Releases)
 open_rel() { u="https://github.com/$1/releases/latest"; if [ "$OS" = Darwin ]; then open "$u"; else xdg-open "$u" 2>/dev/null || echo "$u"; fi; echo "Tải $2: $u"; }
 hoi "Mở trang tải OpenCut (dựng video thay CapCut; web/desktop)?" && open_rel OpenCut-app/OpenCut "OpenCut"
