@@ -413,6 +413,12 @@
         "source": "github",
         "repo": "JuneYaooo/rea-video"
       }
+    },
+    "marketingskills": {
+      "source": {
+        "source": "github",
+        "repo": "coreyhaines31/marketingskills"
+      }
     }
   },
   "enabledPlugins": {
@@ -519,6 +525,7 @@
     "rea@rea": true,
     "pixelfx@pixelfx": true,
     "hallmark@hallmark": true,
-    "rea-video@rea-video": true
+    "rea-video@rea-video": true,
+    "marketing-skills@marketingskills": true
   }
 }
