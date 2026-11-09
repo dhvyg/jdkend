@@ -236,6 +236,13 @@ if hoi "Mở trang tải Mister Download Manager (quản lý tải kiểu IDM, m
   echo "Có tiện ích cho Firefox/Chrome để bắt link tải. Mac: tải bản macOS. Linux: tải bản Linux."
 fi
 
+# ACE-Step 1.5 (ace-step/ACE-Step-1.5, MIT): tạo nhạc có lời trên máy từ mô tả/lời bài, 50+ ngôn ngữ; cần uv, GPU khuyến nghị (bản 2B chạy <4GB VRAM)
+if hoi "Cài ACE-Step 1.5 (tạo nhạc có lời trên máy; cần uv, tải model lần đầu)?"; then
+  co uv || curl -LsSf https://astral.sh/uv/install.sh | sh
+  [ -d ~/ACE-Step-1.5 ] || git clone https://github.com/ACE-Step/ACE-Step-1.5.git ~/ACE-Step-1.5
+  (cd ~/ACE-Step-1.5 && uv sync) && echo "Chạy: cd ~/ACE-Step-1.5 && uv run acestep (mở giao diện web, model tự tải lần đầu)"
+fi
+
 echo
 echo "Xong. Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
 echo "Token Apify/OpenRouter: đặt trong biến môi trường (~/.zshrc hoặc ~/.bashrc), KHÔNG ghi vào repo."

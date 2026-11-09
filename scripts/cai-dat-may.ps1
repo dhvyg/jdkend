@@ -210,6 +210,15 @@ if (Hoi "Mở trang tải Mister Download Manager (quản lý tải kiểu IDM, 
   Write-Host "Tải bản Windows rồi chạy. Có tiện ích cho Chrome/Edge/Brave và Firefox để bắt link tải."
 }
 
+# ACE-Step 1.5 (ace-step/ACE-Step-1.5, MIT): tạo nhạc có lời trên máy từ mô tả/lời bài; cần uv, GPU khuyến nghị
+if (Hoi "Cài ACE-Step 1.5 (tạo nhạc có lời trên máy; cần uv, tải model lần đầu)?") {
+  if (-not (Co uv)) { winget install -e --id astral-sh.uv; $env:Path += ";$env:LOCALAPPDATA\Microsoft\WinGet\Links" }
+  $a = "$HOME\ACE-Step-1.5"
+  if (-not (Test-Path $a)) { git clone https://github.com/ACE-Step/ACE-Step-1.5.git $a }
+  Push-Location $a; uv sync; Pop-Location
+  Write-Host "Chạy: cd $a; uv run acestep (mở giao diện web, model tự tải lần đầu). Card AMD/Intel xem hướng dẫn trong README."
+}
+
 Write-Host ""
 Write-Host "Xong. OpenRig không chạy trên Windows thường (cần WSL2). Locals chỉ chạy trên Mac chip Apple."
 Write-Host "Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
