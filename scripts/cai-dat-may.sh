@@ -203,6 +203,25 @@ if hoi "Cài OpenMontage (agent làm phim tài liệu/giải thích/quảng cáo
   (cd ~/OpenMontage && make setup) && echo "Dùng: cd ~/OpenMontage && claude, rồi nói 'Làm video 60 giây giải thích ...'. Điền API key vào ~/OpenMontage/.env (KHÔNG ghi vào repo jdkend)"
 fi
 
+# T3 Code (pingdotgg/t3code, MIT): bảng điều khiển cho nhiều coding agent (Claude Code, Codex, Cursor...), điều khiển cả từ điện thoại
+if hoi "Cài T3 Code (bảng điều khiển cho coding agent)?"; then
+  curl -fsSL https://t3.codes/install.sh | sh && echo "Chạy: t3 (mở web app trên máy). t3 service install để chạy nền."
+fi
+
+# PR-Agent (qodo-ai/pr-agent, MIT): agent tự review pull request, viết mô tả, gợi ý cải thiện (/review /describe /improve); chạy CLI hoặc GitHub Action
+if co python3 && hoi "Cài PR-Agent (AI review pull request; cần API key LLM)?"; then
+  python3 -m pip install -U "pr-agent[github]" \
+    && echo "Dùng: đặt key trong biến môi trường rồi 'pr-agent --pr_url <link PR> review'. Hoặc chạy bằng GitHub Action, xem docs.pr-agent.ai"
+fi
+
+# Langfuse (langfuse/langfuse, self-host): nền tảng theo dõi và chấm điểm ứng dụng LLM/agent; cần Docker
+if hoi "Cài Langfuse (giám sát/đánh giá ứng dụng AI, chạy trên máy; cần Docker)?"; then
+  if co docker; then
+    [ -d ~/langfuse ] || git clone --depth=1 https://github.com/langfuse/langfuse.git ~/langfuse
+    echo "Chạy: cd ~/langfuse && docker compose up -d, rồi mở http://localhost:3000"
+  else echo "Cần Docker: https://docs.docker.com/get-docker"; fi
+fi
+
 echo
 echo "Xong. Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
 echo "Token Apify/OpenRouter: đặt trong biến môi trường (~/.zshrc hoặc ~/.bashrc), KHÔNG ghi vào repo."

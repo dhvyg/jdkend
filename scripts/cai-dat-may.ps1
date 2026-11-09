@@ -178,6 +178,26 @@ if ((Co python) -and (Hoi "Cài OpenMontage (agent làm phim tài liệu/giải 
   Write-Host "Dùng: cd $o; claude, rồi nói 'Làm video 60 giây giải thích ...'. API key điền vào $o\.env"
 }
 
+# T3 Code (pingdotgg/t3code, MIT): bảng điều khiển cho nhiều coding agent, điều khiển cả từ điện thoại
+if (Hoi "Cài T3 Code (bảng điều khiển cho coding agent)?") {
+  winget install -e --id T3Tools.T3Code; if ($LASTEXITCODE) { irm https://t3.codes/install.ps1 | iex }
+  Write-Host "Chạy: t3 (mở web app trên máy)."
+}
+
+# PR-Agent (qodo-ai/pr-agent, MIT): AI review pull request, viết mô tả, gợi ý cải thiện; cần API key LLM
+if ((Co python) -and (Hoi "Cài PR-Agent (AI review pull request; cần API key LLM)?")) {
+  python -m pip install -U "pr-agent[github]"
+  Write-Host "Dùng: đặt key trong biến môi trường rồi 'pr-agent --pr_url <link PR> review'. Xem docs.pr-agent.ai"
+}
+
+# Langfuse (langfuse/langfuse): giám sát/đánh giá ứng dụng AI, chạy trên máy; cần Docker
+if (Hoi "Cài Langfuse (giám sát/đánh giá ứng dụng AI; cần Docker)?") {
+  if (Co docker) {
+    if (-not (Test-Path "$HOME\langfuse")) { git clone --depth=1 https://github.com/langfuse/langfuse.git "$HOME\langfuse" }
+    Write-Host "Chạy: cd $HOME\langfuse; docker compose up -d, rồi mở http://localhost:3000"
+  } else { Write-Host "Cần Docker: https://docs.docker.com/get-docker" }
+}
+
 Write-Host ""
 Write-Host "Xong. OpenRig không chạy trên Windows thường (cần WSL2). Locals chỉ chạy trên Mac chip Apple."
 Write-Host "Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
