@@ -186,6 +186,23 @@ if hoi "Cài lệnh rea-video (mổ xẻ video, đi kèm plugin rea-video; cần
   uv tool install "rea-video @ git+https://github.com/JuneYaooo/rea-video" && rea-video --help >/dev/null && echo "rea-video đã sẵn sàng"
 fi
 
+# mg-styles-15 (Vincentwei1021, MIT): 15 phong cách motion design, mỗi kiểu có prompt + mã nguồn để Claude làm phim bằng code
+# Bỏ thư mục videos/ và assets/ (phim mẫu nặng); xem phim mẫu tại https://vincentwei1021.github.io/mg-styles-15/
+if hoi "Tải mg-styles-15 (15 kiểu motion design: prompt + mã nguồn mẫu)?"; then
+  if [ ! -d ~/mg-styles-15 ]; then
+    git clone --depth 1 --filter=blob:none --sparse https://github.com/Vincentwei1021/mg-styles-15.git ~/mg-styles-15 \
+      && git -C ~/mg-styles-15 sparse-checkout set prompts demos lib harness
+  fi
+  echo "Dùng: nhờ Claude 'đọc ~/mg-styles-15/prompts/10-synthwave.md rồi làm phim 10 giây về <chủ đề> theo kiểu này'"
+fi
+
+# OpenMontage (OpenMontageInc, AGPL-3.0): hệ thống làm phim bằng agent (tư liệu thật, giải thích, quảng cáo); cần Python 3.10+, Node 22+, ffmpeg
+if hoi "Cài OpenMontage (agent làm phim tài liệu/giải thích/quảng cáo; tải khá nặng)?"; then
+  co ffmpeg || pkg ffmpeg
+  [ -d ~/OpenMontage ] || git clone --depth 1 https://github.com/OpenMontageInc/OpenMontage.git ~/OpenMontage
+  (cd ~/OpenMontage && make setup) && echo "Dùng: cd ~/OpenMontage && claude, rồi nói 'Làm video 60 giây giải thích ...'. Điền API key vào ~/OpenMontage/.env (KHÔNG ghi vào repo jdkend)"
+fi
+
 echo
 echo "Xong. Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
 echo "Token Apify/OpenRouter: đặt trong biến môi trường (~/.zshrc hoặc ~/.bashrc), KHÔNG ghi vào repo."

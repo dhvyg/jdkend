@@ -158,6 +158,26 @@ if (Hoi "Cài lệnh rea-video (mổ xẻ video, đi kèm plugin rea-video; cầ
   uv tool install "rea-video @ git+https://github.com/JuneYaooo/rea-video"
 }
 
+# mg-styles-15 (Vincentwei1021, MIT): 15 phong cách motion design, mỗi kiểu có prompt + mã nguồn; bỏ phim mẫu nặng
+if (Hoi "Tải mg-styles-15 (15 kiểu motion design: prompt + mã nguồn mẫu)?") {
+  $m = "$HOME\mg-styles-15"
+  if (-not (Test-Path $m)) { git clone --depth 1 --filter=blob:none --sparse https://github.com/Vincentwei1021/mg-styles-15.git $m; git -C $m sparse-checkout set prompts demos lib harness }
+  Write-Host "Dùng: nhờ Claude đọc $m\prompts\<kiểu>.md rồi làm phim theo kiểu đó. Xem mẫu: https://vincentwei1021.github.io/mg-styles-15/"
+}
+
+# OpenMontage (OpenMontageInc, AGPL-3.0): hệ thống làm phim bằng agent; cần Python 3.10+, Node 22+, ffmpeg
+if ((Co python) -and (Hoi "Cài OpenMontage (agent làm phim tài liệu/giải thích/quảng cáo; tải khá nặng)?")) {
+  if (-not (Co ffmpeg)) { winget install -e --id Gyan.FFmpeg }
+  $o = "$HOME\OpenMontage"
+  if (-not (Test-Path $o)) { git clone --depth 1 https://github.com/OpenMontageInc/OpenMontage.git $o }
+  Push-Location $o
+  py -3 -m venv .venv; .\.venv\Scripts\python.exe -m pip install "pip>=26.2.2"; .\.venv\Scripts\python.exe -m pip install -r requirements.txt
+  Push-Location remotion-composer; npm install; Pop-Location
+  .\.venv\Scripts\python.exe -m pip install piper-tts; if (-not (Test-Path .env)) { Copy-Item .env.example .env }
+  Pop-Location
+  Write-Host "Dùng: cd $o; claude, rồi nói 'Làm video 60 giây giải thích ...'. API key điền vào $o\.env"
+}
+
 Write-Host ""
 Write-Host "Xong. OpenRig không chạy trên Windows thường (cần WSL2). Locals chỉ chạy trên Mac chip Apple."
 Write-Host "Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
