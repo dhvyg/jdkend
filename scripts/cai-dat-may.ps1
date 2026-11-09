@@ -151,6 +151,13 @@ if (Hoi "Mở trang tải OpenBot (app desktop cho đội AI, chỉ dùng phi th
   Write-Host "Tải file OpenBot-*-x64.exe rồi chạy."
 }
 
+# rea-video (JuneYaooo, Apache-2.0): lệnh rea-video cho plugin rea-video (mổ xẻ video từng cảnh, cách làm lại); cần ffmpeg
+if (Hoi "Cài lệnh rea-video (mổ xẻ video, đi kèm plugin rea-video; cần uv + ffmpeg)?") {
+  if (-not (Co uv)) { winget install -e --id astral-sh.uv }
+  if (-not (Co ffmpeg)) { winget install -e --id Gyan.FFmpeg }
+  uv tool install "rea-video @ git+https://github.com/JuneYaooo/rea-video"
+}
+
 Write-Host ""
 Write-Host "Xong. OpenRig không chạy trên Windows thường (cần WSL2). Locals chỉ chạy trên Mac chip Apple."
 Write-Host "Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."

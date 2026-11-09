@@ -178,6 +178,14 @@ if [ "$OS" = Darwin ] && [ "$(uname -m)" = arm64 ] && hoi "Cài Locals (chạy n
   uv tool install --python 3.12 locals && echo "Dùng: locals code ~/thu-muc-du-an (tải model lần đầu)"
 fi
 
+# rea-video (JuneYaooo, Apache-2.0): lệnh rea-video cho plugin rea-video (mổ xẻ video từng cảnh: quay thật/AI/3D/code, cách làm lại); cần ffmpeg
+# shortcut: bỏ extra [ocr] vì nó kéo opencv-python đè opencv-headless; cần OCR chữ trên hình thì chạy scripts/install_skill.sh của repo
+if hoi "Cài lệnh rea-video (mổ xẻ video, đi kèm plugin rea-video; cần uv + ffmpeg)?"; then
+  co uv || curl -LsSf https://astral.sh/uv/install.sh | sh
+  co ffmpeg || pkg ffmpeg
+  uv tool install "rea-video @ git+https://github.com/JuneYaooo/rea-video" && rea-video --help >/dev/null && echo "rea-video đã sẵn sàng"
+fi
+
 echo
 echo "Xong. Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
 echo "Token Apify/OpenRouter: đặt trong biến môi trường (~/.zshrc hoặc ~/.bashrc), KHÔNG ghi vào repo."
