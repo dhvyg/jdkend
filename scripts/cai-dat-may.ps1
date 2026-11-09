@@ -198,6 +198,12 @@ if (Hoi "Cài Langfuse (giám sát/đánh giá ứng dụng AI; cần Docker)?")
   } else { Write-Host "Cần Docker: https://docs.docker.com/get-docker" }
 }
 
+# CADCraft (storytold/cadcraft, MIT/Apache-2.0): phần mềm vẽ kỹ thuật kiểu AutoCAD, viết bằng Rust; app desktop có bộ cài riêng
+if (Hoi "Mở trang tải CADCraft (phần mềm vẽ kỹ thuật thay AutoCAD, mã nguồn mở)?") {
+  Start-Process "https://github.com/storytold/cadcraft/releases/latest"
+  Write-Host "Tải cadcraft-<ver>-windows-x64.msi rồi chạy. Đối chiếu checksum với SHA256SUMS.txt trong trang release."
+}
+
 Write-Host ""
 Write-Host "Xong. OpenRig không chạy trên Windows thường (cần WSL2). Locals chỉ chạy trên Mac chip Apple."
 Write-Host "Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."

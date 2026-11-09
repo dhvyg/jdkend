@@ -222,6 +222,13 @@ if hoi "Cài Langfuse (giám sát/đánh giá ứng dụng AI, chạy trên máy
   else echo "Cần Docker: https://docs.docker.com/get-docker"; fi
 fi
 
+# CADCraft (storytold/cadcraft, MIT/Apache-2.0): phần mềm vẽ kỹ thuật kiểu AutoCAD, viết bằng Rust, nhẹ và nhanh; app desktop có bộ cài riêng
+if hoi "Mở trang tải CADCraft (phần mềm vẽ kỹ thuật thay AutoCAD, mã nguồn mở)?"; then
+  u=https://github.com/storytold/cadcraft/releases/latest
+  if [ "$OS" = Darwin ]; then open "$u"; else xdg-open "$u" 2>/dev/null || echo "$u"; fi
+  echo "Mac: tải .dmg. Linux: tải bản cho Linux. Nhớ đối chiếu checksum với SHA256SUMS.txt trong trang release."
+fi
+
 echo
 echo "Xong. Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
 echo "Token Apify/OpenRouter: đặt trong biến môi trường (~/.zshrc hoặc ~/.bashrc), KHÔNG ghi vào repo."
