@@ -419,6 +419,12 @@
         "source": "github",
         "repo": "coreyhaines31/marketingskills"
       }
+    },
+    "openseo": {
+      "source": {
+        "source": "github",
+        "repo": "every-app/open-seo"
+      }
     }
   },
   "enabledPlugins": {
@@ -512,7 +518,7 @@
     "autoresearch@autoresearch": false,
     "academic-research-skills@academic-research-skills": false,
     "lemo-opuscar@lemolab": true,
-    "wtt-code-animation-studio-skills@wattter-skills": false,
+    "wtt-code-animation-studio-skills@wattter-skills": true,
     "social-media-research-skills@social-media-research-skills": true,
     "ppt-master@ppt-master": true,
     "nateherk-design@nateherk": false,
@@ -526,6 +532,7 @@
     "pixelfx@pixelfx": true,
     "hallmark@hallmark": true,
     "rea-video@rea-video": true,
-    "marketing-skills@marketingskills": true
+    "marketing-skills@marketingskills": true,
+    "openseo@openseo": true
   }
 }

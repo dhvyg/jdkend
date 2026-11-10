@@ -123,6 +123,16 @@ if hoi "Cài bộ dịch ngược (REA, radare2, Frida, mitmproxy, angr, jadx, a
   echo "ImHex https://imhex.werwolv.net, Rizin https://rizin.re, ILSpy (avaloniaui) https://github.com/icsharpcode/AvaloniaILSpy/releases"
 fi
 
+# fscan (shadow1ng) & firerpa/lamda: công cụ tấn công/kiểm thử MẠNH — CHỈ dùng trên hệ thống của mình hoặc được phép bằng văn bản
+if hoi "Cài fscan (quét lỗ hổng mạng nội bộ; CHỈ trên mạng của bạn, phạm pháp nếu quét trái phép)?"; then
+  if co go; then go install github.com/shadow1ng/fscan@latest && echo "fscan cài ở ~/go/bin. Chỉ quét mạng bạn sở hữu/được phép."; else echo "Cần Go: https://go.dev/dl — hoặc tải bản biên dịch sẵn ở https://github.com/shadow1ng/fscan/releases"; fi
+  echo "CẢNH BÁO: quét/brute-force hệ thống người khác khi chưa được phép là phạm pháp. Phần mềm diệt virus có thể chặn fscan."
+fi
+if co python3 && hoi "Cài firerpa/lamda (điều khiển & tự động hoá Android: MITM, Frida...; CHỈ trên thiết bị của bạn)?"; then
+  python3 -m pip install -U lamda && echo "Xem https://github.com/firerpa/lamda. Chỉ dùng trên thiết bị bạn sở hữu/được phép kiểm thử."
+  echo "CẢNH BÁO: cài lên điện thoại người khác hay chặn bắt dữ liệu của họ khi chưa được phép là phạm pháp."
+fi
+
 # TradingAgents (TauricResearch, Apache-2.0): đội AI phân tích cổ phiếu (phân tích, tranh luận, quản trị rủi ro); chỉ để nghiên cứu, không phải lời khuyên đầu tư
 if co python3 && hoi "Cài TradingAgents (đội AI phân tích chứng khoán, cần Python 3.11+ và API key LLM)?"; then
   [ -d ~/TradingAgents ] || git clone --depth 1 https://github.com/TauricResearch/TradingAgents.git ~/TradingAgents
@@ -221,6 +231,111 @@ if hoi "Cài Langfuse (giám sát/đánh giá ứng dụng AI, chạy trên máy
     echo "Chạy: cd ~/langfuse && docker compose up -d, rồi mở http://localhost:3000"
   else echo "Cần Docker: https://docs.docker.com/get-docker"; fi
 fi
+
+# CADCraft (storytold/cadcraft, MIT/Apache-2.0): phần mềm vẽ kỹ thuật kiểu AutoCAD, viết bằng Rust, nhẹ và nhanh; app desktop có bộ cài riêng
+if hoi "Mở trang tải CADCraft (phần mềm vẽ kỹ thuật thay AutoCAD, mã nguồn mở)?"; then
+  u=https://github.com/storytold/cadcraft/releases/latest
+  if [ "$OS" = Darwin ]; then open "$u"; else xdg-open "$u" 2>/dev/null || echo "$u"; fi
+  echo "Mac: tải .dmg. Linux: tải bản cho Linux. Nhớ đối chiếu checksum với SHA256SUMS.txt trong trang release."
+fi
+
+# Mister Download Manager (anefzaoui, GPL-3.0): trình quản lý tải mã nguồn mở kiểu IDM, viết bằng Rust; app desktop + tiện ích trình duyệt
+if hoi "Mở trang tải Mister Download Manager (quản lý tải kiểu IDM, mã nguồn mở)?"; then
+  u=https://github.com/anefzaoui/misterdownloadmanager/releases/latest
+  if [ "$OS" = Darwin ]; then open "$u"; else xdg-open "$u" 2>/dev/null || echo "$u"; fi
+  echo "Có tiện ích cho Firefox/Chrome để bắt link tải. Mac: tải bản macOS. Linux: tải bản Linux."
+fi
+
+# ACE-Step 1.5 (ace-step/ACE-Step-1.5, MIT): tạo nhạc có lời trên máy từ mô tả/lời bài, 50+ ngôn ngữ; cần uv, GPU khuyến nghị (bản 2B chạy <4GB VRAM)
+if hoi "Cài ACE-Step 1.5 (tạo nhạc có lời trên máy; cần uv, tải model lần đầu)?"; then
+  co uv || curl -LsSf https://astral.sh/uv/install.sh | sh
+  [ -d ~/ACE-Step-1.5 ] || git clone https://github.com/ACE-Step/ACE-Step-1.5.git ~/ACE-Step-1.5
+  (cd ~/ACE-Step-1.5 && uv sync) && echo "Chạy: cd ~/ACE-Step-1.5 && uv run acestep (mở giao diện web, model tự tải lần đầu)"
+fi
+
+# === Ứng dụng mã nguồn mở TỰ HOST (thay SaaS trả phí) — hầu hết cần Docker, chạy trên máy/VPS; làm chủ 100% dữ liệu ===
+# Mỗi app chỉ clone repo về; cách chạy (thường là docker compose) xem trang self-host của từng dự án, vì mỗi dự án đặt file compose khác nhau.
+selfhost() { # $1=tên thư mục  $2=repo  $3=link hướng dẫn self-host
+  [ -d ~/"$1" ] || git clone --depth 1 "https://github.com/$2.git" ~/"$1"
+  echo "Đã tải ~/$1. Cách chạy (Docker): $3"
+}
+if hoi "Cài n8n (tự động hóa luồng việc qua 1500+ app; tự host miễn phí; cần Docker)?"; then selfhost n8n n8n-io/n8n "https://docs.n8n.io/hosting/installation/docker/"; fi
+if hoi "Cài Twenty CRM (quản lý khách hàng thay Salesforce; cần Docker)?"; then selfhost twenty twentyhq/twenty "https://twenty.com/developers/section/self-hosting"; fi
+if hoi "Cài Cal.com (đặt lịch hẹn thay Calendly; cần Docker)?"; then selfhost cal.com calcom/cal.com "https://github.com/calcom/cal.com (docker compose up trong repo)"; fi
+if hoi "Cài PostHog (phân tích sản phẩm, ghi hình thao tác thay Mixpanel/Amplitude; cần Docker)?"; then selfhost posthog PostHog/posthog "https://posthog.com/docs/self-host"; fi
+if hoi "Cài Documenso (ký hợp đồng điện tử thay DocuSign; cần Docker)?"; then selfhost documenso documenso/documenso "https://docs.documenso.com/developers/self-hosting"; fi
+if hoi "Cài Formbricks (khảo sát khách hàng thay Typeform; cần Docker)?"; then selfhost formbricks formbricks/formbricks "https://formbricks.com/docs/self-hosting/overview"; fi
+if hoi "Cài Firecrawl (biến web thành Markdown cho AI; đã có sẵn dạng connector, đây là bản tự host; cần Docker)?"; then selfhost firecrawl firecrawl/firecrawl "https://docs.firecrawl.dev/contributing/self-host"; fi
+if hoi "Cài Plane (quản lý task/sprint thay Jira, ClickUp; cần Docker)?"; then selfhost plane makeplane/plane "https://developers.plane.so/self-hosting/overview"; fi
+if hoi "Cài Chatwoot (live-chat, hỗ trợ khách thay Intercom; cần Docker)?"; then selfhost chatwoot chatwoot/chatwoot "https://www.chatwoot.com/docs/self-hosted/deployment/docker"; fi
+if hoi "Cài OpenProject (quản lý dự án thay Asana/Jira; cần Docker)?"; then selfhost openproject opf/openproject "https://www.openproject.org/docs/installation-and-operations/installation/docker/"; fi
+if hoi "Cài GenOffice (bộ văn phòng AI: Docs/Sheets/Slides/PDF; tự host)?"; then selfhost genoffice genspark-ai/genoffice "README của repo (xem phần self-host/Docker)"; fi
+if hoi "Cài AstrBot (chatbot AI cắm vào app nhắn tin; tự host, cần Docker)?"; then selfhost astrbot AstrBotDevs/AstrBot "https://astrbot.app"; fi
+if hoi "Cài FalkorDB (graph database cho GraphRAG/trí nhớ agent; cần Docker)?"; then selfhost falkordb FalkorDB/FalkorDB "docker run -p 6379:6379 falkordb/falkordb — xem README"; fi
+if hoi "Cài cognee (bộ nhớ dài hạn cho AI agent; Python/Docker)?"; then selfhost cognee topoteretes/cognee "https://docs.cognee.ai (pip install cognee hoặc docker)"; fi
+if hoi "Cài OpenSRE (đội AI trực hệ thống/SRE; tự host)?"; then selfhost opensre Tracer-Cloud/opensre "README của repo"; fi
+if hoi "Cài CowAgent (trợ lý AI tự tiến hoá, chạy 24/7; tự host)?"; then selfhost cowagent zhayujie/CowAgent "README của repo"; fi
+if hoi "Cài Project NOMAD (máy chủ tri thức offline: Wikipedia, sách, AI cục bộ; cần Docker)?"; then selfhost project-nomad Crosstalk-Solutions/project-nomad "README của repo"; fi
+if hoi "Cài LibreChat (giao diện chat AI tự host thay ChatGPT, nhiều model; cần Docker)?"; then selfhost librechat LibreChat-AI/LibreChat "https://www.librechat.ai/docs/local/docker"; fi
+if hoi "Cài Yuxi (nền tảng AI agent + RAG tri thức nội bộ, tự host; cần Docker)?"; then selfhost yuxi xerrors/Yuxi "README của repo"; fi
+if hoi "Cài Hoppscotch (test API thay Postman; tự host, cần Docker)?"; then selfhost hoppscotch hoppscotch/hoppscotch "https://docs.hoppscotch.io/documentation/self-host/getting-started — hoặc dùng bản web hoppscotch.io / app desktop"; fi
+if hoi "Cài pgAdmin 4 (quản trị PostgreSQL; cần Docker)?"; then selfhost pgadmin4 pgadmin-org/pgadmin4 "docker run -p 5050:80 dpage/pgadmin4"; fi
+if hoi "Cài AnythingLLM (chat tài liệu + AI agent cục bộ, riêng tư; cần Docker hoặc bản desktop)?"; then selfhost anything-llm Mintplex-Labs/anything-llm "https://docs.anythingllm.com — hoặc tải app desktop ở anythingllm.com"; fi
+if hoi "Cài GOWA (REST API cho WhatsApp đa tài khoản, có webhook/MCP/Chatwoot; cần Docker)?"; then selfhost gowa aldinokemal/go-whatsapp-web-multidevice "README của repo (docker compose). Tuân thủ điều khoản WhatsApp, chỉ nhắn người đã đồng ý."; fi
+# OctoBot: bot giao dịch crypto — RỦI RO TÀI CHÍNH
+if hoi "Cài OctoBot (bot giao dịch crypto tự động; RỦI RO MẤT TIỀN, cân nhắc kỹ)?"; then
+  selfhost OctoBot Drakkar-Software/OctoBot "https://www.octobot.cloud/en/guides"
+  echo "CẢNH BÁO: giao dịch crypto tự động có thể mất sạch tiền. Chỉ dùng tiền bạn chấp nhận mất, thử chế độ giả lập (paper trading) trước. Không phải lời khuyên đầu tư."
+fi
+# AppFlowy: ghi chú + quản lý dự án thay Notion, có app desktop sẵn
+if hoi "Mở trang tải AppFlowy (ghi chú/quản lý dự án thay Notion, app desktop)?"; then
+  u=https://github.com/AppFlowy-IO/AppFlowy/releases/latest
+  if [ "$OS" = Darwin ]; then open "$u"; else xdg-open "$u" 2>/dev/null || echo "$u"; fi
+fi
+# Open Generative AI (Anil-matcha, web UI tạo ảnh/video qua 600+ model; chạy qua dịch vụ MuAPI, cần API key trả theo lượt)
+if co node && hoi "Cài Open Generative AI (giao diện tạo ảnh/video AI, cần MuAPI key trả theo lượt)?"; then
+  [ -d ~/Open-Generative-AI ] || git clone --depth 1 https://github.com/Anil-matcha/Open-Generative-AI.git ~/Open-Generative-AI
+  (cd ~/Open-Generative-AI && npm install) && echo "Lấy API key ở muapi.ai, điền vào ~/Open-Generative-AI/.env, rồi 'npm run dev'. Bạn tự chịu trách nhiệm nội dung tạo ra."
+fi
+
+# OpenCreator / KrillinAI: dịch video, lồng tiếng, tạo giọng đọc — chạy trên máy, cần Codex/API key
+if co node && hoi "Cài OpenCreator (dịch & lồng tiếng video bằng AI; trước là KrillinAI)?"; then
+  [ -d ~/OpenCreator ] || git clone --depth 1 https://github.com/krillinai/OpenCreator.git ~/OpenCreator
+  echo "Xem ~/OpenCreator/README để chạy. Cần API key mô hình; đặt ngoài repo jdkend."
+fi
+# xerj: tìm/đánh chỉ mục code cho AI, tiết kiệm token (giống codegraph đã có)
+if co cargo && hoi "Cài xerj (lập chỉ mục code cho AI, ít token hơn; cần Rust)?"; then
+  cargo install --git https://github.com/xerj-org/xerj || echo "Xem README của xerj-org/xerj để cài."
+fi
+
+# App desktop tải thẳng (mở trang Releases)
+open_rel() { u="https://github.com/$1/releases/latest"; if [ "$OS" = Darwin ]; then open "$u"; else xdg-open "$u" 2>/dev/null || echo "$u"; fi; echo "Tải $2: $u"; }
+hoi "Mở trang tải OpenCut (dựng video thay CapCut; web/desktop)?" && open_rel OpenCut-app/OpenCut "OpenCut"
+# ArtCraft (escbase, getartcraft.com): bộ app đồ hoạ viết bằng Rust — Craft Anything, PhotoCraft, FilmCraft, DesignCraft, CADCraft... Tải ở trang chính thức.
+if hoi "Mở trang ArtCraft (bộ app đồ hoạ Rust: Craft Anything, PhotoCraft...; CADCraft đã có ở trên)?"; then
+  u=https://getartcraft.com/apps
+  if [ "$OS" = Darwin ]; then open "$u"; else xdg-open "$u" 2>/dev/null || echo "$u"; fi
+  echo "Chỉ tải từ getartcraft.com. Trên GitHub có nhiều repo 'artcraft' của bên thứ ba (launcher, installer), không chắc bản gốc."
+fi
+hoi "Mở trang tải OpenMausBot (đội AI bot trong app chat, mỗi bot là một agent Claude/Codex; thay Grok Bot)?" && open_rel milind-soni/OpenMausBot "OpenMausBot"
+hoi "Mở trang tải Cap (quay màn hình thay Loom)?" && open_rel CapSoftware/Cap "Cap"
+hoi "Mở trang tải Dyad (dựng app bằng AI trên máy, thay Lovable)?" && open_rel dyad-sh/dyad "Dyad"
+hoi "Mở trang tải OpenWhispr (đọc thành chữ thay Wispr Flow)?" && open_rel OpenWhispr/openwhispr "OpenWhispr"
+hoi "Mở trang Nanobrowser (tiện ích Chrome tự động hoá duyệt web bằng AI, thay OpenAI Operator)?" && open_rel nanobrowser/nanobrowser "Nanobrowser"
+hoi "Mở trang tải dsh-pet (thú cưng hoạt hình trên màn hình)?" && open_rel PC2005-cloud/dsh-pet "dsh-pet"
+hoi "Mở trang tải Upscayl (phóng to ảnh bằng AI không vỡ nét)?" && open_rel upscayl/upscayl "Upscayl"
+hoi "Mở trang tải cc-haha (giao diện desktop cho Claude Code)?" && open_rel NanmiCoder/cc-haha "cc-haha"
+hoi "Mở trang tải AIRI (AI companion/VTuber chạy trên máy)?" && open_rel moeru-ai/airi "AIRI"
+hoi "Mở trang tải OpenBot của CopilotKit (AI đồng nghiệp có máy tính riêng; khác OpenBot ở trên)?" && open_rel CopilotKit/OpenBot "OpenBot (CopilotKit)"
+hoi "Mở trang tải DyberPet (thú cưng trên màn hình, PySide6)?" && open_rel ChaozhongLiu/DyberPet "DyberPet"
+# Fay: framework làm người ảo/trợ lý số (streamer ảo, lễ tân số...); cần Python
+if co python3 && hoi "Cài Fay (framework làm người ảo/trợ lý số kết nối LLM)?"; then
+  [ -d ~/Fay ] || git clone --depth 1 https://github.com/xszyou/Fay.git ~/Fay
+  echo "Xem ~/Fay/README để chạy (có nhiều bản: trợ lý, thương mại, người ảo). Cần API key/model, đặt ngoài repo."
+fi
+
+# FastAPI là THƯ VIỆN Python, không phải app chạy riêng: cài khi lập trình API, không cần ở đây
+echo "FastAPI là thư viện: khi code API thì 'pip install fastapi uvicorn' trong dự án, không cần cài sẵn."
 
 echo
 echo "Xong. Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."

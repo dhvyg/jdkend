@@ -104,6 +104,16 @@ if (Hoi "Cài bộ dịch ngược (REA, Ghidra, x64dbg, dnSpy, ILSpy, ImHex, ra
   Write-Host "Ghidra cần JDK 21. GhidraMCP: https://github.com/LaurieWired/GhidraMCP/releases ; jadx/Apktool: https://github.com/skylot/jadx/releases"
 }
 
+# fscan & firerpa/lamda: công cụ tấn công/kiểm thử MẠNH — CHỈ dùng trên hệ thống của bạn hoặc được phép
+if (Hoi "Cài fscan (quét lỗ hổng mạng nội bộ; CHỈ trên mạng của bạn)?") {
+  if (Co go) { go install github.com/shadow1ng/fscan@latest } else { Write-Host "Cần Go (go.dev) hoặc tải bản sẵn: https://github.com/shadow1ng/fscan/releases" }
+  Write-Host "CẢNH BÁO: quét/brute-force hệ thống người khác khi chưa được phép là phạm pháp. AV có thể chặn fscan."
+}
+if ((Co python) -and (Hoi "Cài firerpa/lamda (điều khiển & tự động hoá Android; CHỈ trên thiết bị của bạn)?")) {
+  python -m pip install -U lamda
+  Write-Host "Xem https://github.com/firerpa/lamda. CẢNH BÁO: dùng trên thiết bị người khác khi chưa được phép là phạm pháp."
+}
+
 # TradingAgents (TauricResearch, Apache-2.0): đội AI phân tích cổ phiếu; chỉ để nghiên cứu, không phải lời khuyên đầu tư
 if ((Co python) -and (Hoi "Cài TradingAgents (đội AI phân tích chứng khoán, cần Python 3.11+ và API key LLM)?")) {
   $t = "$HOME\TradingAgents"
@@ -197,6 +207,85 @@ if (Hoi "Cài Langfuse (giám sát/đánh giá ứng dụng AI; cần Docker)?")
     Write-Host "Chạy: cd $HOME\langfuse; docker compose up -d, rồi mở http://localhost:3000"
   } else { Write-Host "Cần Docker: https://docs.docker.com/get-docker" }
 }
+
+# CADCraft (storytold/cadcraft, MIT/Apache-2.0): phần mềm vẽ kỹ thuật kiểu AutoCAD, viết bằng Rust; app desktop có bộ cài riêng
+if (Hoi "Mở trang tải CADCraft (phần mềm vẽ kỹ thuật thay AutoCAD, mã nguồn mở)?") {
+  Start-Process "https://github.com/storytold/cadcraft/releases/latest"
+  Write-Host "Tải cadcraft-<ver>-windows-x64.msi rồi chạy. Đối chiếu checksum với SHA256SUMS.txt trong trang release."
+}
+
+# Mister Download Manager (anefzaoui, GPL-3.0): trình quản lý tải mã nguồn mở kiểu IDM, viết bằng Rust
+if (Hoi "Mở trang tải Mister Download Manager (quản lý tải kiểu IDM, mã nguồn mở)?") {
+  Start-Process "https://github.com/anefzaoui/misterdownloadmanager/releases/latest"
+  Write-Host "Tải bản Windows rồi chạy. Có tiện ích cho Chrome/Edge/Brave và Firefox để bắt link tải."
+}
+
+# ACE-Step 1.5 (ace-step/ACE-Step-1.5, MIT): tạo nhạc có lời trên máy từ mô tả/lời bài; cần uv, GPU khuyến nghị
+if (Hoi "Cài ACE-Step 1.5 (tạo nhạc có lời trên máy; cần uv, tải model lần đầu)?") {
+  if (-not (Co uv)) { winget install -e --id astral-sh.uv; $env:Path += ";$env:LOCALAPPDATA\Microsoft\WinGet\Links" }
+  $a = "$HOME\ACE-Step-1.5"
+  if (-not (Test-Path $a)) { git clone https://github.com/ACE-Step/ACE-Step-1.5.git $a }
+  Push-Location $a; uv sync; Pop-Location
+  Write-Host "Chạy: cd $a; uv run acestep (mở giao diện web, model tự tải lần đầu). Card AMD/Intel xem hướng dẫn trong README."
+}
+
+# === Ứng dụng mã nguồn mở TỰ HOST (thay SaaS trả phí) — cần Docker Desktop ===
+function SelfHost($name,$repo,$doc) {
+  if (-not (Test-Path "$HOME\$name")) { git clone --depth 1 "https://github.com/$repo.git" "$HOME\$name" }
+  Write-Host "Đã tải $HOME\$name. Cách chạy (Docker): $doc"
+}
+if (Hoi "Cài n8n (tự động hóa luồng việc; tự host; cần Docker)?") { SelfHost "n8n" "n8n-io/n8n" "https://docs.n8n.io/hosting/installation/docker/" }
+if (Hoi "Cài Twenty CRM (thay Salesforce; cần Docker)?") { SelfHost "twenty" "twentyhq/twenty" "https://twenty.com/developers/section/self-hosting" }
+if (Hoi "Cài Cal.com (đặt lịch thay Calendly; cần Docker)?") { SelfHost "cal.com" "calcom/cal.com" "docker compose up trong repo" }
+if (Hoi "Cài PostHog (phân tích sản phẩm; cần Docker)?") { SelfHost "posthog" "PostHog/posthog" "https://posthog.com/docs/self-host" }
+if (Hoi "Cài Documenso (ký hợp đồng thay DocuSign; cần Docker)?") { SelfHost "documenso" "documenso/documenso" "https://docs.documenso.com/developers/self-hosting" }
+if (Hoi "Cài Formbricks (khảo sát thay Typeform; cần Docker)?") { SelfHost "formbricks" "formbricks/formbricks" "https://formbricks.com/docs/self-hosting/overview" }
+if (Hoi "Cài Firecrawl (web thành Markdown, bản tự host; cần Docker)?") { SelfHost "firecrawl" "firecrawl/firecrawl" "https://docs.firecrawl.dev/contributing/self-host" }
+if (Hoi "Cài Plane (quản lý task/sprint thay Jira/ClickUp; cần Docker)?") { SelfHost "plane" "makeplane/plane" "https://developers.plane.so/self-hosting/overview" }
+if (Hoi "Cài Chatwoot (live-chat thay Intercom; cần Docker)?") { SelfHost "chatwoot" "chatwoot/chatwoot" "https://www.chatwoot.com/docs/self-hosted/deployment/docker" }
+if (Hoi "Cài OpenProject (quản lý dự án thay Asana/Jira; cần Docker)?") { SelfHost "openproject" "opf/openproject" "https://www.openproject.org/docs/installation-and-operations/installation/docker/" }
+if (Hoi "Cài GenOffice (bộ văn phòng AI; tự host)?") { SelfHost "genoffice" "genspark-ai/genoffice" "README repo" }
+if (Hoi "Cài AstrBot (chatbot AI trong app nhắn tin; cần Docker)?") { SelfHost "astrbot" "AstrBotDevs/AstrBot" "https://astrbot.app" }
+if (Hoi "Cài FalkorDB (graph DB cho GraphRAG; cần Docker)?") { SelfHost "falkordb" "FalkorDB/FalkorDB" "docker run -p 6379:6379 falkordb/falkordb" }
+if (Hoi "Cài cognee (bộ nhớ dài hạn cho AI agent)?") { SelfHost "cognee" "topoteretes/cognee" "https://docs.cognee.ai" }
+if (Hoi "Cài OpenSRE (AI trực hệ thống)?") { SelfHost "opensre" "Tracer-Cloud/opensre" "README repo" }
+if (Hoi "Cài CowAgent (trợ lý AI chạy 24/7)?") { SelfHost "cowagent" "zhayujie/CowAgent" "README repo" }
+if (Hoi "Cài Project NOMAD (tri thức offline: Wikipedia, AI cục bộ; cần Docker)?") { SelfHost "project-nomad" "Crosstalk-Solutions/project-nomad" "README repo" }
+if (Hoi "Cài LibreChat (chat AI tự host thay ChatGPT; cần Docker)?") { SelfHost "librechat" "LibreChat-AI/LibreChat" "https://www.librechat.ai/docs/local/docker" }
+if (Hoi "Cài Yuxi (AI agent + RAG nội bộ; cần Docker)?") { SelfHost "yuxi" "xerrors/Yuxi" "README repo" }
+if (Hoi "Cài Hoppscotch (test API thay Postman; cần Docker)?") { SelfHost "hoppscotch" "hoppscotch/hoppscotch" "hoppscotch.io hoặc self-host docs" }
+if (Hoi "Cài pgAdmin 4 (quản trị PostgreSQL; cần Docker)?") { SelfHost "pgadmin4" "pgadmin-org/pgadmin4" "docker run -p 5050:80 dpage/pgadmin4" }
+if (Hoi "Cài AnythingLLM (chat tài liệu + AI agent cục bộ; Docker hoặc app desktop)?") { SelfHost "anything-llm" "Mintplex-Labs/anything-llm" "https://docs.anythingllm.com hoặc app desktop anythingllm.com" }
+if (Hoi "Cài GOWA (REST API WhatsApp đa tài khoản; cần Docker)?") { SelfHost "gowa" "aldinokemal/go-whatsapp-web-multidevice" "README (docker compose). Tuân thủ điều khoản WhatsApp." }
+if (Hoi "Cài OctoBot (bot giao dịch crypto; RỦI RO MẤT TIỀN)?") { SelfHost "OctoBot" "Drakkar-Software/OctoBot" "https://www.octobot.cloud/en/guides"; Write-Host "CẢNH BÁO: giao dịch crypto tự động có thể mất sạch tiền. Thử paper trading trước." }
+if (Hoi "Mở trang tải AppFlowy (ghi chú thay Notion, app desktop)?") { Start-Process "https://github.com/AppFlowy-IO/AppFlowy/releases/latest" }
+if ((Co node) -and (Hoi "Cài OpenCreator (dịch & lồng tiếng video bằng AI; trước là KrillinAI)?")) {
+  if (-not (Test-Path "$HOME\OpenCreator")) { git clone --depth 1 https://github.com/krillinai/OpenCreator.git "$HOME\OpenCreator" }
+  Write-Host "Xem $HOME\OpenCreator\README để chạy. Cần API key mô hình, đặt ngoài repo."
+}
+if ((Co node) -and (Hoi "Cài Open Generative AI (tạo ảnh/video AI, cần MuAPI key trả theo lượt)?")) {
+  if (-not (Test-Path "$HOME\Open-Generative-AI")) { git clone --depth 1 https://github.com/Anil-matcha/Open-Generative-AI.git "$HOME\Open-Generative-AI" }
+  Push-Location "$HOME\Open-Generative-AI"; npm install; Pop-Location
+  Write-Host "Lấy API key ở muapi.ai, điền vào .env, rồi 'npm run dev'. Bạn tự chịu trách nhiệm nội dung tạo ra."
+}
+if (Hoi "Mở trang tải OpenCut (dựng video thay CapCut)?") { Start-Process "https://github.com/OpenCut-app/OpenCut/releases/latest" }
+if (Hoi "Mở trang tải OpenMausBot (đội AI bot trong app chat, thay Grok Bot)?") { Start-Process "https://github.com/milind-soni/OpenMausBot/releases/latest" }
+if (Hoi "Mở trang ArtCraft (bộ app đồ hoạ Rust: Craft Anything, PhotoCraft...; CADCraft đã có ở trên)?") { Start-Process "https://getartcraft.com/apps"; Write-Host "Chỉ tải từ getartcraft.com; trên GitHub có nhiều repo artcraft bên thứ ba." }
+if (Hoi "Mở trang tải Cap (quay màn hình thay Loom)?") { Start-Process "https://github.com/CapSoftware/Cap/releases/latest" }
+if (Hoi "Mở trang tải Dyad (dựng app bằng AI trên máy, thay Lovable)?") { Start-Process "https://github.com/dyad-sh/dyad/releases/latest" }
+if (Hoi "Mở trang tải OpenWhispr (đọc thành chữ thay Wispr Flow)?") { Start-Process "https://github.com/OpenWhispr/openwhispr/releases/latest" }
+if (Hoi "Mở trang Nanobrowser (tiện ích Chrome tự động duyệt web bằng AI)?") { Start-Process "https://github.com/nanobrowser/nanobrowser/releases/latest" }
+if (Hoi "Mở trang tải dsh-pet (thú cưng trên màn hình)?") { Start-Process "https://github.com/PC2005-cloud/dsh-pet/releases/latest" }
+if (Hoi "Mở trang tải Upscayl (phóng to ảnh bằng AI)?") { Start-Process "https://github.com/upscayl/upscayl/releases/latest" }
+if (Hoi "Mở trang tải cc-haha (giao diện desktop cho Claude Code)?") { Start-Process "https://github.com/NanmiCoder/cc-haha/releases/latest" }
+if (Hoi "Mở trang tải AIRI (AI companion chạy trên máy)?") { Start-Process "https://github.com/moeru-ai/airi/releases/latest" }
+if (Hoi "Mở trang tải OpenBot của CopilotKit (khác OpenBot ở trên)?") { Start-Process "https://github.com/CopilotKit/OpenBot/releases/latest" }
+if (Hoi "Mở trang tải DyberPet (thú cưng trên màn hình)?") { Start-Process "https://github.com/ChaozhongLiu/DyberPet/releases/latest" }
+if ((Co python) -and (Hoi "Cài Fay (framework làm người ảo/trợ lý số)?")) {
+  if (-not (Test-Path "$HOME\Fay")) { git clone --depth 1 https://github.com/xszyou/Fay.git "$HOME\Fay" }
+  Write-Host "Xem $HOME\Fay\README để chạy. Cần API key/model, đặt ngoài repo."
+}
+Write-Host "FastAPI là thư viện: khi code API thì 'pip install fastapi uvicorn' trong dự án, không cần cài sẵn."
 
 Write-Host ""
 Write-Host "Xong. OpenRig không chạy trên Windows thường (cần WSL2). Locals chỉ chạy trên Mac chip Apple."
