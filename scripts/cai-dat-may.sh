@@ -259,6 +259,18 @@ if hoi "Cài Firecrawl (biến web thành Markdown cho AI; đã có sẵn dạng
 if hoi "Cài Plane (quản lý task/sprint thay Jira, ClickUp; cần Docker)?"; then selfhost plane makeplane/plane "https://developers.plane.so/self-hosting/overview"; fi
 if hoi "Cài Chatwoot (live-chat, hỗ trợ khách thay Intercom; cần Docker)?"; then selfhost chatwoot chatwoot/chatwoot "https://www.chatwoot.com/docs/self-hosted/deployment/docker"; fi
 if hoi "Cài OpenProject (quản lý dự án thay Asana/Jira; cần Docker)?"; then selfhost openproject opf/openproject "https://www.openproject.org/docs/installation-and-operations/installation/docker/"; fi
+if hoi "Cài GenOffice (bộ văn phòng AI: Docs/Sheets/Slides/PDF; tự host)?"; then selfhost genoffice genspark-ai/genoffice "README của repo (xem phần self-host/Docker)"; fi
+if hoi "Cài AstrBot (chatbot AI cắm vào app nhắn tin; tự host, cần Docker)?"; then selfhost astrbot AstrBotDevs/AstrBot "https://astrbot.app"; fi
+if hoi "Cài FalkorDB (graph database cho GraphRAG/trí nhớ agent; cần Docker)?"; then selfhost falkordb FalkorDB/FalkorDB "docker run -p 6379:6379 falkordb/falkordb — xem README"; fi
+if hoi "Cài cognee (bộ nhớ dài hạn cho AI agent; Python/Docker)?"; then selfhost cognee topoteretes/cognee "https://docs.cognee.ai (pip install cognee hoặc docker)"; fi
+if hoi "Cài OpenSRE (đội AI trực hệ thống/SRE; tự host)?"; then selfhost opensre Tracer-Cloud/opensre "README của repo"; fi
+if hoi "Cài CowAgent (trợ lý AI tự tiến hoá, chạy 24/7; tự host)?"; then selfhost cowagent zhayujie/CowAgent "README của repo"; fi
+if hoi "Cài Project NOMAD (máy chủ tri thức offline: Wikipedia, sách, AI cục bộ; cần Docker)?"; then selfhost project-nomad Crosstalk-Solutions/project-nomad "README của repo"; fi
+# OctoBot: bot giao dịch crypto — RỦI RO TÀI CHÍNH
+if hoi "Cài OctoBot (bot giao dịch crypto tự động; RỦI RO MẤT TIỀN, cân nhắc kỹ)?"; then
+  selfhost OctoBot Drakkar-Software/OctoBot "https://www.octobot.cloud/en/guides"
+  echo "CẢNH BÁO: giao dịch crypto tự động có thể mất sạch tiền. Chỉ dùng tiền bạn chấp nhận mất, thử chế độ giả lập (paper trading) trước. Không phải lời khuyên đầu tư."
+fi
 # AppFlowy: ghi chú + quản lý dự án thay Notion, có app desktop sẵn
 if hoi "Mở trang tải AppFlowy (ghi chú/quản lý dự án thay Notion, app desktop)?"; then
   u=https://github.com/AppFlowy-IO/AppFlowy/releases/latest
@@ -268,6 +280,16 @@ fi
 if co node && hoi "Cài Open Generative AI (giao diện tạo ảnh/video AI, cần MuAPI key trả theo lượt)?"; then
   [ -d ~/Open-Generative-AI ] || git clone --depth 1 https://github.com/Anil-matcha/Open-Generative-AI.git ~/Open-Generative-AI
   (cd ~/Open-Generative-AI && npm install) && echo "Lấy API key ở muapi.ai, điền vào ~/Open-Generative-AI/.env, rồi 'npm run dev'. Bạn tự chịu trách nhiệm nội dung tạo ra."
+fi
+
+# OpenCreator / KrillinAI: dịch video, lồng tiếng, tạo giọng đọc — chạy trên máy, cần Codex/API key
+if co node && hoi "Cài OpenCreator (dịch & lồng tiếng video bằng AI; trước là KrillinAI)?"; then
+  [ -d ~/OpenCreator ] || git clone --depth 1 https://github.com/krillinai/OpenCreator.git ~/OpenCreator
+  echo "Xem ~/OpenCreator/README để chạy. Cần API key mô hình; đặt ngoài repo jdkend."
+fi
+# xerj: tìm/đánh chỉ mục code cho AI, tiết kiệm token (giống codegraph đã có)
+if co cargo && hoi "Cài xerj (lập chỉ mục code cho AI, ít token hơn; cần Rust)?"; then
+  cargo install --git https://github.com/xerj-org/xerj || echo "Xem README của xerj-org/xerj để cài."
 fi
 
 # App desktop tải thẳng (mở trang Releases)
@@ -283,6 +305,8 @@ hoi "Mở trang tải OpenMausBot (đội AI bot trong app chat, mỗi bot là m
 hoi "Mở trang tải Cap (quay màn hình thay Loom)?" && open_rel CapSoftware/Cap "Cap"
 hoi "Mở trang tải Dyad (dựng app bằng AI trên máy, thay Lovable)?" && open_rel dyad-sh/dyad "Dyad"
 hoi "Mở trang tải OpenWhispr (đọc thành chữ thay Wispr Flow)?" && open_rel OpenWhispr/openwhispr "OpenWhispr"
+hoi "Mở trang Nanobrowser (tiện ích Chrome tự động hoá duyệt web bằng AI, thay OpenAI Operator)?" && open_rel nanobrowser/nanobrowser "Nanobrowser"
+hoi "Mở trang tải dsh-pet (thú cưng hoạt hình trên màn hình)?" && open_rel PC2005-cloud/dsh-pet "dsh-pet"
 
 # FastAPI là THƯ VIỆN Python, không phải app chạy riêng: cài khi lập trình API, không cần ở đây
 echo "FastAPI là thư viện: khi code API thì 'pip install fastapi uvicorn' trong dự án, không cần cài sẵn."

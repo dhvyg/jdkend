@@ -234,7 +234,19 @@ if (Hoi "Cài Firecrawl (web thành Markdown, bản tự host; cần Docker)?") 
 if (Hoi "Cài Plane (quản lý task/sprint thay Jira/ClickUp; cần Docker)?") { SelfHost "plane" "makeplane/plane" "https://developers.plane.so/self-hosting/overview" }
 if (Hoi "Cài Chatwoot (live-chat thay Intercom; cần Docker)?") { SelfHost "chatwoot" "chatwoot/chatwoot" "https://www.chatwoot.com/docs/self-hosted/deployment/docker" }
 if (Hoi "Cài OpenProject (quản lý dự án thay Asana/Jira; cần Docker)?") { SelfHost "openproject" "opf/openproject" "https://www.openproject.org/docs/installation-and-operations/installation/docker/" }
+if (Hoi "Cài GenOffice (bộ văn phòng AI; tự host)?") { SelfHost "genoffice" "genspark-ai/genoffice" "README repo" }
+if (Hoi "Cài AstrBot (chatbot AI trong app nhắn tin; cần Docker)?") { SelfHost "astrbot" "AstrBotDevs/AstrBot" "https://astrbot.app" }
+if (Hoi "Cài FalkorDB (graph DB cho GraphRAG; cần Docker)?") { SelfHost "falkordb" "FalkorDB/FalkorDB" "docker run -p 6379:6379 falkordb/falkordb" }
+if (Hoi "Cài cognee (bộ nhớ dài hạn cho AI agent)?") { SelfHost "cognee" "topoteretes/cognee" "https://docs.cognee.ai" }
+if (Hoi "Cài OpenSRE (AI trực hệ thống)?") { SelfHost "opensre" "Tracer-Cloud/opensre" "README repo" }
+if (Hoi "Cài CowAgent (trợ lý AI chạy 24/7)?") { SelfHost "cowagent" "zhayujie/CowAgent" "README repo" }
+if (Hoi "Cài Project NOMAD (tri thức offline: Wikipedia, AI cục bộ; cần Docker)?") { SelfHost "project-nomad" "Crosstalk-Solutions/project-nomad" "README repo" }
+if (Hoi "Cài OctoBot (bot giao dịch crypto; RỦI RO MẤT TIỀN)?") { SelfHost "OctoBot" "Drakkar-Software/OctoBot" "https://www.octobot.cloud/en/guides"; Write-Host "CẢNH BÁO: giao dịch crypto tự động có thể mất sạch tiền. Thử paper trading trước." }
 if (Hoi "Mở trang tải AppFlowy (ghi chú thay Notion, app desktop)?") { Start-Process "https://github.com/AppFlowy-IO/AppFlowy/releases/latest" }
+if ((Co node) -and (Hoi "Cài OpenCreator (dịch & lồng tiếng video bằng AI; trước là KrillinAI)?")) {
+  if (-not (Test-Path "$HOME\OpenCreator")) { git clone --depth 1 https://github.com/krillinai/OpenCreator.git "$HOME\OpenCreator" }
+  Write-Host "Xem $HOME\OpenCreator\README để chạy. Cần API key mô hình, đặt ngoài repo."
+}
 if ((Co node) -and (Hoi "Cài Open Generative AI (tạo ảnh/video AI, cần MuAPI key trả theo lượt)?")) {
   if (-not (Test-Path "$HOME\Open-Generative-AI")) { git clone --depth 1 https://github.com/Anil-matcha/Open-Generative-AI.git "$HOME\Open-Generative-AI" }
   Push-Location "$HOME\Open-Generative-AI"; npm install; Pop-Location
@@ -246,6 +258,8 @@ if (Hoi "Mở trang ArtCraft (bộ app đồ hoạ Rust: Craft Anything, PhotoCr
 if (Hoi "Mở trang tải Cap (quay màn hình thay Loom)?") { Start-Process "https://github.com/CapSoftware/Cap/releases/latest" }
 if (Hoi "Mở trang tải Dyad (dựng app bằng AI trên máy, thay Lovable)?") { Start-Process "https://github.com/dyad-sh/dyad/releases/latest" }
 if (Hoi "Mở trang tải OpenWhispr (đọc thành chữ thay Wispr Flow)?") { Start-Process "https://github.com/OpenWhispr/openwhispr/releases/latest" }
+if (Hoi "Mở trang Nanobrowser (tiện ích Chrome tự động duyệt web bằng AI)?") { Start-Process "https://github.com/nanobrowser/nanobrowser/releases/latest" }
+if (Hoi "Mở trang tải dsh-pet (thú cưng trên màn hình)?") { Start-Process "https://github.com/PC2005-cloud/dsh-pet/releases/latest" }
 Write-Host "FastAPI là thư viện: khi code API thì 'pip install fastapi uvicorn' trong dự án, không cần cài sẵn."
 
 Write-Host ""
