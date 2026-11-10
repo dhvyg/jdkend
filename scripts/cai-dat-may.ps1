@@ -241,6 +241,10 @@ if (Hoi "Cài cognee (bộ nhớ dài hạn cho AI agent)?") { SelfHost "cognee"
 if (Hoi "Cài OpenSRE (AI trực hệ thống)?") { SelfHost "opensre" "Tracer-Cloud/opensre" "README repo" }
 if (Hoi "Cài CowAgent (trợ lý AI chạy 24/7)?") { SelfHost "cowagent" "zhayujie/CowAgent" "README repo" }
 if (Hoi "Cài Project NOMAD (tri thức offline: Wikipedia, AI cục bộ; cần Docker)?") { SelfHost "project-nomad" "Crosstalk-Solutions/project-nomad" "README repo" }
+if (Hoi "Cài LibreChat (chat AI tự host thay ChatGPT; cần Docker)?") { SelfHost "librechat" "LibreChat-AI/LibreChat" "https://www.librechat.ai/docs/local/docker" }
+if (Hoi "Cài Yuxi (AI agent + RAG nội bộ; cần Docker)?") { SelfHost "yuxi" "xerrors/Yuxi" "README repo" }
+if (Hoi "Cài Hoppscotch (test API thay Postman; cần Docker)?") { SelfHost "hoppscotch" "hoppscotch/hoppscotch" "hoppscotch.io hoặc self-host docs" }
+if (Hoi "Cài pgAdmin 4 (quản trị PostgreSQL; cần Docker)?") { SelfHost "pgadmin4" "pgadmin-org/pgadmin4" "docker run -p 5050:80 dpage/pgadmin4" }
 if (Hoi "Cài OctoBot (bot giao dịch crypto; RỦI RO MẤT TIỀN)?") { SelfHost "OctoBot" "Drakkar-Software/OctoBot" "https://www.octobot.cloud/en/guides"; Write-Host "CẢNH BÁO: giao dịch crypto tự động có thể mất sạch tiền. Thử paper trading trước." }
 if (Hoi "Mở trang tải AppFlowy (ghi chú thay Notion, app desktop)?") { Start-Process "https://github.com/AppFlowy-IO/AppFlowy/releases/latest" }
 if ((Co node) -and (Hoi "Cài OpenCreator (dịch & lồng tiếng video bằng AI; trước là KrillinAI)?")) {
@@ -260,6 +264,10 @@ if (Hoi "Mở trang tải Dyad (dựng app bằng AI trên máy, thay Lovable)?"
 if (Hoi "Mở trang tải OpenWhispr (đọc thành chữ thay Wispr Flow)?") { Start-Process "https://github.com/OpenWhispr/openwhispr/releases/latest" }
 if (Hoi "Mở trang Nanobrowser (tiện ích Chrome tự động duyệt web bằng AI)?") { Start-Process "https://github.com/nanobrowser/nanobrowser/releases/latest" }
 if (Hoi "Mở trang tải dsh-pet (thú cưng trên màn hình)?") { Start-Process "https://github.com/PC2005-cloud/dsh-pet/releases/latest" }
+if (Hoi "Mở trang tải Upscayl (phóng to ảnh bằng AI)?") { Start-Process "https://github.com/upscayl/upscayl/releases/latest" }
+if (Hoi "Mở trang tải cc-haha (giao diện desktop cho Claude Code)?") { Start-Process "https://github.com/NanmiCoder/cc-haha/releases/latest" }
+if (Hoi "Mở trang tải AIRI (AI companion chạy trên máy)?") { Start-Process "https://github.com/moeru-ai/airi/releases/latest" }
+if (Hoi "Mở trang tải OpenBot của CopilotKit (khác OpenBot ở trên)?") { Start-Process "https://github.com/CopilotKit/OpenBot/releases/latest" }
 Write-Host "FastAPI là thư viện: khi code API thì 'pip install fastapi uvicorn' trong dự án, không cần cài sẵn."
 
 Write-Host ""

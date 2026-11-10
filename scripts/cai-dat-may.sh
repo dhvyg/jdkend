@@ -266,6 +266,10 @@ if hoi "Cài cognee (bộ nhớ dài hạn cho AI agent; Python/Docker)?"; then 
 if hoi "Cài OpenSRE (đội AI trực hệ thống/SRE; tự host)?"; then selfhost opensre Tracer-Cloud/opensre "README của repo"; fi
 if hoi "Cài CowAgent (trợ lý AI tự tiến hoá, chạy 24/7; tự host)?"; then selfhost cowagent zhayujie/CowAgent "README của repo"; fi
 if hoi "Cài Project NOMAD (máy chủ tri thức offline: Wikipedia, sách, AI cục bộ; cần Docker)?"; then selfhost project-nomad Crosstalk-Solutions/project-nomad "README của repo"; fi
+if hoi "Cài LibreChat (giao diện chat AI tự host thay ChatGPT, nhiều model; cần Docker)?"; then selfhost librechat LibreChat-AI/LibreChat "https://www.librechat.ai/docs/local/docker"; fi
+if hoi "Cài Yuxi (nền tảng AI agent + RAG tri thức nội bộ, tự host; cần Docker)?"; then selfhost yuxi xerrors/Yuxi "README của repo"; fi
+if hoi "Cài Hoppscotch (test API thay Postman; tự host, cần Docker)?"; then selfhost hoppscotch hoppscotch/hoppscotch "https://docs.hoppscotch.io/documentation/self-host/getting-started — hoặc dùng bản web hoppscotch.io / app desktop"; fi
+if hoi "Cài pgAdmin 4 (quản trị PostgreSQL; cần Docker)?"; then selfhost pgadmin4 pgadmin-org/pgadmin4 "docker run -p 5050:80 dpage/pgadmin4"; fi
 # OctoBot: bot giao dịch crypto — RỦI RO TÀI CHÍNH
 if hoi "Cài OctoBot (bot giao dịch crypto tự động; RỦI RO MẤT TIỀN, cân nhắc kỹ)?"; then
   selfhost OctoBot Drakkar-Software/OctoBot "https://www.octobot.cloud/en/guides"
@@ -307,6 +311,10 @@ hoi "Mở trang tải Dyad (dựng app bằng AI trên máy, thay Lovable)?" && 
 hoi "Mở trang tải OpenWhispr (đọc thành chữ thay Wispr Flow)?" && open_rel OpenWhispr/openwhispr "OpenWhispr"
 hoi "Mở trang Nanobrowser (tiện ích Chrome tự động hoá duyệt web bằng AI, thay OpenAI Operator)?" && open_rel nanobrowser/nanobrowser "Nanobrowser"
 hoi "Mở trang tải dsh-pet (thú cưng hoạt hình trên màn hình)?" && open_rel PC2005-cloud/dsh-pet "dsh-pet"
+hoi "Mở trang tải Upscayl (phóng to ảnh bằng AI không vỡ nét)?" && open_rel upscayl/upscayl "Upscayl"
+hoi "Mở trang tải cc-haha (giao diện desktop cho Claude Code)?" && open_rel NanmiCoder/cc-haha "cc-haha"
+hoi "Mở trang tải AIRI (AI companion/VTuber chạy trên máy)?" && open_rel moeru-ai/airi "AIRI"
+hoi "Mở trang tải OpenBot của CopilotKit (AI đồng nghiệp có máy tính riêng; khác OpenBot ở trên)?" && open_rel CopilotKit/OpenBot "OpenBot (CopilotKit)"
 
 # FastAPI là THƯ VIỆN Python, không phải app chạy riêng: cài khi lập trình API, không cần ở đây
 echo "FastAPI là thư viện: khi code API thì 'pip install fastapi uvicorn' trong dự án, không cần cài sẵn."
