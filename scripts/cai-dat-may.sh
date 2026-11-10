@@ -348,6 +348,55 @@ if co python3 && hoi "Cài Scrapling (thư viện cào web Python, qua được 
   python3 -m pip install -U "scrapling" && python3 -m scrapling install 2>/dev/null; echo "Chỉ cào trang bạn được phép; tôn trọng robots.txt và điều khoản của trang."
 fi
 
+# Harness2 (google-research/harness2, Apache-2.0): framework để agent TỰ cải thiện giàn đỡ (prompt/tool/memory/skill) qua nhiều vòng, không chỉnh trọng số model. Nghiên cứu; cần Linux, Python 3.12, uv
+if co python3 && hoi "Cài Harness2 của Google (framework agent tự cải thiện; cần Linux + Python 3.12 + uv)?"; then
+  co uv || curl -LsSf https://astral.sh/uv/install.sh | sh
+  [ -d ~/harness2 ] || git clone --depth 1 https://github.com/google-research/harness2.git ~/harness2
+  (cd ~/harness2 && uv venv --python 3.12 .venv && .venv/bin/python -m pip install -e ".[render]") \
+    && echo "Chạy demo: cd ~/harness2 && source .venv/bin/activate && harness2-demo --output runs/demo --k 2 (xem README)"
+fi
+
+# google-colab-cli (googlecolab, Apache-2.0): chạy máy Colab (GPU T4 miễn phí) từ dòng lệnh — hợp khi máy không có GPU. Lệnh: colab
+if co python3 && hoi "Cài google-colab-cli (dùng GPU Colab miễn phí từ dòng lệnh; cần tài khoản Google)?"; then
+  co uv && uv tool install google-colab-cli || python3 -m pip install -U google-colab-cli
+  echo "Xác thực: chạy 'colab' theo hướng dẫn (đăng nhập Google Cloud ADC). GPU T4 miễn phí; A100/H100 trả phí khi cần. Xem README của repo."
+fi
+
+# Agent Lightning (microsoft/agent-lightning, MIT): framework HUẤN LUYỆN/tối ưu AI agent bằng reinforcement learning. Nâng cao, cần GPU; dành cho người làm nghiên cứu/model
+if co python3 && hoi "Cài Agent Lightning (huấn luyện agent bằng RL; nâng cao, cần GPU mạnh)?"; then
+  python3 -m pip install -U agentlightning && echo "Xem https://microsoft.github.io/agent-lightning. Có 'Agent Lightning Skill' trong repo giúp một coding agent cải thiện agent khác theo benchmark."
+fi
+
+# Artemis (google/artemis, Apache-2.0): cho AI agent điều khiển ĐIỆN THOẠI ANDROID THẬT (mở app, bấm, test); MCP server nối Claude Code. Cần uv + ADB; chỉ dùng trên máy/điện thoại của bạn
+if co python3 && hoi "Cài Artemis của Google (AI điều khiển điện thoại Android thật; cần uv, bật USB debugging trên máy của bạn)?"; then
+  co uv || curl -LsSf https://astral.sh/uv/install.sh | sh
+  [ -d ~/artemis ] || git clone --depth 1 https://github.com/google/artemis.git ~/artemis
+  (cd ~/artemis && uv run artemis init) && echo "Nối Claude Code: cd ~/artemis && uv run artemis mcp --install all. Chỉ điều khiển điện thoại của bạn (bật Gỡ lỗi USB)."
+fi
+
+# === 5 repo "kiếm tiền với AI" ===
+# OpenHands: nền tảng coding agent tự host (trước là OpenDevin)
+if hoi "Cài OpenHands (coding agent tự host, bảng điều khiển dev; cần Docker)?"; then selfhost openhands All-Hands-AI/OpenHands "https://docs.all-hands.dev (chạy bằng docker run, xem README)"; fi
+# screenshot-to-code: ảnh chụp/Figma -> code (HTML/React/Tailwind). Cần API key OpenAI/Anthropic
+if co python3 && hoi "Cài screenshot-to-code (ảnh chụp màn hình -> code; cần API key AI)?"; then
+  [ -d ~/screenshot-to-code ] || git clone --depth 1 https://github.com/abi/screenshot-to-code.git ~/screenshot-to-code
+  echo "Xem ~/screenshot-to-code/README (chạy backend + frontend, hoặc Docker). Cần OPENAI/ANTHROPIC key, đặt ngoài repo."
+fi
+# CrewAI: framework Python điều phối nhiều AI agent làm việc nhóm
+if co python3 && hoi "Cài CrewAI (framework lập trình nhiều AI agent làm việc nhóm)?"; then
+  python3 -m pip install -U crewai && echo "Xem https://docs.crewai.com. Cần API key model, đặt ngoài repo."
+fi
+# PPTAgent: tạo slide PowerPoint từ tài liệu
+if co python3 && hoi "Cài PPTAgent (tạo slide PowerPoint từ tài liệu bằng AI)?"; then
+  [ -d ~/PPTAgent ] || git clone --depth 1 https://github.com/icip-cas/PPTAgent.git ~/PPTAgent
+  echo "Xem ~/PPTAgent/README để cài phụ thuộc và chạy. Cần API key model."
+fi
+# Open AI UGC: tạo video quảng cáo UGC (diễn viên AI) qua MuAPI (trả phí theo lượt); tự chịu trách nhiệm nội dung
+if co node && hoi "Cài Open AI UGC (tạo video quảng cáo UGC diễn viên AI; qua MuAPI, trả phí theo lượt)?"; then
+  [ -d ~/Open-AI-UGC ] || git clone --depth 1 https://github.com/Anil-matcha/Open-AI-UGC.git ~/Open-AI-UGC
+  (cd ~/Open-AI-UGC && npm install) && echo "Lấy key ở muapi.ai, điền vào .env, chạy theo README. Bạn tự chịu trách nhiệm nội dung và quyền hình ảnh."
+fi
+
 echo
 echo "Xong. Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
 echo "Token Apify/OpenRouter: đặt trong biến môi trường (~/.zshrc hoặc ~/.bashrc), KHÔNG ghi vào repo."
