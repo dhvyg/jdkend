@@ -362,6 +362,11 @@ if co python3 && hoi "Cài google-colab-cli (dùng GPU Colab miễn phí từ d�
   echo "Xác thực: chạy 'colab' theo hướng dẫn (đăng nhập Google Cloud ADC). GPU T4 miễn phí; A100/H100 trả phí khi cần. Xem README của repo."
 fi
 
+# Agent Lightning (microsoft/agent-lightning, MIT): framework HUẤN LUYỆN/tối ưu AI agent bằng reinforcement learning. Nâng cao, cần GPU; dành cho người làm nghiên cứu/model
+if co python3 && hoi "Cài Agent Lightning (huấn luyện agent bằng RL; nâng cao, cần GPU mạnh)?"; then
+  python3 -m pip install -U agentlightning && echo "Xem https://microsoft.github.io/agent-lightning. Có 'Agent Lightning Skill' trong repo giúp một coding agent cải thiện agent khác theo benchmark."
+fi
+
 echo
 echo "Xong. Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
 echo "Token Apify/OpenRouter: đặt trong biến môi trường (~/.zshrc hoặc ~/.bashrc), KHÔNG ghi vào repo."

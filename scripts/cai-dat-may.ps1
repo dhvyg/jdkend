@@ -311,6 +311,12 @@ if ((Co python) -and (Hoi "Cài google-colab-cli (dùng GPU Colab miễn phí t�
   Write-Host "Xác thực: chạy 'colab' theo hướng dẫn (đăng nhập Google Cloud ADC). GPU T4 miễn phí; A100/H100 trả phí."
 }
 
+# Agent Lightning (microsoft/agent-lightning, MIT): framework huấn luyện AI agent bằng RL. Nâng cao, cần GPU
+if ((Co python) -and (Hoi "Cài Agent Lightning (huấn luyện agent bằng RL; nâng cao, cần GPU)?")) {
+  python -m pip install -U agentlightning
+  Write-Host "Xem https://microsoft.github.io/agent-lightning"
+}
+
 Write-Host ""
 Write-Host "Xong. OpenRig không chạy trên Windows thường (cần WSL2). Locals chỉ chạy trên Mac chip Apple."
 Write-Host "Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
