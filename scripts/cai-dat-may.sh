@@ -273,6 +273,7 @@ fi
 # App desktop tải thẳng (mở trang Releases)
 open_rel() { u="https://github.com/$1/releases/latest"; if [ "$OS" = Darwin ]; then open "$u"; else xdg-open "$u" 2>/dev/null || echo "$u"; fi; echo "Tải $2: $u"; }
 hoi "Mở trang tải OpenCut (dựng video thay CapCut; web/desktop)?" && open_rel OpenCut-app/OpenCut "OpenCut"
+hoi "Mở trang tải OpenMausBot (đội AI bot trong app chat, mỗi bot là một agent Claude/Codex; thay Grok Bot)?" && open_rel milind-soni/OpenMausBot "OpenMausBot"
 hoi "Mở trang tải Cap (quay màn hình thay Loom)?" && open_rel CapSoftware/Cap "Cap"
 hoi "Mở trang tải Dyad (dựng app bằng AI trên máy, thay Lovable)?" && open_rel dyad-sh/dyad "Dyad"
 hoi "Mở trang tải OpenWhispr (đọc thành chữ thay Wispr Flow)?" && open_rel OpenWhispr/openwhispr "OpenWhispr"

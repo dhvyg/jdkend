@@ -241,6 +241,7 @@ if ((Co node) -and (Hoi "Cài Open Generative AI (tạo ảnh/video AI, cần Mu
   Write-Host "Lấy API key ở muapi.ai, điền vào .env, rồi 'npm run dev'. Bạn tự chịu trách nhiệm nội dung tạo ra."
 }
 if (Hoi "Mở trang tải OpenCut (dựng video thay CapCut)?") { Start-Process "https://github.com/OpenCut-app/OpenCut/releases/latest" }
+if (Hoi "Mở trang tải OpenMausBot (đội AI bot trong app chat, thay Grok Bot)?") { Start-Process "https://github.com/milind-soni/OpenMausBot/releases/latest" }
 if (Hoi "Mở trang tải Cap (quay màn hình thay Loom)?") { Start-Process "https://github.com/CapSoftware/Cap/releases/latest" }
 if (Hoi "Mở trang tải Dyad (dựng app bằng AI trên máy, thay Lovable)?") { Start-Process "https://github.com/dyad-sh/dyad/releases/latest" }
 if (Hoi "Mở trang tải OpenWhispr (đọc thành chữ thay Wispr Flow)?") { Start-Process "https://github.com/OpenWhispr/openwhispr/releases/latest" }
