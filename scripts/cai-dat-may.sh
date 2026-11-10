@@ -374,6 +374,29 @@ if co python3 && hoi "Cài Artemis của Google (AI điều khiển điện tho�
   (cd ~/artemis && uv run artemis init) && echo "Nối Claude Code: cd ~/artemis && uv run artemis mcp --install all. Chỉ điều khiển điện thoại của bạn (bật Gỡ lỗi USB)."
 fi
 
+# === 5 repo "kiếm tiền với AI" ===
+# OpenHands: nền tảng coding agent tự host (trước là OpenDevin)
+if hoi "Cài OpenHands (coding agent tự host, bảng điều khiển dev; cần Docker)?"; then selfhost openhands All-Hands-AI/OpenHands "https://docs.all-hands.dev (chạy bằng docker run, xem README)"; fi
+# screenshot-to-code: ảnh chụp/Figma -> code (HTML/React/Tailwind). Cần API key OpenAI/Anthropic
+if co python3 && hoi "Cài screenshot-to-code (ảnh chụp màn hình -> code; cần API key AI)?"; then
+  [ -d ~/screenshot-to-code ] || git clone --depth 1 https://github.com/abi/screenshot-to-code.git ~/screenshot-to-code
+  echo "Xem ~/screenshot-to-code/README (chạy backend + frontend, hoặc Docker). Cần OPENAI/ANTHROPIC key, đặt ngoài repo."
+fi
+# CrewAI: framework Python điều phối nhiều AI agent làm việc nhóm
+if co python3 && hoi "Cài CrewAI (framework lập trình nhiều AI agent làm việc nhóm)?"; then
+  python3 -m pip install -U crewai && echo "Xem https://docs.crewai.com. Cần API key model, đặt ngoài repo."
+fi
+# PPTAgent: tạo slide PowerPoint từ tài liệu
+if co python3 && hoi "Cài PPTAgent (tạo slide PowerPoint từ tài liệu bằng AI)?"; then
+  [ -d ~/PPTAgent ] || git clone --depth 1 https://github.com/icip-cas/PPTAgent.git ~/PPTAgent
+  echo "Xem ~/PPTAgent/README để cài phụ thuộc và chạy. Cần API key model."
+fi
+# Open AI UGC: tạo video quảng cáo UGC (diễn viên AI) qua MuAPI (trả phí theo lượt); tự chịu trách nhiệm nội dung
+if co node && hoi "Cài Open AI UGC (tạo video quảng cáo UGC diễn viên AI; qua MuAPI, trả phí theo lượt)?"; then
+  [ -d ~/Open-AI-UGC ] || git clone --depth 1 https://github.com/Anil-matcha/Open-AI-UGC.git ~/Open-AI-UGC
+  (cd ~/Open-AI-UGC && npm install) && echo "Lấy key ở muapi.ai, điền vào .env, chạy theo README. Bạn tự chịu trách nhiệm nội dung và quyền hình ảnh."
+fi
+
 echo
 echo "Xong. Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
 echo "Token Apify/OpenRouter: đặt trong biến môi trường (~/.zshrc hoặc ~/.bashrc), KHÔNG ghi vào repo."

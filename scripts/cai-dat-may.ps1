@@ -325,6 +325,23 @@ if ((Co python) -and (Hoi "Cài Artemis của Google (AI điều khiển điện
   Write-Host "Nối Claude Code: cd $HOME\artemis; uv run artemis mcp --install all. Chỉ điều khiển điện thoại của bạn."
 }
 
+# === 5 repo "kiếm tiền với AI" ===
+if (Hoi "Cài OpenHands (coding agent tự host; cần Docker)?") { SelfHost "openhands" "All-Hands-AI/OpenHands" "https://docs.all-hands.dev" }
+if ((Co python) -and (Hoi "Cài screenshot-to-code (ảnh -> code; cần API key AI)?")) {
+  if (-not (Test-Path "$HOME\screenshot-to-code")) { git clone --depth 1 https://github.com/abi/screenshot-to-code.git "$HOME\screenshot-to-code" }
+  Write-Host "Xem $HOME\screenshot-to-code\README. Cần OPENAI/ANTHROPIC key."
+}
+if ((Co python) -and (Hoi "Cài CrewAI (nhiều AI agent làm việc nhóm)?")) { python -m pip install -U crewai; Write-Host "Xem https://docs.crewai.com" }
+if ((Co python) -and (Hoi "Cài PPTAgent (tạo PowerPoint từ tài liệu)?")) {
+  if (-not (Test-Path "$HOME\PPTAgent")) { git clone --depth 1 https://github.com/icip-cas/PPTAgent.git "$HOME\PPTAgent" }
+  Write-Host "Xem $HOME\PPTAgent\README. Cần API key model."
+}
+if ((Co node) -and (Hoi "Cài Open AI UGC (video quảng cáo UGC; qua MuAPI trả phí)?")) {
+  if (-not (Test-Path "$HOME\Open-AI-UGC")) { git clone --depth 1 https://github.com/Anil-matcha/Open-AI-UGC.git "$HOME\Open-AI-UGC" }
+  Push-Location "$HOME\Open-AI-UGC"; npm install; Pop-Location
+  Write-Host "Lấy key muapi.ai, điền .env. Tự chịu trách nhiệm nội dung và quyền hình ảnh."
+}
+
 Write-Host ""
 Write-Host "Xong. OpenRig không chạy trên Windows thường (cần WSL2). Locals chỉ chạy trên Mac chip Apple."
 Write-Host "Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
