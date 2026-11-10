@@ -425,6 +425,12 @@
         "source": "github",
         "repo": "every-app/open-seo"
       }
+    },
+    "motionsites": {
+      "source": {
+        "source": "github",
+        "repo": "Motionsites-AI/claude-skill"
+      }
     }
   },
   "enabledPlugins": {
@@ -533,6 +539,7 @@
     "hallmark@hallmark": true,
     "rea-video@rea-video": true,
     "marketing-skills@marketingskills": true,
-    "openseo@openseo": true
+    "openseo@openseo": true,
+    "motionsites-web-builder@motionsites": true
   }
 }
