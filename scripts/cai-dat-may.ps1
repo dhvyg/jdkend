@@ -317,6 +317,14 @@ if ((Co python) -and (Hoi "Cài Agent Lightning (huấn luyện agent bằng RL;
   Write-Host "Xem https://microsoft.github.io/agent-lightning"
 }
 
+# Artemis (google/artemis, Apache-2.0): AI điều khiển điện thoại Android thật; MCP server. Cần uv + ADB; chỉ dùng trên điện thoại của bạn
+if ((Co python) -and (Hoi "Cài Artemis của Google (AI điều khiển điện thoại Android thật; cần uv, bật USB debugging)?")) {
+  if (-not (Co uv)) { winget install -e --id astral-sh.uv }
+  if (-not (Test-Path "$HOME\artemis")) { git clone --depth 1 https://github.com/google/artemis.git "$HOME\artemis" }
+  Push-Location "$HOME\artemis"; uv run artemis init; Pop-Location
+  Write-Host "Nối Claude Code: cd $HOME\artemis; uv run artemis mcp --install all. Chỉ điều khiển điện thoại của bạn."
+}
+
 Write-Host ""
 Write-Host "Xong. OpenRig không chạy trên Windows thường (cần WSL2). Locals chỉ chạy trên Mac chip Apple."
 Write-Host "Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."

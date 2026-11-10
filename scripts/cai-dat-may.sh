@@ -367,6 +367,13 @@ if co python3 && hoi "Cài Agent Lightning (huấn luyện agent bằng RL; nân
   python3 -m pip install -U agentlightning && echo "Xem https://microsoft.github.io/agent-lightning. Có 'Agent Lightning Skill' trong repo giúp một coding agent cải thiện agent khác theo benchmark."
 fi
 
+# Artemis (google/artemis, Apache-2.0): cho AI agent điều khiển ĐIỆN THOẠI ANDROID THẬT (mở app, bấm, test); MCP server nối Claude Code. Cần uv + ADB; chỉ dùng trên máy/điện thoại của bạn
+if co python3 && hoi "Cài Artemis của Google (AI điều khiển điện thoại Android thật; cần uv, bật USB debugging trên máy của bạn)?"; then
+  co uv || curl -LsSf https://astral.sh/uv/install.sh | sh
+  [ -d ~/artemis ] || git clone --depth 1 https://github.com/google/artemis.git ~/artemis
+  (cd ~/artemis && uv run artemis init) && echo "Nối Claude Code: cd ~/artemis && uv run artemis mcp --install all. Chỉ điều khiển điện thoại của bạn (bật Gỡ lỗi USB)."
+fi
+
 echo
 echo "Xong. Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
 echo "Token Apify/OpenRouter: đặt trong biến môi trường (~/.zshrc hoặc ~/.bashrc), KHÔNG ghi vào repo."
