@@ -273,6 +273,12 @@ fi
 # App desktop tải thẳng (mở trang Releases)
 open_rel() { u="https://github.com/$1/releases/latest"; if [ "$OS" = Darwin ]; then open "$u"; else xdg-open "$u" 2>/dev/null || echo "$u"; fi; echo "Tải $2: $u"; }
 hoi "Mở trang tải OpenCut (dựng video thay CapCut; web/desktop)?" && open_rel OpenCut-app/OpenCut "OpenCut"
+# ArtCraft (escbase, getartcraft.com): bộ app đồ hoạ viết bằng Rust — Craft Anything, PhotoCraft, FilmCraft, DesignCraft, CADCraft... Tải ở trang chính thức.
+if hoi "Mở trang ArtCraft (bộ app đồ hoạ Rust: Craft Anything, PhotoCraft...; CADCraft đã có ở trên)?"; then
+  u=https://getartcraft.com/apps
+  if [ "$OS" = Darwin ]; then open "$u"; else xdg-open "$u" 2>/dev/null || echo "$u"; fi
+  echo "Chỉ tải từ getartcraft.com. Trên GitHub có nhiều repo 'artcraft' của bên thứ ba (launcher, installer), không chắc bản gốc."
+fi
 hoi "Mở trang tải OpenMausBot (đội AI bot trong app chat, mỗi bot là một agent Claude/Codex; thay Grok Bot)?" && open_rel milind-soni/OpenMausBot "OpenMausBot"
 hoi "Mở trang tải Cap (quay màn hình thay Loom)?" && open_rel CapSoftware/Cap "Cap"
 hoi "Mở trang tải Dyad (dựng app bằng AI trên máy, thay Lovable)?" && open_rel dyad-sh/dyad "Dyad"

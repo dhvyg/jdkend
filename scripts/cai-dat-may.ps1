@@ -242,6 +242,7 @@ if ((Co node) -and (Hoi "Cài Open Generative AI (tạo ảnh/video AI, cần Mu
 }
 if (Hoi "Mở trang tải OpenCut (dựng video thay CapCut)?") { Start-Process "https://github.com/OpenCut-app/OpenCut/releases/latest" }
 if (Hoi "Mở trang tải OpenMausBot (đội AI bot trong app chat, thay Grok Bot)?") { Start-Process "https://github.com/milind-soni/OpenMausBot/releases/latest" }
+if (Hoi "Mở trang ArtCraft (bộ app đồ hoạ Rust: Craft Anything, PhotoCraft...; CADCraft đã có ở trên)?") { Start-Process "https://getartcraft.com/apps"; Write-Host "Chỉ tải từ getartcraft.com; trên GitHub có nhiều repo artcraft bên thứ ba." }
 if (Hoi "Mở trang tải Cap (quay màn hình thay Loom)?") { Start-Process "https://github.com/CapSoftware/Cap/releases/latest" }
 if (Hoi "Mở trang tải Dyad (dựng app bằng AI trên máy, thay Lovable)?") { Start-Process "https://github.com/dyad-sh/dyad/releases/latest" }
 if (Hoi "Mở trang tải OpenWhispr (đọc thành chữ thay Wispr Flow)?") { Start-Process "https://github.com/OpenWhispr/openwhispr/releases/latest" }
