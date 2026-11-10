@@ -348,6 +348,17 @@ if ((Co python) -and (Hoi "Tải Unlimited-OCR 2 của Baidu (OCR tài liệu d�
   Write-Host "Xem README. Không có GPU mạnh thì chạy trên Colab, hoặc webui: github.com/win4r/unlimited-ocr2-webui . Ít trang thì dùng MinerU nhẹ hơn."
 }
 
+# GSD (gsd-build/get-shit-done): bộ khung làm phần mềm theo đặc tả cho AI agent coding — tải về rồi làm theo README
+if (Hoi "Tải GSD (get-shit-done: quy trình làm phần mềm theo đặc tả cho AI agent)?") {
+  if (-not (Test-Path "$HOME\get-shit-done")) { git clone --depth 1 https://github.com/gsd-build/get-shit-done.git "$HOME\get-shit-done" }
+  Write-Host "Xem $HOME\get-shit-done\README. Là bộ khung quy trình (không phải plugin), làm theo hướng dẫn trong repo."
+}
+# LightRAG (HKUDS/LightRAG): RAG đồ thị tri thức cho AI agent; cần API key model đặt NGOÀI repo
+if ((Co python) -and (Hoi "Cài LightRAG (RAG đồ thị tri thức cho AI; cần API key model)?")) {
+  python -m pip install -U lightrag-hku
+  Write-Host "Xem github.com/HKUDS/LightRAG. Cần OPENAI/ANTHROPIC key (hoặc model cục bộ), đặt trong biến môi trường, KHÔNG ghi vào repo."
+}
+
 Write-Host ""
 Write-Host "Xong. OpenRig không chạy trên Windows thường (cần WSL2). Locals chỉ chạy trên Mac chip Apple."
 Write-Host "Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."

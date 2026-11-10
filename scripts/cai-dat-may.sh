@@ -403,6 +403,16 @@ if co python3 && hoi "Tải Unlimited-OCR 2 của Baidu (OCR tài liệu dài; C
   echo "Xem ~/Unlimited-OCR/README. Máy không có GPU mạnh thì chạy trên Colab, hoặc dùng giao diện web: https://github.com/win4r/unlimited-ocr2-webui . Số hoá tài liệu ít trang: dùng MinerU (đã có ở trên) nhẹ hơn."
 fi
 
+# GSD (get-shit-done, gsd-build/get-shit-done): bộ khung làm việc theo đặc tả (spec-driven) cho AI agent coding — tải về rồi làm theo README
+if hoi "Tải GSD (get-shit-done: quy trình làm phần mềm theo đặc tả cho AI agent)?"; then
+  [ -d ~/get-shit-done ] || git clone --depth 1 https://github.com/gsd-build/get-shit-done.git ~/get-shit-done
+  echo "Xem ~/get-shit-done/README. Là bộ khung quy trình (không phải plugin), làm theo hướng dẫn trong repo."
+fi
+# LightRAG (HKUDS/LightRAG): RAG nhanh gọn dựa trên đồ thị tri thức cho AI agent; cần API key model đặt NGOÀI repo
+if co python3 && hoi "Cài LightRAG (RAG đồ thị tri thức cho AI; cần API key model)?"; then
+  python3 -m pip install -U lightrag-hku && echo "Xem https://github.com/HKUDS/LightRAG. Cần OPENAI/ANTHROPIC key (hoặc model cục bộ), đặt trong biến môi trường, KHÔNG ghi vào repo."
+fi
+
 echo
 echo "Xong. Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
 echo "Token Apify/OpenRouter: đặt trong biến môi trường (~/.zshrc hoặc ~/.bashrc), KHÔNG ghi vào repo."
