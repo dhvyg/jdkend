@@ -342,6 +342,12 @@ if ((Co node) -and (Hoi "Cài Open AI UGC (video quảng cáo UGC; qua MuAPI tr�
   Write-Host "Lấy key muapi.ai, điền .env. Tự chịu trách nhiệm nội dung và quyền hình ảnh."
 }
 
+# Unlimited-OCR 2 (baidu/Unlimited-OCR, MIT): model VLM 6.7B đọc tài liệu dài thành văn bản. CẦN GPU rất mạnh
+if ((Co python) -and (Hoi "Tải Unlimited-OCR 2 của Baidu (OCR tài liệu dài; CẦN GPU rất mạnh)?")) {
+  if (-not (Test-Path "$HOME\Unlimited-OCR")) { git clone --depth 1 https://github.com/baidu/Unlimited-OCR.git "$HOME\Unlimited-OCR" }
+  Write-Host "Xem README. Không có GPU mạnh thì chạy trên Colab, hoặc webui: github.com/win4r/unlimited-ocr2-webui . Ít trang thì dùng MinerU nhẹ hơn."
+}
+
 Write-Host ""
 Write-Host "Xong. OpenRig không chạy trên Windows thường (cần WSL2). Locals chỉ chạy trên Mac chip Apple."
 Write-Host "Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."

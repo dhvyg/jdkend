@@ -397,6 +397,12 @@ if co node && hoi "Cài Open AI UGC (tạo video quảng cáo UGC diễn viên A
   (cd ~/Open-AI-UGC && npm install) && echo "Lấy key ở muapi.ai, điền vào .env, chạy theo README. Bạn tự chịu trách nhiệm nội dung và quyền hình ảnh."
 fi
 
+# Unlimited-OCR 2 (baidu/Unlimited-OCR, MIT): model VLM 6.7B đọc cả cuốn sách/tài liệu dài thành văn bản (OCR). CẦN GPU MẠNH (thử nghiệm trên A800-80GB) — máy thường không chạy nổi, nên dùng qua Colab (google-colab-cli ở trên) hoặc giao diện web win4r/unlimited-ocr2-webui
+if co python3 && hoi "Tải Unlimited-OCR 2 của Baidu (OCR tài liệu dài; CẦN GPU rất mạnh)?"; then
+  [ -d ~/Unlimited-OCR ] || git clone --depth 1 https://github.com/baidu/Unlimited-OCR.git ~/Unlimited-OCR
+  echo "Xem ~/Unlimited-OCR/README. Máy không có GPU mạnh thì chạy trên Colab, hoặc dùng giao diện web: https://github.com/win4r/unlimited-ocr2-webui . Số hoá tài liệu ít trang: dùng MinerU (đã có ở trên) nhẹ hơn."
+fi
+
 echo
 echo "Xong. Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
 echo "Token Apify/OpenRouter: đặt trong biến môi trường (~/.zshrc hoặc ~/.bashrc), KHÔNG ghi vào repo."
