@@ -299,6 +299,12 @@ if ((Co python) -and (Hoi "Cài Scrapling (thư viện cào web Python)?")) {
   Write-Host "Chỉ cào trang bạn được phép; tôn trọng robots.txt."
 }
 
+# Harness2 (google-research/harness2, Apache-2.0): framework agent tự cải thiện giàn đỡ. Chính thức chỉ hỗ trợ Linux + Python 3.12; trên Windows nên dùng WSL2.
+if (Hoi "Tải Harness2 của Google (framework agent tự cải thiện; khuyến nghị chạy trong WSL2)?") {
+  if (-not (Test-Path "$HOME\harness2")) { git clone --depth 1 https://github.com/google-research/harness2.git "$HOME\harness2" }
+  Write-Host "Harness2 cần Linux + Python 3.12 + uv. Trên Windows: mở WSL2 rồi làm theo README trong $HOME\harness2."
+}
+
 Write-Host ""
 Write-Host "Xong. OpenRig không chạy trên Windows thường (cần WSL2). Locals chỉ chạy trên Mac chip Apple."
 Write-Host "Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."

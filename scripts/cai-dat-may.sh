@@ -348,6 +348,14 @@ if co python3 && hoi "Cài Scrapling (thư viện cào web Python, qua được 
   python3 -m pip install -U "scrapling" && python3 -m scrapling install 2>/dev/null; echo "Chỉ cào trang bạn được phép; tôn trọng robots.txt và điều khoản của trang."
 fi
 
+# Harness2 (google-research/harness2, Apache-2.0): framework để agent TỰ cải thiện giàn đỡ (prompt/tool/memory/skill) qua nhiều vòng, không chỉnh trọng số model. Nghiên cứu; cần Linux, Python 3.12, uv
+if co python3 && hoi "Cài Harness2 của Google (framework agent tự cải thiện; cần Linux + Python 3.12 + uv)?"; then
+  co uv || curl -LsSf https://astral.sh/uv/install.sh | sh
+  [ -d ~/harness2 ] || git clone --depth 1 https://github.com/google-research/harness2.git ~/harness2
+  (cd ~/harness2 && uv venv --python 3.12 .venv && .venv/bin/python -m pip install -e ".[render]") \
+    && echo "Chạy demo: cd ~/harness2 && source .venv/bin/activate && harness2-demo --output runs/demo --k 2 (xem README)"
+fi
+
 echo
 echo "Xong. Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
 echo "Token Apify/OpenRouter: đặt trong biến môi trường (~/.zshrc hoặc ~/.bashrc), KHÔNG ghi vào repo."
