@@ -327,6 +327,7 @@ hoi "Mở trang tải Upscayl (phóng to ảnh bằng AI không vỡ nét)?" && 
 hoi "Mở trang tải cc-haha (giao diện desktop cho Claude Code)?" && open_rel NanmiCoder/cc-haha "cc-haha"
 hoi "Mở trang tải AIRI (AI companion/VTuber chạy trên máy)?" && open_rel moeru-ai/airi "AIRI"
 hoi "Mở trang tải OpenBot của CopilotKit (AI đồng nghiệp có máy tính riêng; khác OpenBot ở trên)?" && open_rel CopilotKit/OpenBot "OpenBot (CopilotKit)"
+hoi "Mở trang tải Orkas (đội 16 AI agent chạy trên máy, local-first; thêm app cho đội AI)?" && open_rel Orkas-AI/Orkas "Orkas"
 hoi "Mở trang tải DyberPet (thú cưng trên màn hình, PySide6)?" && open_rel ChaozhongLiu/DyberPet "DyberPet"
 # Fay: framework làm người ảo/trợ lý số (streamer ảo, lễ tân số...); cần Python
 if co python3 && hoi "Cài Fay (framework làm người ảo/trợ lý số kết nối LLM)?"; then
@@ -336,6 +337,16 @@ fi
 
 # FastAPI là THƯ VIỆN Python, không phải app chạy riêng: cài khi lập trình API, không cần ở đây
 echo "FastAPI là thư viện: khi code API thì 'pip install fastapi uvicorn' trong dự án, không cần cài sẵn."
+
+# MoneyPrinterTurbo (harry0703, MIT): gõ 1 chủ đề → ra video ngắn hoàn chỉnh (kịch bản, giọng đọc, phụ đề, nhạc); cần Python, có giao diện web
+if co python3 && hoi "Cài MoneyPrinterTurbo (gõ chủ đề ra video ngắn tự động; cần Python, một số tính năng cần API key)?"; then
+  [ -d ~/MoneyPrinterTurbo ] || git clone --depth 1 https://github.com/harry0703/MoneyPrinterTurbo.git ~/MoneyPrinterTurbo
+  echo "Xem ~/MoneyPrinterTurbo/README (có bản Docker và bản chạy trực tiếp). Giọng đọc/hình nền có thể cần API key, đặt ngoài repo."
+fi
+# Scrapling (D4Vinci, BSD-3): thư viện cào web Python, vượt được một số chặn bot (Cloudflare)
+if co python3 && hoi "Cài Scrapling (thư viện cào web Python, qua được một số chặn bot)?"; then
+  python3 -m pip install -U "scrapling" && python3 -m scrapling install 2>/dev/null; echo "Chỉ cào trang bạn được phép; tôn trọng robots.txt và điều khoản của trang."
+fi
 
 echo
 echo "Xong. Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
