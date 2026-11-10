@@ -305,6 +305,12 @@ if (Hoi "Tải Harness2 của Google (framework agent tự cải thiện; khuy�
   Write-Host "Harness2 cần Linux + Python 3.12 + uv. Trên Windows: mở WSL2 rồi làm theo README trong $HOME\harness2."
 }
 
+# google-colab-cli (googlecolab, Apache-2.0): chạy máy Colab (GPU T4 miễn phí) từ dòng lệnh. Lệnh: colab
+if ((Co python) -and (Hoi "Cài google-colab-cli (dùng GPU Colab miễn phí từ dòng lệnh; cần tài khoản Google)?")) {
+  if (Co uv) { uv tool install google-colab-cli } else { python -m pip install -U google-colab-cli }
+  Write-Host "Xác thực: chạy 'colab' theo hướng dẫn (đăng nhập Google Cloud ADC). GPU T4 miễn phí; A100/H100 trả phí."
+}
+
 Write-Host ""
 Write-Host "Xong. OpenRig không chạy trên Windows thường (cần WSL2). Locals chỉ chạy trên Mac chip Apple."
 Write-Host "Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."

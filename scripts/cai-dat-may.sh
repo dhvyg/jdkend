@@ -356,6 +356,12 @@ if co python3 && hoi "Cài Harness2 của Google (framework agent tự cải thi
     && echo "Chạy demo: cd ~/harness2 && source .venv/bin/activate && harness2-demo --output runs/demo --k 2 (xem README)"
 fi
 
+# google-colab-cli (googlecolab, Apache-2.0): chạy máy Colab (GPU T4 miễn phí) từ dòng lệnh — hợp khi máy không có GPU. Lệnh: colab
+if co python3 && hoi "Cài google-colab-cli (dùng GPU Colab miễn phí từ dòng lệnh; cần tài khoản Google)?"; then
+  co uv && uv tool install google-colab-cli || python3 -m pip install -U google-colab-cli
+  echo "Xác thực: chạy 'colab' theo hướng dẫn (đăng nhập Google Cloud ADC). GPU T4 miễn phí; A100/H100 trả phí khi cần. Xem README của repo."
+fi
+
 echo
 echo "Xong. Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
 echo "Token Apify/OpenRouter: đặt trong biến môi trường (~/.zshrc hoặc ~/.bashrc), KHÔNG ghi vào repo."
