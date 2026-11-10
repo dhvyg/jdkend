@@ -327,6 +327,7 @@ hoi "Mở trang tải Upscayl (phóng to ảnh bằng AI không vỡ nét)?" && 
 hoi "Mở trang tải cc-haha (giao diện desktop cho Claude Code)?" && open_rel NanmiCoder/cc-haha "cc-haha"
 hoi "Mở trang tải AIRI (AI companion/VTuber chạy trên máy)?" && open_rel moeru-ai/airi "AIRI"
 hoi "Mở trang tải OpenBot của CopilotKit (AI đồng nghiệp có máy tính riêng; khác OpenBot ở trên)?" && open_rel CopilotKit/OpenBot "OpenBot (CopilotKit)"
+hoi "Mở trang tải Orkas (đội 16 AI agent chạy trên máy, local-first; thêm app cho đội AI)?" && open_rel Orkas-AI/Orkas "Orkas"
 hoi "Mở trang tải DyberPet (thú cưng trên màn hình, PySide6)?" && open_rel ChaozhongLiu/DyberPet "DyberPet"
 # Fay: framework làm người ảo/trợ lý số (streamer ảo, lễ tân số...); cần Python
 if co python3 && hoi "Cài Fay (framework làm người ảo/trợ lý số kết nối LLM)?"; then

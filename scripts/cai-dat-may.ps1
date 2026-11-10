@@ -280,6 +280,7 @@ if (Hoi "Mở trang tải Upscayl (phóng to ảnh bằng AI)?") { Start-Process
 if (Hoi "Mở trang tải cc-haha (giao diện desktop cho Claude Code)?") { Start-Process "https://github.com/NanmiCoder/cc-haha/releases/latest" }
 if (Hoi "Mở trang tải AIRI (AI companion chạy trên máy)?") { Start-Process "https://github.com/moeru-ai/airi/releases/latest" }
 if (Hoi "Mở trang tải OpenBot của CopilotKit (khác OpenBot ở trên)?") { Start-Process "https://github.com/CopilotKit/OpenBot/releases/latest" }
+if (Hoi "Mở trang tải Orkas (đội 16 AI agent chạy trên máy, local-first)?") { Start-Process "https://github.com/Orkas-AI/Orkas/releases/latest" }
 if (Hoi "Mở trang tải DyberPet (thú cưng trên màn hình)?") { Start-Process "https://github.com/ChaozhongLiu/DyberPet/releases/latest" }
 if ((Co python) -and (Hoi "Cài Fay (framework làm người ảo/trợ lý số)?")) {
   if (-not (Test-Path "$HOME\Fay")) { git clone --depth 1 https://github.com/xszyou/Fay.git "$HOME\Fay" }
