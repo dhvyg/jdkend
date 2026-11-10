@@ -288,6 +288,17 @@ if ((Co python) -and (Hoi "Cài Fay (framework làm người ảo/trợ lý số
 }
 Write-Host "FastAPI là thư viện: khi code API thì 'pip install fastapi uvicorn' trong dự án, không cần cài sẵn."
 
+# MoneyPrinterTurbo (harry0703, MIT): gõ chủ đề ra video ngắn tự động; cần Python
+if ((Co python) -and (Hoi "Cài MoneyPrinterTurbo (gõ chủ đề ra video ngắn; cần Python)?")) {
+  if (-not (Test-Path "$HOME\MoneyPrinterTurbo")) { git clone --depth 1 https://github.com/harry0703/MoneyPrinterTurbo.git "$HOME\MoneyPrinterTurbo" }
+  Write-Host "Xem $HOME\MoneyPrinterTurbo\README. Một số tính năng cần API key, đặt ngoài repo."
+}
+# Scrapling (D4Vinci, BSD-3): thư viện cào web Python
+if ((Co python) -and (Hoi "Cài Scrapling (thư viện cào web Python)?")) {
+  python -m pip install -U scrapling; python -m scrapling install
+  Write-Host "Chỉ cào trang bạn được phép; tôn trọng robots.txt."
+}
+
 Write-Host ""
 Write-Host "Xong. OpenRig không chạy trên Windows thường (cần WSL2). Locals chỉ chạy trên Mac chip Apple."
 Write-Host "Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."

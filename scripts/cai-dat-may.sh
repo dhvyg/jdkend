@@ -338,6 +338,16 @@ fi
 # FastAPI là THƯ VIỆN Python, không phải app chạy riêng: cài khi lập trình API, không cần ở đây
 echo "FastAPI là thư viện: khi code API thì 'pip install fastapi uvicorn' trong dự án, không cần cài sẵn."
 
+# MoneyPrinterTurbo (harry0703, MIT): gõ 1 chủ đề → ra video ngắn hoàn chỉnh (kịch bản, giọng đọc, phụ đề, nhạc); cần Python, có giao diện web
+if co python3 && hoi "Cài MoneyPrinterTurbo (gõ chủ đề ra video ngắn tự động; cần Python, một số tính năng cần API key)?"; then
+  [ -d ~/MoneyPrinterTurbo ] || git clone --depth 1 https://github.com/harry0703/MoneyPrinterTurbo.git ~/MoneyPrinterTurbo
+  echo "Xem ~/MoneyPrinterTurbo/README (có bản Docker và bản chạy trực tiếp). Giọng đọc/hình nền có thể cần API key, đặt ngoài repo."
+fi
+# Scrapling (D4Vinci, BSD-3): thư viện cào web Python, vượt được một số chặn bot (Cloudflare)
+if co python3 && hoi "Cài Scrapling (thư viện cào web Python, qua được một số chặn bot)?"; then
+  python3 -m pip install -U "scrapling" && python3 -m scrapling install 2>/dev/null; echo "Chỉ cào trang bạn được phép; tôn trọng robots.txt và điều khoản của trang."
+fi
+
 echo
 echo "Xong. Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
 echo "Token Apify/OpenRouter: đặt trong biến môi trường (~/.zshrc hoặc ~/.bashrc), KHÔNG ghi vào repo."
