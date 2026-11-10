@@ -123,6 +123,16 @@ if hoi "Cài bộ dịch ngược (REA, radare2, Frida, mitmproxy, angr, jadx, a
   echo "ImHex https://imhex.werwolv.net, Rizin https://rizin.re, ILSpy (avaloniaui) https://github.com/icsharpcode/AvaloniaILSpy/releases"
 fi
 
+# fscan (shadow1ng) & firerpa/lamda: công cụ tấn công/kiểm thử MẠNH — CHỈ dùng trên hệ thống của mình hoặc được phép bằng văn bản
+if hoi "Cài fscan (quét lỗ hổng mạng nội bộ; CHỈ trên mạng của bạn, phạm pháp nếu quét trái phép)?"; then
+  if co go; then go install github.com/shadow1ng/fscan@latest && echo "fscan cài ở ~/go/bin. Chỉ quét mạng bạn sở hữu/được phép."; else echo "Cần Go: https://go.dev/dl — hoặc tải bản biên dịch sẵn ở https://github.com/shadow1ng/fscan/releases"; fi
+  echo "CẢNH BÁO: quét/brute-force hệ thống người khác khi chưa được phép là phạm pháp. Phần mềm diệt virus có thể chặn fscan."
+fi
+if co python3 && hoi "Cài firerpa/lamda (điều khiển & tự động hoá Android: MITM, Frida...; CHỈ trên thiết bị của bạn)?"; then
+  python3 -m pip install -U lamda && echo "Xem https://github.com/firerpa/lamda. Chỉ dùng trên thiết bị bạn sở hữu/được phép kiểm thử."
+  echo "CẢNH BÁO: cài lên điện thoại người khác hay chặn bắt dữ liệu của họ khi chưa được phép là phạm pháp."
+fi
+
 # TradingAgents (TauricResearch, Apache-2.0): đội AI phân tích cổ phiếu (phân tích, tranh luận, quản trị rủi ro); chỉ để nghiên cứu, không phải lời khuyên đầu tư
 if co python3 && hoi "Cài TradingAgents (đội AI phân tích chứng khoán, cần Python 3.11+ và API key LLM)?"; then
   [ -d ~/TradingAgents ] || git clone --depth 1 https://github.com/TauricResearch/TradingAgents.git ~/TradingAgents
@@ -270,6 +280,8 @@ if hoi "Cài LibreChat (giao diện chat AI tự host thay ChatGPT, nhiều mode
 if hoi "Cài Yuxi (nền tảng AI agent + RAG tri thức nội bộ, tự host; cần Docker)?"; then selfhost yuxi xerrors/Yuxi "README của repo"; fi
 if hoi "Cài Hoppscotch (test API thay Postman; tự host, cần Docker)?"; then selfhost hoppscotch hoppscotch/hoppscotch "https://docs.hoppscotch.io/documentation/self-host/getting-started — hoặc dùng bản web hoppscotch.io / app desktop"; fi
 if hoi "Cài pgAdmin 4 (quản trị PostgreSQL; cần Docker)?"; then selfhost pgadmin4 pgadmin-org/pgadmin4 "docker run -p 5050:80 dpage/pgadmin4"; fi
+if hoi "Cài AnythingLLM (chat tài liệu + AI agent cục bộ, riêng tư; cần Docker hoặc bản desktop)?"; then selfhost anything-llm Mintplex-Labs/anything-llm "https://docs.anythingllm.com — hoặc tải app desktop ở anythingllm.com"; fi
+if hoi "Cài GOWA (REST API cho WhatsApp đa tài khoản, có webhook/MCP/Chatwoot; cần Docker)?"; then selfhost gowa aldinokemal/go-whatsapp-web-multidevice "README của repo (docker compose). Tuân thủ điều khoản WhatsApp, chỉ nhắn người đã đồng ý."; fi
 # OctoBot: bot giao dịch crypto — RỦI RO TÀI CHÍNH
 if hoi "Cài OctoBot (bot giao dịch crypto tự động; RỦI RO MẤT TIỀN, cân nhắc kỹ)?"; then
   selfhost OctoBot Drakkar-Software/OctoBot "https://www.octobot.cloud/en/guides"
@@ -315,6 +327,12 @@ hoi "Mở trang tải Upscayl (phóng to ảnh bằng AI không vỡ nét)?" && 
 hoi "Mở trang tải cc-haha (giao diện desktop cho Claude Code)?" && open_rel NanmiCoder/cc-haha "cc-haha"
 hoi "Mở trang tải AIRI (AI companion/VTuber chạy trên máy)?" && open_rel moeru-ai/airi "AIRI"
 hoi "Mở trang tải OpenBot của CopilotKit (AI đồng nghiệp có máy tính riêng; khác OpenBot ở trên)?" && open_rel CopilotKit/OpenBot "OpenBot (CopilotKit)"
+hoi "Mở trang tải DyberPet (thú cưng trên màn hình, PySide6)?" && open_rel ChaozhongLiu/DyberPet "DyberPet"
+# Fay: framework làm người ảo/trợ lý số (streamer ảo, lễ tân số...); cần Python
+if co python3 && hoi "Cài Fay (framework làm người ảo/trợ lý số kết nối LLM)?"; then
+  [ -d ~/Fay ] || git clone --depth 1 https://github.com/xszyou/Fay.git ~/Fay
+  echo "Xem ~/Fay/README để chạy (có nhiều bản: trợ lý, thương mại, người ảo). Cần API key/model, đặt ngoài repo."
+fi
 
 # FastAPI là THƯ VIỆN Python, không phải app chạy riêng: cài khi lập trình API, không cần ở đây
 echo "FastAPI là thư viện: khi code API thì 'pip install fastapi uvicorn' trong dự án, không cần cài sẵn."

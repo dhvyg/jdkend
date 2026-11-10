@@ -104,6 +104,16 @@ if (Hoi "Cài bộ dịch ngược (REA, Ghidra, x64dbg, dnSpy, ILSpy, ImHex, ra
   Write-Host "Ghidra cần JDK 21. GhidraMCP: https://github.com/LaurieWired/GhidraMCP/releases ; jadx/Apktool: https://github.com/skylot/jadx/releases"
 }
 
+# fscan & firerpa/lamda: công cụ tấn công/kiểm thử MẠNH — CHỈ dùng trên hệ thống của bạn hoặc được phép
+if (Hoi "Cài fscan (quét lỗ hổng mạng nội bộ; CHỈ trên mạng của bạn)?") {
+  if (Co go) { go install github.com/shadow1ng/fscan@latest } else { Write-Host "Cần Go (go.dev) hoặc tải bản sẵn: https://github.com/shadow1ng/fscan/releases" }
+  Write-Host "CẢNH BÁO: quét/brute-force hệ thống người khác khi chưa được phép là phạm pháp. AV có thể chặn fscan."
+}
+if ((Co python) -and (Hoi "Cài firerpa/lamda (điều khiển & tự động hoá Android; CHỈ trên thiết bị của bạn)?")) {
+  python -m pip install -U lamda
+  Write-Host "Xem https://github.com/firerpa/lamda. CẢNH BÁO: dùng trên thiết bị người khác khi chưa được phép là phạm pháp."
+}
+
 # TradingAgents (TauricResearch, Apache-2.0): đội AI phân tích cổ phiếu; chỉ để nghiên cứu, không phải lời khuyên đầu tư
 if ((Co python) -and (Hoi "Cài TradingAgents (đội AI phân tích chứng khoán, cần Python 3.11+ và API key LLM)?")) {
   $t = "$HOME\TradingAgents"
@@ -245,6 +255,8 @@ if (Hoi "Cài LibreChat (chat AI tự host thay ChatGPT; cần Docker)?") { Self
 if (Hoi "Cài Yuxi (AI agent + RAG nội bộ; cần Docker)?") { SelfHost "yuxi" "xerrors/Yuxi" "README repo" }
 if (Hoi "Cài Hoppscotch (test API thay Postman; cần Docker)?") { SelfHost "hoppscotch" "hoppscotch/hoppscotch" "hoppscotch.io hoặc self-host docs" }
 if (Hoi "Cài pgAdmin 4 (quản trị PostgreSQL; cần Docker)?") { SelfHost "pgadmin4" "pgadmin-org/pgadmin4" "docker run -p 5050:80 dpage/pgadmin4" }
+if (Hoi "Cài AnythingLLM (chat tài liệu + AI agent cục bộ; Docker hoặc app desktop)?") { SelfHost "anything-llm" "Mintplex-Labs/anything-llm" "https://docs.anythingllm.com hoặc app desktop anythingllm.com" }
+if (Hoi "Cài GOWA (REST API WhatsApp đa tài khoản; cần Docker)?") { SelfHost "gowa" "aldinokemal/go-whatsapp-web-multidevice" "README (docker compose). Tuân thủ điều khoản WhatsApp." }
 if (Hoi "Cài OctoBot (bot giao dịch crypto; RỦI RO MẤT TIỀN)?") { SelfHost "OctoBot" "Drakkar-Software/OctoBot" "https://www.octobot.cloud/en/guides"; Write-Host "CẢNH BÁO: giao dịch crypto tự động có thể mất sạch tiền. Thử paper trading trước." }
 if (Hoi "Mở trang tải AppFlowy (ghi chú thay Notion, app desktop)?") { Start-Process "https://github.com/AppFlowy-IO/AppFlowy/releases/latest" }
 if ((Co node) -and (Hoi "Cài OpenCreator (dịch & lồng tiếng video bằng AI; trước là KrillinAI)?")) {
@@ -268,6 +280,11 @@ if (Hoi "Mở trang tải Upscayl (phóng to ảnh bằng AI)?") { Start-Process
 if (Hoi "Mở trang tải cc-haha (giao diện desktop cho Claude Code)?") { Start-Process "https://github.com/NanmiCoder/cc-haha/releases/latest" }
 if (Hoi "Mở trang tải AIRI (AI companion chạy trên máy)?") { Start-Process "https://github.com/moeru-ai/airi/releases/latest" }
 if (Hoi "Mở trang tải OpenBot của CopilotKit (khác OpenBot ở trên)?") { Start-Process "https://github.com/CopilotKit/OpenBot/releases/latest" }
+if (Hoi "Mở trang tải DyberPet (thú cưng trên màn hình)?") { Start-Process "https://github.com/ChaozhongLiu/DyberPet/releases/latest" }
+if ((Co python) -and (Hoi "Cài Fay (framework làm người ảo/trợ lý số)?")) {
+  if (-not (Test-Path "$HOME\Fay")) { git clone --depth 1 https://github.com/xszyou/Fay.git "$HOME\Fay" }
+  Write-Host "Xem $HOME\Fay\README để chạy. Cần API key/model, đặt ngoài repo."
+}
 Write-Host "FastAPI là thư viện: khi code API thì 'pip install fastapi uvicorn' trong dự án, không cần cài sẵn."
 
 Write-Host ""
