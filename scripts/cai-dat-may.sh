@@ -415,6 +415,24 @@ if co python3 && hoi "Tải Unlimited-OCR 2 của Baidu (OCR tài liệu dài; C
   echo "Xem ~/Unlimited-OCR/README. Máy không có GPU mạnh thì chạy trên Colab, hoặc dùng giao diện web: https://github.com/win4r/unlimited-ocr2-webui . Số hoá tài liệu ít trang: dùng MinerU (đã có ở trên) nhẹ hơn."
 fi
 
+# === Công cụ làm VIDEO bằng code (hợp người làm content) — Remotion & three.js đã có sẵn dạng skill ===
+# HyperFrames (heygen-com, 82k sao): viết HTML là ra video — dựng rồi render bằng lệnh
+if co node && hoi "Cài HyperFrames (viết HTML -> ra video; render bằng lệnh)?"; then
+  [ -d ~/hyperframes ] || git clone --depth 1 https://github.com/heygen-com/hyperframes.git ~/hyperframes
+  echo "Xem ~/hyperframes/README. Dùng: npx hyperframes render (trong thư mục dự án). Hoặc chạy thẳng: npx hyperframes@latest"
+fi
+# Manim (ManimCommunity — bản cộng đồng dễ cài; bản gốc là 3b1b/manim của 3Blue1Brown): vẽ animation toán/đồ thị bằng Python. Cần ffmpeg; chữ công thức cần thêm LaTeX
+if co python3 && hoi "Cài Manim (vẽ animation toán/đồ thị kiểu 3Blue1Brown; cần ffmpeg)?"; then
+  co ffmpeg || pkg ffmpeg
+  python3 -m pip install -U manim && echo "Chạy: manim -qh file.py Scene. Xem https://docs.manim.community . Muốn chữ công thức đẹp thì cài thêm LaTeX (MiKTeX/TeX Live)."
+fi
+# Blender MCP (ahujasid/blender-mcp, 34k sao): nối AI vào Blender để dựng mô hình 3D bằng câu lệnh. Cần cài sẵn Blender + add-on trong repo
+if co uvx && hoi "Cài Blender MCP (điều khiển Blender dựng 3D bằng AI; cần Blender + add-on)?"; then
+  echo "1) Cài Blender: https://www.blender.org/download . 2) Tải add-on addon.py ở https://github.com/ahujasid/blender-mcp và bật trong Blender. 3) Server chạy bằng: uvx blender-mcp"
+  echo "Khai báo trong .mcp.json (hoặc cấu hình Claude): command uvx, args [blender-mcp]. Xem README repo."
+fi
+# GSAP (greensock/GSAP, 30k sao): thư viện JS tạo chuyển động/hiệu ứng chữ mượt cho web. KHÔNG cài toàn máy — thêm vào từng dự án web
+echo "Mẹo: muốn chữ/animation mượt trên web, trong dự án web chạy: npm i gsap  (xem https://gsap.com/docs)."
 # social-auto-upload (dreammis, Python): tự đăng + hẹn giờ video/bài/ảnh lên TikTok, Douyin, YouTube, Instagram, X, Facebook, LinkedIn, Bilibili, Xiaohongshu. Hợp người làm content
 if co python3 && hoi "Cài social-auto-upload (tự đăng video/ảnh lên nhiều MXH; hợp làm content)?"; then
   [ -d ~/social-auto-upload ] || git clone --depth 1 https://github.com/dreammis/social-auto-upload.git ~/social-auto-upload

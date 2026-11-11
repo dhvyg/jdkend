@@ -360,6 +360,24 @@ if ((Co python) -and (Hoi "Tải Unlimited-OCR 2 của Baidu (OCR tài liệu d�
   Write-Host "Xem README. Không có GPU mạnh thì chạy trên Colab, hoặc webui: github.com/win4r/unlimited-ocr2-webui . Ít trang thì dùng MinerU nhẹ hơn."
 }
 
+# === Công cụ làm VIDEO bằng code — Remotion & three.js đã có sẵn dạng skill ===
+# HyperFrames (heygen-com, 82k sao): viết HTML là ra video
+if ((Co node) -and (Hoi "Cài HyperFrames (viết HTML -> ra video)?")) {
+  if (-not (Test-Path "$HOME\hyperframes")) { git clone --depth 1 https://github.com/heygen-com/hyperframes.git "$HOME\hyperframes" }
+  Write-Host "Xem README. Dùng: npx hyperframes render (trong thư mục dự án)."
+}
+# Manim (ManimCommunity — bản cộng đồng dễ cài): vẽ animation toán/đồ thị kiểu 3Blue1Brown. Cần ffmpeg; chữ công thức cần LaTeX
+if ((Co python) -and (Hoi "Cài Manim (animation toán/đồ thị kiểu 3Blue1Brown; cần ffmpeg)?")) {
+  python -m pip install -U manim
+  Write-Host "Chạy: manim -qh file.py Scene. Xem https://docs.manim.community . Chữ công thức đẹp cần cài thêm MiKTeX."
+}
+# Blender MCP (ahujasid/blender-mcp, 34k sao): nối AI vào Blender dựng 3D. Cần Blender + add-on
+if ((Co uvx) -and (Hoi "Cài Blender MCP (điều khiển Blender bằng AI; cần Blender + add-on)?")) {
+  Write-Host "1) Cài Blender: https://www.blender.org/download . 2) Tải add-on ở https://github.com/ahujasid/blender-mcp, bật trong Blender. 3) Chạy server: uvx blender-mcp"
+  Write-Host "Khai báo trong .mcp.json: command uvx, args [blender-mcp]. Xem README."
+}
+# GSAP (greensock/GSAP): thư viện JS chuyển động mượt cho web — thêm vào từng dự án: npm i gsap
+Write-Host "Meo: muon chu/animation muot tren web, trong du an chay: npm i gsap (xem https://gsap.com/docs)."
 # social-auto-upload (dreammis): tự đăng + hẹn giờ video/bài/ảnh lên nhiều MXH (TikTok, Douyin, YouTube, IG, X, FB, LinkedIn, Bilibili, Xiaohongshu)
 if ((Co python) -and (Hoi "Cài social-auto-upload (tự đăng video/ảnh lên nhiều MXH; hợp làm content)?")) {
   if (-not (Test-Path "$HOME\social-auto-upload")) { git clone --depth 1 https://github.com/dreammis/social-auto-upload.git "$HOME\social-auto-upload" }
