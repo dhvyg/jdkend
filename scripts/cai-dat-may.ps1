@@ -257,6 +257,12 @@ if (Hoi "Cài Hoppscotch (test API thay Postman; cần Docker)?") { SelfHost "ho
 if (Hoi "Cài pgAdmin 4 (quản trị PostgreSQL; cần Docker)?") { SelfHost "pgadmin4" "pgadmin-org/pgadmin4" "docker run -p 5050:80 dpage/pgadmin4" }
 if (Hoi "Cài AnythingLLM (chat tài liệu + AI agent cục bộ; Docker hoặc app desktop)?") { SelfHost "anything-llm" "Mintplex-Labs/anything-llm" "https://docs.anythingllm.com hoặc app desktop anythingllm.com" }
 if (Hoi "Cài GOWA (REST API WhatsApp đa tài khoản; cần Docker)?") { SelfHost "gowa" "aldinokemal/go-whatsapp-web-multidevice" "README (docker compose). Tuân thủ điều khoản WhatsApp." }
+# Coolify (coollabsio/coolify): tự dựng Vercel/Heroku trên VPS của bạn. DÀNH CHO VPS, không phải laptop cá nhân
+if (Hoi "Xem hướng dẫn cài Coolify (tự dựng Vercel trên VPS)?") {
+  Write-Host "Coolify cài TRÊN 1 VPS Ubuntu/Debian bằng 1 lệnh (chạy trên VPS, không phải máy này):"
+  Write-Host "    curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash"
+  Write-Host "Hướng dẫn: https://coolify.io/docs/get-started/installation . Cần VPS ~4-6 USD/tháng. Laptop thường không hợp."
+}
 if (Hoi "Cài OctoBot (bot giao dịch crypto; RỦI RO MẤT TIỀN)?") { SelfHost "OctoBot" "Drakkar-Software/OctoBot" "https://www.octobot.cloud/en/guides"; Write-Host "CẢNH BÁO: giao dịch crypto tự động có thể mất sạch tiền. Thử paper trading trước." }
 if (Hoi "Mở trang tải AppFlowy (ghi chú thay Notion, app desktop)?") { Start-Process "https://github.com/AppFlowy-IO/AppFlowy/releases/latest" }
 if ((Co node) -and (Hoi "Cài OpenCreator (dịch & lồng tiếng video bằng AI; trước là KrillinAI)?")) {
@@ -348,6 +354,16 @@ if ((Co python) -and (Hoi "Tải Unlimited-OCR 2 của Baidu (OCR tài liệu d�
   Write-Host "Xem README. Không có GPU mạnh thì chạy trên Colab, hoặc webui: github.com/win4r/unlimited-ocr2-webui . Ít trang thì dùng MinerU nhẹ hơn."
 }
 
+# DeepTutor (HKUDS/DeepTutor): "gia sư AI" cá nhân hoá, app desktop Mac/Windows
+if (Hoi "Mở trang tải DeepTutor (gia sư AI cá nhân hoá; app desktop)?") {
+  Start-Process "https://github.com/HKUDS/DeepTutor/releases/latest"
+  Write-Host "Tải bản Windows (.exe) ở Releases. Tài liệu: https://deeptutor.info . Cần API key model, đặt trong app, KHÔNG ghi vào repo."
+}
+# Cherry Studio (CherryHQ/cherry-studio): "văn phòng AI" desktop — mọi model trong 1 cửa sổ. Win/Mac/Linux
+if (Hoi "Mở trang tải Cherry Studio (văn phòng AI desktop: mọi model 1 cửa sổ)?") {
+  Start-Process "https://github.com/CherryHQ/cherry-studio/releases/latest"
+  Write-Host "Tải bản Windows ở Releases (hoặc cherry-ai.com). Cần API key từng model, đặt trong app, KHÔNG ghi vào repo."
+}
 # LLM Wiki (DimitrisLianos/LLM_Wiki_SecondBrain): "bộ não thứ hai" chạy 100% cục bộ (Gemma 4), không gửi lên mây. Chuẩn: Mac chip Apple RAM>=16GB; Windows phải chạy trong WSL2 (script scripts/ dùng bash). Tải model ~16GB
 if ((Co python) -and (Hoi "Tải LLM Wiki (bộ não thứ hai LLM cục bộ; Windows cần WSL2, tải model ~16GB)?")) {
   if (-not (Test-Path "$HOME\LLM_Wiki_SecondBrain")) { git clone --depth 1 https://github.com/DimitrisLianos/LLM_Wiki_SecondBrain.git "$HOME\LLM_Wiki_SecondBrain" }
