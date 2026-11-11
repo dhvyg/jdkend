@@ -348,6 +348,11 @@ if ((Co python) -and (Hoi "Tải Unlimited-OCR 2 của Baidu (OCR tài liệu d�
   Write-Host "Xem README. Không có GPU mạnh thì chạy trên Colab, hoặc webui: github.com/win4r/unlimited-ocr2-webui . Ít trang thì dùng MinerU nhẹ hơn."
 }
 
+# LLM Wiki (DimitrisLianos/LLM_Wiki_SecondBrain): "bộ não thứ hai" chạy 100% cục bộ (Gemma 4), không gửi lên mây. Chuẩn: Mac chip Apple RAM>=16GB; Windows phải chạy trong WSL2 (script scripts/ dùng bash). Tải model ~16GB
+if ((Co python) -and (Hoi "Tải LLM Wiki (bộ não thứ hai LLM cục bộ; Windows cần WSL2, tải model ~16GB)?")) {
+  if (-not (Test-Path "$HOME\LLM_Wiki_SecondBrain")) { git clone --depth 1 https://github.com/DimitrisLianos/LLM_Wiki_SecondBrain.git "$HOME\LLM_Wiki_SecondBrain" }
+  Write-Host "Xem README (Quick Start + docs/arc42/07-deployment-view.md). Trên Windows nên chạy trong WSL2 Ubuntu. Máy yếu/không đủ RAM thì bỏ qua."
+}
 # GSD (gsd-build/get-shit-done): bộ khung làm phần mềm theo đặc tả cho AI agent coding — tải về rồi làm theo README
 if (Hoi "Tải GSD (get-shit-done: quy trình làm phần mềm theo đặc tả cho AI agent)?") {
   if (-not (Test-Path "$HOME\get-shit-done")) { git clone --depth 1 https://github.com/gsd-build/get-shit-done.git "$HOME\get-shit-done" }

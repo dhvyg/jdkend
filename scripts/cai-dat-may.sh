@@ -403,6 +403,11 @@ if co python3 && hoi "Tải Unlimited-OCR 2 của Baidu (OCR tài liệu dài; C
   echo "Xem ~/Unlimited-OCR/README. Máy không có GPU mạnh thì chạy trên Colab, hoặc dùng giao diện web: https://github.com/win4r/unlimited-ocr2-webui . Số hoá tài liệu ít trang: dùng MinerU (đã có ở trên) nhẹ hơn."
 fi
 
+# LLM Wiki (DimitrisLianos/LLM_Wiki_SecondBrain): "bộ não thứ hai" chạy 100% CỤC BỘ — LLM Gemma 4 đọc tài liệu, tự dựng wiki liên kết trong Obsidian, KHÔNG gửi dữ liệu lên mây. Chuẩn nhất: Mac chip Apple (M-series, RAM >=16GB); Linux GPU/CPU cũng chạy; Windows phải qua WSL2. Phải tải model ~16GB
+if co python3 && hoi "Tải LLM Wiki (bộ não thứ hai LLM cục bộ; cần Mac chip Apple RAM>=16GB hoặc GPU, tải model ~16GB)?"; then
+  [ -d ~/LLM_Wiki_SecondBrain ] || git clone --depth 1 https://github.com/DimitrisLianos/LLM_Wiki_SecondBrain.git ~/LLM_Wiki_SecondBrain
+  echo "Xem ~/LLM_Wiki_SecondBrain/README (phần Quick Start + docs/arc42/07-deployment-view.md). Lõi ingest/query chỉ cần Python chuẩn; web UI thêm fastapi+ddgs. Chạy được trên máy có đủ RAM/GPU; máy yếu thì bỏ qua."
+fi
 # GSD (get-shit-done, gsd-build/get-shit-done): bộ khung làm việc theo đặc tả (spec-driven) cho AI agent coding — tải về rồi làm theo README
 if hoi "Tải GSD (get-shit-done: quy trình làm phần mềm theo đặc tả cho AI agent)?"; then
   [ -d ~/get-shit-done ] || git clone --depth 1 https://github.com/gsd-build/get-shit-done.git ~/get-shit-done
