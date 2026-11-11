@@ -282,6 +282,12 @@ if hoi "Cài Hoppscotch (test API thay Postman; tự host, cần Docker)?"; then
 if hoi "Cài pgAdmin 4 (quản trị PostgreSQL; cần Docker)?"; then selfhost pgadmin4 pgadmin-org/pgadmin4 "docker run -p 5050:80 dpage/pgadmin4"; fi
 if hoi "Cài AnythingLLM (chat tài liệu + AI agent cục bộ, riêng tư; cần Docker hoặc bản desktop)?"; then selfhost anything-llm Mintplex-Labs/anything-llm "https://docs.anythingllm.com — hoặc tải app desktop ở anythingllm.com"; fi
 if hoi "Cài GOWA (REST API cho WhatsApp đa tài khoản, có webhook/MCP/Chatwoot; cần Docker)?"; then selfhost gowa aldinokemal/go-whatsapp-web-multidevice "README của repo (docker compose). Tuân thủ điều khoản WhatsApp, chỉ nhắn người đã đồng ý."; fi
+# Coolify (coollabsio/coolify, Apache-2.0): tự dựng "Vercel/Heroku của riêng mình" trên VPS — bấm nút là deploy app/web/database, HTTPS tự động. DÀNH CHO VPS/máy chủ, KHÔNG phải laptop cá nhân
+if hoi "Xem hướng dẫn cài Coolify (tự dựng Vercel trên VPS của bạn)?"; then
+  echo "Coolify cài trên 1 VPS (Ubuntu/Debian) bằng 1 lệnh (chạy TRÊN VPS, không phải máy này):"
+  echo "    curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash"
+  echo "Hướng dẫn đầy đủ: https://coolify.io/docs/get-started/installation . Cần VPS (DigitalOcean/Hetzner/Vultr...) ~4-6 USD/tháng. Laptop thường không hợp (phải bật 24/7, có IP tĩnh)."
+fi
 # OctoBot: bot giao dịch crypto — RỦI RO TÀI CHÍNH
 if hoi "Cài OctoBot (bot giao dịch crypto tự động; RỦI RO MẤT TIỀN, cân nhắc kỹ)?"; then
   selfhost OctoBot Drakkar-Software/OctoBot "https://www.octobot.cloud/en/guides"
@@ -403,6 +409,21 @@ if co python3 && hoi "Tải Unlimited-OCR 2 của Baidu (OCR tài liệu dài; C
   echo "Xem ~/Unlimited-OCR/README. Máy không có GPU mạnh thì chạy trên Colab, hoặc dùng giao diện web: https://github.com/win4r/unlimited-ocr2-webui . Số hoá tài liệu ít trang: dùng MinerU (đã có ở trên) nhẹ hơn."
 fi
 
+# DeepTutor (HKUDS/DeepTutor, Apache-2.0): "gia sư AI" — đưa tài liệu/giáo trình vào, nó dạy bạn theo kiểu cá nhân hoá, nhớ tiến độ. Có app desktop Mac/Windows tải thẳng
+if hoi "Mở trang tải DeepTutor (gia sư AI cá nhân hoá; app desktop Mac/Windows)?"; then
+  case "$OS" in
+    Darwin) u="https://github.com/HKUDS/DeepTutor/releases/latest" ;;
+    *) u="https://github.com/HKUDS/DeepTutor/releases/latest" ;;
+  esac
+  if [ "$OS" = Darwin ]; then open "$u"; else xdg-open "$u" 2>/dev/null || echo "$u"; fi
+  echo "Tải: Mac Apple Silicon / Mac Intel / Windows (.exe) ở trang Releases. Tài liệu: https://deeptutor.info . Cần API key model (đặt trong app, KHÔNG ghi vào repo)."
+fi
+# Cherry Studio (CherryHQ/cherry-studio, AGPL-3.0): "văn phòng AI" trên desktop — gom mọi model (Claude, GPT, Gemini...) + kho tài liệu + trợ lý vào 1 app. Win/Mac/Linux
+if hoi "Mở trang tải Cherry Studio (văn phòng AI trên desktop: mọi model 1 cửa sổ)?"; then
+  u="https://github.com/CherryHQ/cherry-studio/releases/latest"
+  if [ "$OS" = Darwin ]; then open "$u"; else xdg-open "$u" 2>/dev/null || echo "$u"; fi
+  echo "Tải bản Win/Mac/Linux ở trang Releases (hoặc cherry-ai.com). Cần API key của từng model (đặt trong app, KHÔNG ghi vào repo)."
+fi
 # LLM Wiki (DimitrisLianos/LLM_Wiki_SecondBrain): "bộ não thứ hai" chạy 100% CỤC BỘ — LLM Gemma 4 đọc tài liệu, tự dựng wiki liên kết trong Obsidian, KHÔNG gửi dữ liệu lên mây. Chuẩn nhất: Mac chip Apple (M-series, RAM >=16GB); Linux GPU/CPU cũng chạy; Windows phải qua WSL2. Phải tải model ~16GB
 if co python3 && hoi "Tải LLM Wiki (bộ não thứ hai LLM cục bộ; cần Mac chip Apple RAM>=16GB hoặc GPU, tải model ~16GB)?"; then
   [ -d ~/LLM_Wiki_SecondBrain ] || git clone --depth 1 https://github.com/DimitrisLianos/LLM_Wiki_SecondBrain.git ~/LLM_Wiki_SecondBrain
