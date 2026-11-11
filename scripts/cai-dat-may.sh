@@ -397,6 +397,27 @@ if co node && hoi "Cài Open AI UGC (tạo video quảng cáo UGC diễn viên A
   (cd ~/Open-AI-UGC && npm install) && echo "Lấy key ở muapi.ai, điền vào .env, chạy theo README. Bạn tự chịu trách nhiệm nội dung và quyền hình ảnh."
 fi
 
+# Unlimited-OCR 2 (baidu/Unlimited-OCR, MIT): model VLM 6.7B đọc cả cuốn sách/tài liệu dài thành văn bản (OCR). CẦN GPU MẠNH (thử nghiệm trên A800-80GB) — máy thường không chạy nổi, nên dùng qua Colab (google-colab-cli ở trên) hoặc giao diện web win4r/unlimited-ocr2-webui
+if co python3 && hoi "Tải Unlimited-OCR 2 của Baidu (OCR tài liệu dài; CẦN GPU rất mạnh)?"; then
+  [ -d ~/Unlimited-OCR ] || git clone --depth 1 https://github.com/baidu/Unlimited-OCR.git ~/Unlimited-OCR
+  echo "Xem ~/Unlimited-OCR/README. Máy không có GPU mạnh thì chạy trên Colab, hoặc dùng giao diện web: https://github.com/win4r/unlimited-ocr2-webui . Số hoá tài liệu ít trang: dùng MinerU (đã có ở trên) nhẹ hơn."
+fi
+
+# LLM Wiki (DimitrisLianos/LLM_Wiki_SecondBrain): "bộ não thứ hai" chạy 100% CỤC BỘ — LLM Gemma 4 đọc tài liệu, tự dựng wiki liên kết trong Obsidian, KHÔNG gửi dữ liệu lên mây. Chuẩn nhất: Mac chip Apple (M-series, RAM >=16GB); Linux GPU/CPU cũng chạy; Windows phải qua WSL2. Phải tải model ~16GB
+if co python3 && hoi "Tải LLM Wiki (bộ não thứ hai LLM cục bộ; cần Mac chip Apple RAM>=16GB hoặc GPU, tải model ~16GB)?"; then
+  [ -d ~/LLM_Wiki_SecondBrain ] || git clone --depth 1 https://github.com/DimitrisLianos/LLM_Wiki_SecondBrain.git ~/LLM_Wiki_SecondBrain
+  echo "Xem ~/LLM_Wiki_SecondBrain/README (phần Quick Start + docs/arc42/07-deployment-view.md). Lõi ingest/query chỉ cần Python chuẩn; web UI thêm fastapi+ddgs. Chạy được trên máy có đủ RAM/GPU; máy yếu thì bỏ qua."
+fi
+# GSD (get-shit-done, gsd-build/get-shit-done): bộ khung làm việc theo đặc tả (spec-driven) cho AI agent coding — tải về rồi làm theo README
+if hoi "Tải GSD (get-shit-done: quy trình làm phần mềm theo đặc tả cho AI agent)?"; then
+  [ -d ~/get-shit-done ] || git clone --depth 1 https://github.com/gsd-build/get-shit-done.git ~/get-shit-done
+  echo "Xem ~/get-shit-done/README. Là bộ khung quy trình (không phải plugin), làm theo hướng dẫn trong repo."
+fi
+# LightRAG (HKUDS/LightRAG): RAG nhanh gọn dựa trên đồ thị tri thức cho AI agent; cần API key model đặt NGOÀI repo
+if co python3 && hoi "Cài LightRAG (RAG đồ thị tri thức cho AI; cần API key model)?"; then
+  python3 -m pip install -U lightrag-hku && echo "Xem https://github.com/HKUDS/LightRAG. Cần OPENAI/ANTHROPIC key (hoặc model cục bộ), đặt trong biến môi trường, KHÔNG ghi vào repo."
+fi
+
 echo
 echo "Xong. Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
 echo "Token Apify/OpenRouter: đặt trong biến môi trường (~/.zshrc hoặc ~/.bashrc), KHÔNG ghi vào repo."

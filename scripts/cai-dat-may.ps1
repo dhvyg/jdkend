@@ -342,6 +342,28 @@ if ((Co node) -and (Hoi "Cài Open AI UGC (video quảng cáo UGC; qua MuAPI tr�
   Write-Host "Lấy key muapi.ai, điền .env. Tự chịu trách nhiệm nội dung và quyền hình ảnh."
 }
 
+# Unlimited-OCR 2 (baidu/Unlimited-OCR, MIT): model VLM 6.7B đọc tài liệu dài thành văn bản. CẦN GPU rất mạnh
+if ((Co python) -and (Hoi "Tải Unlimited-OCR 2 của Baidu (OCR tài liệu dài; CẦN GPU rất mạnh)?")) {
+  if (-not (Test-Path "$HOME\Unlimited-OCR")) { git clone --depth 1 https://github.com/baidu/Unlimited-OCR.git "$HOME\Unlimited-OCR" }
+  Write-Host "Xem README. Không có GPU mạnh thì chạy trên Colab, hoặc webui: github.com/win4r/unlimited-ocr2-webui . Ít trang thì dùng MinerU nhẹ hơn."
+}
+
+# LLM Wiki (DimitrisLianos/LLM_Wiki_SecondBrain): "bộ não thứ hai" chạy 100% cục bộ (Gemma 4), không gửi lên mây. Chuẩn: Mac chip Apple RAM>=16GB; Windows phải chạy trong WSL2 (script scripts/ dùng bash). Tải model ~16GB
+if ((Co python) -and (Hoi "Tải LLM Wiki (bộ não thứ hai LLM cục bộ; Windows cần WSL2, tải model ~16GB)?")) {
+  if (-not (Test-Path "$HOME\LLM_Wiki_SecondBrain")) { git clone --depth 1 https://github.com/DimitrisLianos/LLM_Wiki_SecondBrain.git "$HOME\LLM_Wiki_SecondBrain" }
+  Write-Host "Xem README (Quick Start + docs/arc42/07-deployment-view.md). Trên Windows nên chạy trong WSL2 Ubuntu. Máy yếu/không đủ RAM thì bỏ qua."
+}
+# GSD (gsd-build/get-shit-done): bộ khung làm phần mềm theo đặc tả cho AI agent coding — tải về rồi làm theo README
+if (Hoi "Tải GSD (get-shit-done: quy trình làm phần mềm theo đặc tả cho AI agent)?") {
+  if (-not (Test-Path "$HOME\get-shit-done")) { git clone --depth 1 https://github.com/gsd-build/get-shit-done.git "$HOME\get-shit-done" }
+  Write-Host "Xem $HOME\get-shit-done\README. Là bộ khung quy trình (không phải plugin), làm theo hướng dẫn trong repo."
+}
+# LightRAG (HKUDS/LightRAG): RAG đồ thị tri thức cho AI agent; cần API key model đặt NGOÀI repo
+if ((Co python) -and (Hoi "Cài LightRAG (RAG đồ thị tri thức cho AI; cần API key model)?")) {
+  python -m pip install -U lightrag-hku
+  Write-Host "Xem github.com/HKUDS/LightRAG. Cần OPENAI/ANTHROPIC key (hoặc model cục bộ), đặt trong biến môi trường, KHÔNG ghi vào repo."
+}
+
 Write-Host ""
 Write-Host "Xong. OpenRig không chạy trên Windows thường (cần WSL2). Locals chỉ chạy trên Mac chip Apple."
 Write-Host "Không cần cài: vibe-kanban (chạy 'npx vibe-kanban' khi dùng)."
