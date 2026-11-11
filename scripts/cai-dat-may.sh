@@ -132,6 +132,12 @@ if co python3 && hoi "Cài firerpa/lamda (điều khiển & tự động hoá An
   python3 -m pip install -U lamda && echo "Xem https://github.com/firerpa/lamda. Chỉ dùng trên thiết bị bạn sở hữu/được phép kiểm thử."
   echo "CẢNH BÁO: cài lên điện thoại người khác hay chặn bắt dữ liệu của họ khi chưa được phép là phạm pháp."
 fi
+# Sherlock (sherlock-project, MIT): tìm tài khoản MXH theo 1 username trên 400+ trang (OSINT). DÙNG ĐÚNG: kiểm tra "dấu chân số" của CHÍNH BẠN, hoặc điều tra được cho phép
+if co python3 && hoi "Cài Sherlock (tìm tài khoản MXH theo username; CHỈ dùng cho tài khoản của bạn hoặc được phép)?"; then
+  if co pipx; then pipx install sherlock-project; else python3 -m pip install -U sherlock-project; fi
+  echo "Chạy: sherlock <username>. Xem https://github.com/sherlock-project/sherlock"
+  echo "CẢNH BÁO: dùng để theo dõi/truy tìm/bóc phốt người khác là xâm phạm đời tư, có thể vi phạm pháp luật (quấy rối, theo dõi). Chỉ tra username của chính bạn, hoặc khi có sự đồng ý/được phép."
+fi
 
 # TradingAgents (TauricResearch, Apache-2.0): đội AI phân tích cổ phiếu (phân tích, tranh luận, quản trị rủi ro); chỉ để nghiên cứu, không phải lời khuyên đầu tư
 if co python3 && hoi "Cài TradingAgents (đội AI phân tích chứng khoán, cần Python 3.11+ và API key LLM)?"; then

@@ -113,6 +113,12 @@ if ((Co python) -and (Hoi "Cài firerpa/lamda (điều khiển & tự động ho
   python -m pip install -U lamda
   Write-Host "Xem https://github.com/firerpa/lamda. CẢNH BÁO: dùng trên thiết bị người khác khi chưa được phép là phạm pháp."
 }
+# Sherlock (sherlock-project, MIT): tìm tài khoản MXH theo username trên 400+ trang (OSINT). Chỉ dùng cho tài khoản của bạn hoặc được phép
+if ((Co python) -and (Hoi "Cài Sherlock (tìm tài khoản MXH theo username; CHỈ cho tài khoản của bạn hoặc được phép)?")) {
+  python -m pip install -U sherlock-project
+  Write-Host "Chạy: sherlock <username>. Xem https://github.com/sherlock-project/sherlock"
+  Write-Host "CẢNH BÁO: dùng để theo dõi/truy tìm/bóc phốt người khác là xâm phạm đời tư, có thể phạm pháp. Chỉ tra username của chính bạn, hoặc khi được phép."
+}
 
 # TradingAgents (TauricResearch, Apache-2.0): đội AI phân tích cổ phiếu; chỉ để nghiên cứu, không phải lời khuyên đầu tư
 if ((Co python) -and (Hoi "Cài TradingAgents (đội AI phân tích chứng khoán, cần Python 3.11+ và API key LLM)?")) {
