@@ -360,6 +360,12 @@ if ((Co python) -and (Hoi "Tải Unlimited-OCR 2 của Baidu (OCR tài liệu d�
   Write-Host "Xem README. Không có GPU mạnh thì chạy trên Colab, hoặc webui: github.com/win4r/unlimited-ocr2-webui . Ít trang thì dùng MinerU nhẹ hơn."
 }
 
+# social-auto-upload (dreammis): tự đăng + hẹn giờ video/bài/ảnh lên nhiều MXH (TikTok, Douyin, YouTube, IG, X, FB, LinkedIn, Bilibili, Xiaohongshu)
+if ((Co python) -and (Hoi "Cài social-auto-upload (tự đăng video/ảnh lên nhiều MXH; hợp làm content)?")) {
+  if (-not (Test-Path "$HOME\social-auto-upload")) { git clone --depth 1 https://github.com/dreammis/social-auto-upload.git "$HOME\social-auto-upload" }
+  Push-Location "$HOME\social-auto-upload"; python -m pip install -r requirements.txt; python -m playwright install chromium; Pop-Location
+  Write-Host "Xem README. Cần đăng nhập từng nền tảng 1 lần (lưu cookie). Tôn trọng điều khoản mỗi nền tảng — đăng spam có thể bị khoá tài khoản."
+}
 # DeepTutor (HKUDS/DeepTutor): "gia sư AI" cá nhân hoá, app desktop Mac/Windows
 if (Hoi "Mở trang tải DeepTutor (gia sư AI cá nhân hoá; app desktop)?") {
   Start-Process "https://github.com/HKUDS/DeepTutor/releases/latest"

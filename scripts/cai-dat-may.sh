@@ -415,6 +415,12 @@ if co python3 && hoi "Tải Unlimited-OCR 2 của Baidu (OCR tài liệu dài; C
   echo "Xem ~/Unlimited-OCR/README. Máy không có GPU mạnh thì chạy trên Colab, hoặc dùng giao diện web: https://github.com/win4r/unlimited-ocr2-webui . Số hoá tài liệu ít trang: dùng MinerU (đã có ở trên) nhẹ hơn."
 fi
 
+# social-auto-upload (dreammis, Python): tự đăng + hẹn giờ video/bài/ảnh lên TikTok, Douyin, YouTube, Instagram, X, Facebook, LinkedIn, Bilibili, Xiaohongshu. Hợp người làm content
+if co python3 && hoi "Cài social-auto-upload (tự đăng video/ảnh lên nhiều MXH; hợp làm content)?"; then
+  [ -d ~/social-auto-upload ] || git clone --depth 1 https://github.com/dreammis/social-auto-upload.git ~/social-auto-upload
+  (cd ~/social-auto-upload && python3 -m pip install -r requirements.txt 2>/dev/null; python3 -m playwright install chromium 2>/dev/null)
+  echo "Xem ~/social-auto-upload/README. Cần đăng nhập từng nền tảng 1 lần (lưu cookie). Tôn trọng điều khoản mỗi nền tảng — đăng spam/tự động quá đà có thể bị khoá tài khoản."
+fi
 # DeepTutor (HKUDS/DeepTutor, Apache-2.0): "gia sư AI" — đưa tài liệu/giáo trình vào, nó dạy bạn theo kiểu cá nhân hoá, nhớ tiến độ. Có app desktop Mac/Windows tải thẳng
 if hoi "Mở trang tải DeepTutor (gia sư AI cá nhân hoá; app desktop Mac/Windows)?"; then
   case "$OS" in
