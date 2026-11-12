@@ -1,6 +1,6 @@
 # Mua bán, tiêu dùng, lừa đảo
 
-**Văn bản chính:** Luật Bảo vệ quyền lợi người tiêu dùng 2023 (hiệu lực 1/7/2024); Bộ luật Dân sự 2015 (hợp đồng mua bán); quy định về thương mại điện tử (kiểm tra văn bản hiện hành); Bộ luật Hình sự (tội lừa đảo chiếm đoạt tài sản).
+**Văn bản chính:** Luật Bảo vệ quyền lợi người tiêu dùng 2023 (hiệu lực 1/7/2024); Bộ luật Dân sự 2015 (hợp đồng mua bán); Luật Thương mại điện tử 2025 (số 122/2025/QH15, hiệu lực 1/7/2026); Bộ luật Hình sự (tội lừa đảo chiếm đoạt tài sản).
 
 ## Quyền người tiêu dùng (khái quát)
 - Được cung cấp thông tin đúng về hàng hóa, giá, nguồn gốc, bảo hành.

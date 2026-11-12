@@ -10,7 +10,7 @@
 Luôn kiểm: văn bản **còn hiệu lực** không, có **văn bản sửa đổi** sau không.
 
 ## Hỏi ai
-- **Trợ giúp pháp lý miễn phí của nhà nước** (theo Luật Trợ giúp pháp lý 2017): Trung tâm trợ giúp pháp lý nhà nước ở tỉnh, thành phố.
+- **Trợ giúp pháp lý miễn phí của nhà nước** (Luật Trợ giúp pháp lý 2017, sửa đổi bởi Luật 05/2026/QH16 ban hành 23/4/2026 — mở rộng diện người được trợ giúp): Trung tâm trợ giúp pháp lý nhà nước ở tỉnh, thành phố.
   Dành cho một số nhóm như người thuộc hộ nghèo, người có công, trẻ em, người khuyết tật, người dân tộc thiểu số ở vùng khó khăn, nạn nhân một số vụ việc...
   Danh sách đối tượng cụ thể: kiểm tra văn bản hiện hành.
 - **Luật sư**: qua Đoàn luật sư tỉnh, thành phố. Nhiều nơi có buổi tư vấn miễn phí.

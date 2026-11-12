@@ -1,6 +1,6 @@
 # Hiến pháp
 
-**Văn bản:** Hiến pháp năm 2013 (hiệu lực 1/1/2014), được sửa đổi, bổ sung một số điều năm 2025. Kiểm tra bản hợp nhất mới nhất.
+**Văn bản:** Hiến pháp năm 2013 (hiệu lực 1/1/2014), được sửa đổi, bổ sung một số điều bởi Nghị quyết số 203/2025/QH15 ngày 16/6/2025 (hiệu lực ngay ngày 16/6/2025). Bản hợp nhất: 52/VBHN-VPQH (2025) trên chinhphu.vn.
 
 Hiến pháp là luật cao nhất; mọi luật khác phải phù hợp với nó. Người dân thường không "kiện theo Hiến pháp" trực tiếp,
 mà dùng các luật cụ thể (dân sự, lao động...). Hiến pháp giúp hiểu **mình có những quyền gì**.

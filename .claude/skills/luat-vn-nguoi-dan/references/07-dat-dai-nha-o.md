@@ -1,6 +1,6 @@
 # Đất đai và nhà ở
 
-**Văn bản chính:** Luật Đất đai 2024 (hiệu lực 1/8/2024); Luật Nhà ở 2023; Luật Kinh doanh bất động sản 2023. Nhiều nghị định hướng dẫn và quy định riêng của từng tỉnh (giá đất, diện tích tách thửa...).
+**Văn bản chính:** Luật Đất đai 2024 (số 31/2024/QH15, hiệu lực 1/8/2024; đã sửa bởi Luật 43/2024/QH15 và một số luật khác; bảng giá đất mới của tỉnh áp dụng từ 1/1/2026; đang có đề xuất sửa tiếp — kiểm tra); Luật Nhà ở 2023; Luật Kinh doanh bất động sản 2023. Nhiều nghị định hướng dẫn và quy định riêng của từng tỉnh (giá đất, diện tích tách thửa...).
 Lĩnh vực phức tạp, nhiều tiền: **luôn khuyên kiểm tra tại cơ quan đất đai và gặp luật sư, công chứng viên trước khi xuống tiền.**
 
 ## Mua bán đất, nhà

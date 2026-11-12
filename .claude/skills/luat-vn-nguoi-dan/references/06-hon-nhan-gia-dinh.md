@@ -1,6 +1,6 @@
 # Hôn nhân và gia đình
 
-**Văn bản chính:** Luật Hôn nhân và gia đình 2014; Luật Phòng, chống bạo lực gia đình 2022; Luật Hộ tịch 2014.
+**Văn bản chính:** Luật Hôn nhân và gia đình 2014 (số 52/2014/QH13; đã đối chiếu Điều 8, 51, 81); Luật Phòng, chống bạo lực gia đình 2022; Luật Hộ tịch 2014.
 
 ## Kết hôn
 - Tuổi kết hôn: **nam từ đủ 20 tuổi, nữ từ đủ 18 tuổi**; tự nguyện; đăng ký tại cơ quan có thẩm quyền.

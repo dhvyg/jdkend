@@ -1,8 +1,8 @@
 # Giao thông đường bộ
 
-**Văn bản chính (theo hiểu biết, kiểm tra lại):**
-- Luật Trật tự, an toàn giao thông đường bộ 2024 và Luật Đường bộ 2024 (hiệu lực 1/1/2025).
-- Nghị định 168/2024/NĐ-CP về xử phạt vi phạm hành chính trong giao thông đường bộ và trừ điểm, phục hồi điểm giấy phép lái xe (hiệu lực 1/1/2025).
+**Văn bản chính:**
+- Luật Trật tự, an toàn giao thông đường bộ 2024 (số 36/2024/QH15) và Luật Đường bộ 2024 (hiệu lực 1/1/2025).
+- Nghị định 168/2024/NĐ-CP về xử phạt vi phạm hành chính giao thông đường bộ; trừ điểm, phục hồi điểm giấy phép lái xe (hiệu lực 1/1/2025), **đã được sửa đổi, bổ sung bởi Nghị định 238/2026/NĐ-CP**. Luôn đọc bản đã sửa.
 Mức phạt thay đổi theo từng nghị định: **không nêu số tiền phạt nếu chưa đọc văn bản hiện hành.**
 
 ## Điểm chính cho người đi xe máy, ô tô

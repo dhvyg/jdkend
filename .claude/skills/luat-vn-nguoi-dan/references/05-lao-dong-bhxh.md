@@ -1,6 +1,9 @@
 # Lao động và bảo hiểm xã hội
 
-**Văn bản chính:** Bộ luật Lao động 2019 (hiệu lực 1/1/2021); Luật Bảo hiểm xã hội 2024 (hiệu lực 1/7/2025); Luật Việc làm (bảo hiểm thất nghiệp — kiểm tra bản hiện hành).
+**Văn bản chính:**
+- Bộ luật Lao động 2019 (hiệu lực 1/1/2021), đã được sửa bởi một số luật năm 2025; bản hợp nhất mới: 18/VBHN-VPQH (2026). Quốc hội đang xem xét dự án sửa Bộ luật Lao động — kiểm tra trước khi trả lời.
+- Luật Bảo hiểm xã hội 2024 (số 41/2024/QH15, hiệu lực 1/7/2025).
+- Luật Việc làm 2025 (số 74/2025/QH15, hiệu lực 1/1/2026) — bảo hiểm thất nghiệp.
 Mức lương tối thiểu vùng thay đổi theo nghị định từng thời kỳ và theo địa bàn: **tra mức hiện hành, không đoán.**
 
 ## Hợp đồng lao động
@@ -9,9 +12,10 @@ Mức lương tối thiểu vùng thay đổi theo nghị định từng thời 
 - Thử việc: thời gian và tiền lương thử việc có giới hạn theo luật.
 
 ## Thời giờ làm việc, nghỉ ngơi (nguyên tắc chung theo Bộ luật Lao động 2019)
-- Giờ làm bình thường không quá **8 giờ/ngày và 48 giờ/tuần**.
+- Giờ làm bình thường không quá **8 giờ/ngày và 48 giờ/tuần** (Điều 105); làm theo tuần thì không quá 10 giờ/ngày và 48 giờ/tuần.
+- Làm từ 6 giờ/ngày trở lên được nghỉ giữa giờ ít nhất 30 phút liên tục (ca đêm: 45 phút).
 - Nghỉ hằng tuần ít nhất **24 giờ liên tục**.
-- Làm thêm giờ cần người lao động đồng ý và có giới hạn số giờ. Tiền lương làm thêm ít nhất: **150%** (ngày thường), **200%** (ngày nghỉ hằng tuần), **300%** (lễ, Tết, ngày nghỉ có hưởng lương), chưa kể phần lương của ngày lễ.
+- Làm thêm giờ cần người lao động đồng ý và có giới hạn số giờ. Tiền lương làm thêm ít nhất (Điều 98): **150%** (ngày thường), **200%** (ngày nghỉ hằng tuần), **300%** (lễ, Tết, ngày nghỉ có hưởng lương), chưa kể tiền lương ngày lễ với người hưởng lương ngày. Làm ban đêm có thêm phụ cấp.
 - Nghỉ hằng năm hưởng lương: **12 ngày** khi làm đủ 12 tháng với công việc điều kiện bình thường (nhiều hơn với công việc nặng nhọc, độc hại hoặc làm lâu năm).
 
 ## Bảo hiểm xã hội
