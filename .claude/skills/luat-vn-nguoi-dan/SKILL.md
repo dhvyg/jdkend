@@ -39,7 +39,7 @@ Mục tiêu: giúp người không học luật hiểu **quyền và nghĩa vụ
 | Hình sự: tội phạm, tuổi chịu trách nhiệm, bị tạm giữ | `references/03-hinh-su.md` |
 | Giao thông: lỗi, phạt, trừ điểm bằng lái, tai nạn | `references/04-giao-thong.md` |
 | Lao động, tiền lương, làm thêm giờ, BHXH | `references/05-lao-dong-bhxh.md` |
-| Hôn nhân, ly hôn, con cái, bạo lực gia đình | `references/06-hon-nhan-gia-dinh.md` |
+| Hôn nhân, ly hôn, con cái, bạo lực gia đình, khai sinh, khai tử (hộ tịch) | `references/06-hon-nhan-gia-dinh.md` |
 | Đất đai, nhà ở, thuê nhà | `references/07-dat-dai-nha-o.md` |
 | Mua bán, tiêu dùng, mua online, bị lừa đảo | `references/08-tieu-dung-lua-dao.md` |
 | Mạng xã hội, dữ liệu cá nhân, cư trú, căn cước | `references/09-mang-xa-hoi-giay-to.md` |

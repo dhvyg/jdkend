@@ -32,5 +32,9 @@
 | Luật Căn cước 2023 hiệu lực 1/7/2024 | Đúng | Nguồn tin |
 | Luật Trợ giúp pháp lý sửa đổi 05/2026/QH16 (23/4/2026), mở rộng diện | **Bổ sung** | Nguồn tin (vanban.chinhphu.vn, tgpl.moj.gov.vn) |
 
-Chưa đối chiếu: Luật Hộ tịch, nội dung Chương II Hiến pháp (chỉ tóm tắt khái quát), số tổng đài quốc gia về phòng, chống bạo lực gia đình (cố ý không ghi số).
+| Luật Hộ tịch 2026 (03/2026/QH16, thông qua 23/4/2026) **hiệu lực 1/3/2027**, thay Luật Hộ tịch 2014 | **Bổ sung** (bản cũ chỉ ghi luật 2014) | Nguồn tin (vanban.chinhphu.vn) |
+| Khai sinh trong 60 ngày (luật 2014 Điều 15 và luật 2026) | Đúng | Văn bản gốc (vbpq.toaan.gov.vn; toàn văn luật 2026 trên xaydungchinhsach.chinhphu.vn) |
+| Khai tử trong 15 ngày; nộp hồ sơ trực tuyến; nhận GCN kết hôn trực tiếp (luật 2026) | Đúng | Văn bản gốc (toàn văn luật 2026) |
+
+Chưa đối chiếu: khai tử 15 ngày theo luật 2014 (chỉ đọc bản 2026), nội dung Chương II Hiến pháp (chỉ tóm tắt khái quát), số tổng đài quốc gia về phòng, chống bạo lực gia đình (cố ý không ghi số).
 Lần đối chiếu sau: kiểm tra lại toàn bộ mục "Bổ sung" và các luật đang có dự án sửa (Bộ luật Lao động, Luật Đất đai).
