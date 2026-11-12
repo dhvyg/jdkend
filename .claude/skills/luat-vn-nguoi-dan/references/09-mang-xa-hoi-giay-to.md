@@ -1,0 +1,19 @@
+# Mạng xã hội, dữ liệu cá nhân, cư trú, giấy tờ
+
+## Mạng xã hội
+**Văn bản:** Luật An ninh mạng (kiểm tra bản hiện hành), các nghị định về quản lý dịch vụ Internet và xử phạt trong lĩnh vực thông tin; Bộ luật Dân sự (danh dự, nhân phẩm, hình ảnh cá nhân); Bộ luật Hình sự với hành vi nghiêm trọng.
+- Đăng tin sai sự thật, xúc phạm danh dự người khác, tung ảnh, video riêng tư của người khác: có thể bị phạt hành chính, phải bồi thường, nặng thì xử lý hình sự.
+- Dùng hình ảnh của người khác cần sự đồng ý của họ (trừ một số trường hợp luật cho phép).
+- Bị xúc phạm, bôi nhọ: chụp màn hình có đường link và thời gian, báo nền tảng, trình báo công an hoặc khởi kiện dân sự.
+
+## Dữ liệu cá nhân
+**Văn bản:** Luật Bảo vệ dữ liệu cá nhân 2025 (hiệu lực 1/1/2026) và văn bản hướng dẫn; trước đó là Nghị định 13/2023/NĐ-CP. Kiểm tra văn bản đang áp dụng.
+- Người dân có quyền được biết dữ liệu của mình bị thu thập, dùng vào việc gì; quyền đồng ý, rút lại đồng ý, yêu cầu xóa trong một số trường hợp.
+- Mua bán số điện thoại, căn cước, dữ liệu khách hàng trái phép là vi phạm.
+- Không gửi ảnh căn cước, mã OTP cho người lạ.
+
+## Cư trú, căn cước
+**Văn bản:** Luật Cư trú 2020; Luật Căn cước 2023 (hiệu lực 1/7/2024).
+- Ở trọ, ở nhờ nơi khác nơi thường trú một thời gian thì phải đăng ký tạm trú (thời hạn cụ thể: kiểm tra). Có thể làm online qua cổng dịch vụ công hoặc VNeID.
+- Căn cước là giấy tờ tùy thân; tài khoản định danh điện tử VNeID dùng cho nhiều thủ tục.
+- Mất giấy tờ: báo công an nơi gần nhất, làm lại theo thủ tục hiện hành.
