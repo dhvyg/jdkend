@@ -14,9 +14,9 @@ Mức lương tối thiểu vùng thay đổi theo nghị định từng thời 
 ## Thời giờ làm việc, nghỉ ngơi (nguyên tắc chung theo Bộ luật Lao động 2019)
 - Giờ làm bình thường không quá **8 giờ/ngày và 48 giờ/tuần** (Điều 105); làm theo tuần thì không quá 10 giờ/ngày và 48 giờ/tuần.
 - Làm từ 6 giờ/ngày trở lên được nghỉ giữa giờ ít nhất 30 phút liên tục (ca đêm: 45 phút).
-- Nghỉ hằng tuần ít nhất **24 giờ liên tục**.
+- Nghỉ hằng tuần ít nhất **24 giờ liên tục** (Điều 111).
 - Làm thêm giờ cần người lao động đồng ý và có giới hạn số giờ. Tiền lương làm thêm ít nhất (Điều 98): **150%** (ngày thường), **200%** (ngày nghỉ hằng tuần), **300%** (lễ, Tết, ngày nghỉ có hưởng lương), chưa kể tiền lương ngày lễ với người hưởng lương ngày. Làm ban đêm có thêm phụ cấp.
-- Nghỉ hằng năm hưởng lương: **12 ngày** khi làm đủ 12 tháng với công việc điều kiện bình thường (nhiều hơn với công việc nặng nhọc, độc hại hoặc làm lâu năm).
+- Nghỉ hằng năm hưởng lương khi làm đủ 12 tháng cho một chủ (Điều 113): **12 ngày** làm việc với điều kiện bình thường; **14 ngày** với người chưa thành niên, người khuyết tật, nghề nặng nhọc, độc hại, nguy hiểm; **16 ngày** với nghề đặc biệt nặng nhọc, độc hại, nguy hiểm. Làm lâu năm được cộng thêm ngày nghỉ.
 
 ## Bảo hiểm xã hội
 - Người làm việc theo hợp đồng lao động từ một mức thời hạn nhất định trở lên thuộc diện **BHXH bắt buộc**; công ty phải đóng phần của công ty và trích phần của người lao động.

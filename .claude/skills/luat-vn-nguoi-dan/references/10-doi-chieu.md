@@ -14,7 +14,12 @@
 | NĐ 238/2026/NĐ-CP sửa NĐ 168/2024 | **Bổ sung** (bản cũ thiếu) | Nguồn tin (luatvietnam.vn) |
 | BLLĐ Điều 98: 150% / 200% / 300% | Đúng | Văn bản gốc (bản hợp nhất 18/VBHN-VPQH 2026) |
 | BLLĐ Điều 105: 8 giờ/ngày, 48 giờ/tuần | Đúng | Văn bản gốc (wikisource, thuvienphapluat) |
-| BLLĐ Điều 111 (24 giờ), Điều 113 (12 ngày phép) | Chưa đọc được văn bản gốc trong đợt này | — |
+| BLLĐ Điều 111: nghỉ hằng tuần ít nhất 24 giờ liên tục | Đúng | Nguồn tin (baochinhphu.vn trích nguyên văn) |
+| BLLĐ Điều 113: phép năm 12 / 14 / 16 ngày | Đúng, bổ sung mức 14 và 16 ngày | Văn bản gốc (bản hợp nhất 18/VBHN-VPQH 2026) |
+| Luật Cư trú Điều 27: tạm trú khi ở ngoài xã nơi thường trú từ 30 ngày | Đúng, bổ sung ngưỡng 30 ngày | Văn bản gốc (bản hợp nhất 06/VBHN-VPQH 2026, chinhphu.vn) |
+| Luật Cư trú: thời hạn tạm trú tối đa 02 năm | Bổ sung | Nguồn tin (Cổng thông tin Tiền Giang, Hải Phòng) |
+| Luật PCBLGĐ 13/2022/QH15 hiệu lực 1/7/2023; cấm tiếp xúc Điều 25 (≤03 ngày), Điều 26 (≤04 tháng) | Đúng, bổ sung chi tiết | Văn bản gốc (thuvienphapluat), tulieuvankien.dangcongsan.vn |
+| Luật Nhà ở 27/2023/QH15 hiệu lực 1/8/2024; Điều 160, 164 (công chứng) | Đúng, bổ sung chi tiết | Văn bản gốc (Công báo chinhphu.vn, thuvienphapluat) |
 | BLLĐ đã sửa bởi luật năm 2025; có dự án sửa tiếp | **Bổ sung** | Nguồn tin (chinhphu.vn, quochoi.vn) |
 | Luật BHXH 41/2024/QH15 hiệu lực 1/7/2025 | Đúng | Nguồn tin (baohiemxahoi.gov.vn) |
 | Luật Việc làm 2025 (74/2025/QH15) hiệu lực 1/1/2026 | **Bổ sung** | Nguồn tin |
@@ -27,5 +32,5 @@
 | Luật Căn cước 2023 hiệu lực 1/7/2024 | Đúng | Nguồn tin |
 | Luật Trợ giúp pháp lý sửa đổi 05/2026/QH16 (23/4/2026), mở rộng diện | **Bổ sung** | Nguồn tin (vanban.chinhphu.vn, tgpl.moj.gov.vn) |
 
-Chưa đối chiếu: Luật Cư trú 2020, Luật Phòng, chống bạo lực gia đình 2022, Luật Hộ tịch, Luật Nhà ở 2023, nội dung Chương II Hiến pháp (chỉ tóm tắt khái quát).
+Chưa đối chiếu: Luật Hộ tịch, nội dung Chương II Hiến pháp (chỉ tóm tắt khái quát), số tổng đài quốc gia về phòng, chống bạo lực gia đình (cố ý không ghi số).
 Lần đối chiếu sau: kiểm tra lại toàn bộ mục "Bổ sung" và các luật đang có dự án sửa (Bộ luật Lao động, Luật Đất đai).

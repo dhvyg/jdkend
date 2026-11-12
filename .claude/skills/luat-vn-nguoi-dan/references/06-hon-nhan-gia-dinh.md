@@ -17,4 +17,8 @@
 - Người không trực tiếp nuôi con phải cấp dưỡng và có quyền thăm nom.
 
 ## Bạo lực gia đình
-Gọi 113 khi nguy hiểm. Có thể báo công an xã/phường, trưởng thôn, tổ dân phố, Hội phụ nữ; giữ ảnh vết thương, giấy khám. Có biện pháp cấm tiếp xúc theo luật 2022.
+**Luật Phòng, chống bạo lực gia đình 2022** (số 13/2022/QH15, hiệu lực 1/7/2023).
+- Gọi 113 khi nguy hiểm. Báo tin qua: UBND cấp xã, công an xã/phường hoặc nơi gần nhất, nhà trường (nếu nạn nhân là học sinh), tổ chức đoàn thể cấp xã, tổng đài quốc gia về phòng, chống bạo lực gia đình. Báo bằng gọi điện, nhắn tin, gửi đơn hoặc đến trực tiếp.
+- Giữ ảnh vết thương, giấy khám, ghi âm, ghi hình: người có âm thanh, hình ảnh về hành vi bạo lực được quyền cung cấp cho cơ quan giải quyết.
+- **Cấm tiếp xúc**: Chủ tịch UBND cấp xã quyết định, mỗi lần không quá 03 ngày (Điều 25); Tòa án đang giải quyết vụ án dân sự giữa hai bên quyết định, không quá 04 tháng (Điều 26). Quyết định có hiệu lực ngay khi ký.
+- Nạn nhân được bố trí nơi tạm lánh, được chăm sóc y tế, được trợ giúp pháp lý và tư vấn tâm lý.

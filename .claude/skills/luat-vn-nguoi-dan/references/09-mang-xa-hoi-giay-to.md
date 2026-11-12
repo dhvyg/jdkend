@@ -13,7 +13,9 @@
 - Không gửi ảnh căn cước, mã OTP cho người lạ.
 
 ## Cư trú, căn cước
-**Văn bản:** Luật Cư trú 2020; Luật Căn cước 2023 (hiệu lực 1/7/2024).
-- Ở trọ, ở nhờ nơi khác nơi thường trú một thời gian thì phải đăng ký tạm trú (thời hạn cụ thể: kiểm tra). Có thể làm online qua cổng dịch vụ công hoặc VNeID.
+**Văn bản:** Luật Cư trú 2020 (số 68/2020/QH14; bản hợp nhất mới 06/VBHN-VPQH năm 2026); Luật Căn cước 2023 (hiệu lực 1/7/2024).
+- Đến sống tại chỗ ở hợp pháp **ngoài phạm vi xã/phường nơi thường trú** để làm việc, học tập... **từ 30 ngày trở lên** thì phải đăng ký tạm trú (Điều 27). Thời hạn tạm trú tối đa 02 năm, hết hạn thì gia hạn.
+- Ở dưới 30 ngày là **lưu trú**: chủ nhà, chủ cơ sở lưu trú thông báo với công an.
+- Có thể làm online qua cổng dịch vụ công hoặc VNeID.
 - Căn cước là giấy tờ tùy thân; tài khoản định danh điện tử VNeID dùng cho nhiều thủ tục.
 - Mất giấy tờ: báo công an nơi gần nhất, làm lại theo thủ tục hiện hành.
