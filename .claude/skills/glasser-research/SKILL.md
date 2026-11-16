@@ -11,7 +11,7 @@ endpoints through one account. Glasser provides access and billing; the selected
 provider supplies the response. Use the provider's name when attributing data.
 
 This is a data collection skill. Return its evidence to the marketing skill that
-needs it, such as `competitor-analysis`, `keyword-research`, `serp-analyzer`, or
+needs it, such as `competitor-analysis`, `semrush-research`, `serp-analyzer`, or
 `google-reviews`. Keep that skill's analysis method and output format.
 
 ## Source selection
@@ -95,7 +95,7 @@ run because coverage, schemas, and prices can change.
 | Need | Example provider and endpoint | Use in OpenClaudia |
 |------|-------------------------------|--------------------|
 | Current Google results | [Serper](https://glasser.ai/data-sources/serper) `/search` | `serp-analyzer`, content briefs, competitor discovery |
-| Google Ads keyword volume | [DataForSEO](https://glasser.ai/data-sources/dataforseo) `/v3/keywords_data/google_ads/search_volume/live` | `keyword-research`, content planning |
+| Google Ads keyword volume | [DataForSEO](https://glasser.ai/data-sources/dataforseo) `/v3/keywords_data/google_ads/search_volume/live` | `semrush-research`, content planning |
 | Reddit posts or comments | [ScrapeCreators](https://glasser.ai/data-sources/scrapecreators) `/v1/reddit/search` | customer language, pain points, competitor sentiment |
 | Google Ads advertisers | [ScrapeCreators](https://glasser.ai/data-sources/scrapecreators) `/v1/google/adLibrary/advertisers/search` | identify an advertiser before inspecting its ad endpoints |
 | Other marketing data | Search the live [data source catalog](https://glasser.ai/data-sources) | companies, people, places, news, social posts, ads, and web pages |
