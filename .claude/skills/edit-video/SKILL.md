@@ -23,6 +23,12 @@ description: >-
 4. Mã hóa chung (mặc định cho mọi lệnh bên dưới): `ENC="-c:v libx264 -preset veryfast -crf 20 -pix_fmt yuv420p -c:a aac -b:a 160k -movflags +faststart"`.
 5. Báo người dùng: đã làm gì, độ dài/kích thước trước–sau, chỗ chưa chắc (phụ đề nghe nhầm tên riêng, số).
 
+## Tự động một lệnh
+Người dùng chỉ nói "làm cho đăng TikTok" / "tự sửa video này": chạy
+`.claude/skills/edit-video/scripts/auto.sh IN.mp4 [OUT.mp4] [vi|en|none]` → dọc 9:16 nền mờ, phụ đề in cứng (chép lời bằng `nghe-audio`),
+âm lượng −14 LUFS, nén 30 fps; lưu kèm `OUT.srt`. Đo được: clip 44 giây mất ~75 giây trên 4 CPU. Sau đó vẫn làm bước kiểm tra (lưới khung hình),
+đọc `OUT.srt` tìm chỗ nghe nhầm; có lỗi thì sửa `.srt` rồi in lại bằng công thức "Phụ đề" bên dưới.
+
 ## Công thức
 
 **Cắt đoạn** (từ giây A đến B, chính xác từng khung):
