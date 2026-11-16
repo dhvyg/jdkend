@@ -286,6 +286,6 @@ None mandatory. Optional, depending on what the destination and the gates need:
 |---|---|
 | Keyword volume and difficulty (Gate 1) | Ahrefs, Semrush, or DataForSEO — see `ahrefs-research`, `semrush-research` |
 | Real query data for the target page | Google Search Console — see `search-console` |
-| Cover image generation | any image model — see `ai-image-gen` |
+| Cover image generation | any image model — see `ai-image-creator` |
 | Public-domain imagery | Wikimedia Commons API, no key required |
 | Publishing | your own CMS or repo credentials |
