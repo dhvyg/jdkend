@@ -26,6 +26,7 @@ Cần mạng tới PyPI và huggingface.co (lần đầu tải mô hình, ~1,6 G
 - Mặc định `large-v3-turbo` (tiếng Việt tốt; đo được: video 44 giây chép xong ~24 giây trên 4 CPU).
   File dài hoặc cần nhanh: `--model small` (kém chính xác hơn với tiếng Việt).
 - Biết trước ngôn ngữ thì thêm `--lang vi` cho chắc.
+- Cần phụ đề: thêm `--srt` để in ra định dạng SRT (`> sub.srt`); in phụ đề lên video xem skill `edit-video`.
 - Chạy nền (`run_in_background`) với file dài trên ~10 phút.
 
 ## 3. Trả lời người dùng
