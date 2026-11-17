@@ -2,7 +2,7 @@
 name: bklit-ui
 description: >-
   Dựng biểu đồ và trực quan hóa dữ liệu đẹp cho dashboard bằng Bklit UI (thành phần React trên shadcn/ui): biểu đồ
-  đường, vùng, cột, phễu, nến, v.v., có tooltip, hiệu ứng vào, trạng thái đang tải. Dùng khi người dùng nói "vẽ biểu
+  đường, vùng, phễu, nến, phân tán, kết hợp, có tooltip, hiệu ứng vào, trạng thái đang tải. Dùng khi người dùng nói "vẽ biểu
   đồ", "dashboard", "chart cho React", "Bklit", "biểu đồ đẹp kiểu shadcn", hoặc làm trang có số liệu theo thời gian.
 ---
 
