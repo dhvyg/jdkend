@@ -51,6 +51,16 @@ Dự án cần React + Tailwind + shadcn + `motion`. Lệnh mẫu (ví dụ thà
 ## 5. Tránh những dấu hiệu "AI làm" (bài gốc đánh dấu các lỗi này)
 Chữ gradient · nền tím chuyển màu và "AI-powered" · chữ nhạt khó đọc (độ tương phản thấp) · nhãn con nhộng (pill) phía trên tiêu đề · tiêu đề chữ serif nghiêng làm điểm nhấn cho đẹp · số liệu 10K+/99,9% rập khuôn. Dùng thì phải có lý do từ mẫu đã xem.
 
+## 5b. Phối màu: 2 màu dịu + 1 màu nhấn
+Nguồn ý chính: kênh TikTok @hoanganh_thrive (thiết kế web, tiêu đề các video ngày 3–16/11/2026; chưa xem được nội dung video, chỉ đọc tiêu đề): "dùng 2 màu dịu và để một màu nổi bật làm thiết kế đáng nhớ", "màu nhấn chiếm ít diện tích nhất nhưng để lại ấn tượng lớn nhất", "thiết kế đã đẹp rồi, chỉ cần thêm một màu nhấn".
+Cách làm (phần sau là thông lệ thiết kế chung, không phải lời của kênh):
+- **Hai màu dịu:** một màu nền, một màu phụ (khối, thẻ, viền), độ bão hòa thấp. Gần đúng quy tắc 60-30-10: khoảng 60% màu nền, 30% màu phụ, 10% hoặc ít hơn là màu nhấn.
+- **Một màu nhấn duy nhất cho cả trang,** sáng và bão hòa hơn hẳn hai màu kia. Chỉ dùng cho thứ cần người xem để ý: nút kêu gọi hành động, một con số chính, link quan trọng, điểm đang chọn. Không tô cả khối lớn, không dùng cho chữ thường.
+- Chọn màu nhấn hợp thương hiệu hoặc cảm xúc muốn gợi (ấm, tin cậy, năng động); thử 2–3 phương án rồi chụp ảnh so sánh.
+- **Kiểm độ tương phản:** chữ thường trên nền cần tỉ lệ tối thiểu 4,5:1 (chuẩn WCAG AA); chữ trên nút màu nhấn cũng vậy.
+- Khai báo thành biến (`--nen`, `--phu`, `--nhan`) và dùng lại, đừng rải mã màu khắp nơi (xem `design-md`).
+- Có chế độ tối thì làm lại bộ ba màu cho nền tối, vẫn chỉ một màu nhấn.
+
 ## 6. Làm xong phải kiểm
 Chụp ảnh desktop và điện thoại, đối chiếu với ghi chú ở mục 3, rồi chạy `unslop` hoặc `impeccable` để bắt lỗi còn sót. Báo người dùng: đã học kỹ thuật nào từ nguồn nào, cái gì chưa xem được (trang chặn, cần trả phí).
 Phối hợp: `taste-skill` (trang công ty), `emil-design-eng`, `motion` (chuyển động), `stageshow` (giao diện giả để khoe sản phẩm).
