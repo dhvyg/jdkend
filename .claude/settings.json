@@ -455,6 +455,12 @@
         "source": "github",
         "repo": "charlie947/social-media-skills"
       }
+    },
+    "mobbin": {
+      "source": {
+        "source": "github",
+        "repo": "mobbin/skills"
+      }
     }
   },
   "enabledPlugins": {
@@ -566,6 +572,7 @@
     "openseo@openseo": true,
     "motionsites-web-builder@motionsites": true,
     "claude-seo@agricidaniel-claude-seo": true,
-    "social-media-skills@social-media-skills": true
+    "social-media-skills@social-media-skills": true,
+    "mobbin@mobbin": true
   }
 }
