@@ -431,6 +431,30 @@
         "source": "github",
         "repo": "Motionsites-AI/claude-skill"
       }
+    },
+    "agricidaniel-claude-seo": {
+      "source": {
+        "source": "github",
+        "repo": "AgriciDaniel/claude-seo"
+      }
+    },
+    "claude-for-legal": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/claude-for-legal"
+      }
+    },
+    "claude-code-skills": {
+      "source": {
+        "source": "github",
+        "repo": "alirezarezvani/claude-skills"
+      }
+    },
+    "social-media-skills": {
+      "source": {
+        "source": "github",
+        "repo": "charlie947/social-media-skills"
+      }
     }
   },
   "enabledPlugins": {
@@ -485,7 +509,7 @@
     "repomix-commands@repomix": false,
     "repomix-explorer@repomix": true,
     "planning-with-files@planning-with-files": false,
-    "codex@openai-codex": false,
+    "codex@openai-codex": true,
     "agentmemory@agentmemory": false,
     "perplexity@perplexity-mcp-server": true,
     "impeccable@impeccable": true,
@@ -540,6 +564,8 @@
     "rea-video@rea-video": true,
     "marketing-skills@marketingskills": true,
     "openseo@openseo": true,
-    "motionsites-web-builder@motionsites": true
+    "motionsites-web-builder@motionsites": true,
+    "claude-seo@agricidaniel-claude-seo": true,
+    "social-media-skills@social-media-skills": true
   }
 }
