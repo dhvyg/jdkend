@@ -5,3 +5,5 @@ Các skill ở đây **không được Claude Code nạp** (chỉ thư mục con
 Bật lại một skill: `git mv .claude/skills-tat/<tên> .claude/skills/<tên>`, rồi mở phiên mới.
 
 Đợt 2 (19/11/2026): thêm nhóm Marketing, bán hàng, viết nội dung kinh doanh (43 skill), tổng ở đây 108 skill.
+
+Đợt 3 (20/11/2026): thêm 116 skill theo nhóm người dùng chọn: Vue, khoa học/nghiên cứu, Replica, Trader + Seed, Expo/React Native, Instagram, Remotion, Three.js/3D.
