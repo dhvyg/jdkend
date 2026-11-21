@@ -455,6 +455,12 @@
         "source": "github",
         "repo": "charlie947/social-media-skills"
       }
+    },
+    "gsd-core": {
+      "source": {
+        "source": "github",
+        "repo": "open-gsd/gsd-core"
+      }
     }
   },
   "enabledPlugins": {
@@ -566,6 +572,7 @@
     "openseo@openseo": false,
     "motionsites-web-builder@motionsites": false,
     "claude-seo@agricidaniel-claude-seo": false,
-    "social-media-skills@social-media-skills": false
+    "social-media-skills@social-media-skills": false,
+    "gsd-core@gsd-core": true
   }
 }
