@@ -515,7 +515,7 @@
     "repomix-commands@repomix": false,
     "repomix-explorer@repomix": false,
     "planning-with-files@planning-with-files": false,
-    "codex@openai-codex": true,
+    "codex@openai-codex": false,
     "agentmemory@agentmemory": false,
     "perplexity@perplexity-mcp-server": false,
     "impeccable@impeccable": false,
@@ -573,6 +573,6 @@
     "motionsites-web-builder@motionsites": false,
     "claude-seo@agricidaniel-claude-seo": false,
     "social-media-skills@social-media-skills": false,
-    "gsd-core@gsd-core": true
+    "gsd-core@gsd-core": false
   }
 }
