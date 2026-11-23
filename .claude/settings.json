@@ -467,6 +467,12 @@
         "source": "github",
         "repo": "obsidianmd/obsidian-skills"
       }
+    },
+    "heydamir": {
+      "source": {
+        "source": "github",
+        "repo": "heydamir/unslop"
+      }
     }
   },
   "enabledPlugins": {
@@ -507,6 +513,7 @@
     "postiz@knowledge-work-plugins": true,
     "open-design@open-design": true,
     "obsidian@obsidian-skills": true,
+    "unslop@heydamir": true,
     "stripe@claude-plugins-official": true,
     "shopify-ai-toolkit@claude-plugins-official": true,
     "intuit-quickbooks@claude-plugins-official": true,
