@@ -479,6 +479,12 @@
         "source": "github",
         "repo": "EricJujianZou/rederive"
       }
+    },
+    "google-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "google/skills"
+      }
     }
   },
   "enabledPlugins": {
@@ -521,6 +527,7 @@
     "obsidian@obsidian-skills": true,
     "unslop@heydamir": true,
     "rederive@rederive": true,
+    "google-cloud-developer@google-plugins": true,
     "stripe@claude-plugins-official": true,
     "shopify-ai-toolkit@claude-plugins-official": true,
     "intuit-quickbooks@claude-plugins-official": true,
