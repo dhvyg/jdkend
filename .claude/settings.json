@@ -478,7 +478,7 @@
   "enabledPlugins": {
     "ponytail@ponytail": true,
     "watch@claude-video": true,
-    "caveman@caveman": false,
+    "caveman@caveman": true,
     "last30days@last30days-skill": true,
     "founder-skill@founder-skill": true,
     "notfair@nowork-studio": true,
