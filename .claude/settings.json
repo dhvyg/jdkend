@@ -455,12 +455,42 @@
         "source": "github",
         "repo": "charlie947/social-media-skills"
       }
+    },
+    "open-design": {
+      "source": {
+        "source": "github",
+        "repo": "nexu-io/open-design"
+      }
+    },
+    "obsidian-skills": {
+      "source": {
+        "source": "github",
+        "repo": "obsidianmd/obsidian-skills"
+      }
+    },
+    "heydamir": {
+      "source": {
+        "source": "github",
+        "repo": "heydamir/unslop"
+      }
+    },
+    "rederive": {
+      "source": {
+        "source": "github",
+        "repo": "EricJujianZou/rederive"
+      }
+    },
+    "google-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "google/skills"
+      }
     }
   },
   "enabledPlugins": {
     "ponytail@ponytail": true,
-    "watch@claude-video": true,
-    "caveman@caveman": false,
+    "watch@claude-video": false,
+    "caveman@caveman": true,
     "last30days@last30days-skill": true,
     "founder-skill@founder-skill": true,
     "notfair@nowork-studio": true,
@@ -491,8 +521,19 @@
     "brand-voice@knowledge-work-plugins": true,
     "diagram-design@diagram-design": true,
     "text-to-cad@earthtojake": true,
-    "hyperframes@hyperframes": true,
+    "hyperframes@hyperframes": false,
     "postiz@knowledge-work-plugins": true,
+    "open-design@open-design": true,
+    "obsidian@obsidian-skills": true,
+    "unslop@heydamir": true,
+    "rederive@rederive": true,
+    "google-cloud-developer@google-plugins": true,
+    "stripe@claude-plugins-official": true,
+    "shopify-ai-toolkit@claude-plugins-official": true,
+    "intuit-quickbooks@claude-plugins-official": true,
+    "canva@claude-plugins-official": true,
+    "hubspot-sales@claude-plugins-official": true,
+    "legalzoom@claude-plugins-official": true,
     "frontend-design@claude-plugins-official": true,
     "feature-dev@claude-plugins-official": true,
     "commit-commands@claude-plugins-official": true,
@@ -530,7 +571,7 @@
     "market-researcher@claude-for-financial-services": false,
     "model-builder@claude-for-financial-services": false,
     "apify-ultimate-scraper@apify-agent-skills": true,
-    "ffmpeg-skill@ffmpeg-skill": true,
+    "ffmpeg-skill@ffmpeg-skill": false,
     "playwright@claude-plugins-official": true,
     "figma@claude-plugins-official": true,
     "zapier@claude-plugins-official": true,
@@ -548,7 +589,7 @@
     "autoresearch@autoresearch": false,
     "academic-research-skills@academic-research-skills": false,
     "lemo-opuscar@lemolab": true,
-    "wtt-code-animation-studio-skills@wattter-skills": true,
+    "wtt-code-animation-studio-skills@wattter-skills": false,
     "social-media-research-skills@social-media-research-skills": true,
     "ppt-master@ppt-master": true,
     "nateherk-design@nateherk": false,
@@ -559,9 +600,9 @@
     "understand-anything@understand-anything": false,
     "tokeneconomizer@tokeneconomizer": false,
     "rea@rea": true,
-    "pixelfx@pixelfx": true,
+    "pixelfx@pixelfx": false,
     "hallmark@hallmark": true,
-    "rea-video@rea-video": true,
+    "rea-video@rea-video": false,
     "marketing-skills@marketingskills": true,
     "openseo@openseo": true,
     "motionsites-web-builder@motionsites": true,
