@@ -455,6 +455,18 @@
         "source": "github",
         "repo": "charlie947/social-media-skills"
       }
+    },
+    "open-design": {
+      "source": {
+        "source": "github",
+        "repo": "nexu-io/open-design"
+      }
+    },
+    "obsidian-skills": {
+      "source": {
+        "source": "github",
+        "repo": "obsidianmd/obsidian-skills"
+      }
     }
   },
   "enabledPlugins": {
@@ -493,6 +505,8 @@
     "text-to-cad@earthtojake": true,
     "hyperframes@hyperframes": true,
     "postiz@knowledge-work-plugins": true,
+    "open-design@open-design": true,
+    "obsidian@obsidian-skills": true,
     "stripe@claude-plugins-official": true,
     "shopify-ai-toolkit@claude-plugins-official": true,
     "intuit-quickbooks@claude-plugins-official": true,
