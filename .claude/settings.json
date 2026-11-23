@@ -473,6 +473,12 @@
         "source": "github",
         "repo": "heydamir/unslop"
       }
+    },
+    "rederive": {
+      "source": {
+        "source": "github",
+        "repo": "EricJujianZou/rederive"
+      }
     }
   },
   "enabledPlugins": {
@@ -514,6 +520,7 @@
     "open-design@open-design": true,
     "obsidian@obsidian-skills": true,
     "unslop@heydamir": true,
+    "rederive@rederive": true,
     "stripe@claude-plugins-official": true,
     "shopify-ai-toolkit@claude-plugins-official": true,
     "intuit-quickbooks@claude-plugins-official": true,
