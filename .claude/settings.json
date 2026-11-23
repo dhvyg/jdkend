@@ -499,6 +499,7 @@
     "design@knowledge-work-plugins": true,
     "finance@knowledge-work-plugins": true,
     "small-business@knowledge-work-plugins": true,
+    "stripe@claude-plugins-official": true,
     "frontend-design@claude-plugins-official": true,
     "feature-dev@claude-plugins-official": true,
     "commit-commands@claude-plugins-official": true,
